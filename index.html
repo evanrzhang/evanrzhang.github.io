@@ -60,6 +60,7 @@
       margin-bottom: 1rem;
       font-size: 1.8rem;
       font-weight: 700;
+      text-align: center;
     }
 
     .about-container {
@@ -251,14 +252,7 @@
         <div class="media-items">
           <img src="SPIRoMain.jpg" alt="SPIRo main" class="media-item active" />
           <img src="SPIRoField.jpg" alt="SPIRo second" class="media-item" />
-          <iframe
-            class="media-item"
-            src="https://youtu.be/Btl4Zmm5sTo"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            style="border-radius: 6px; max-height: 300px; width: 100%;"
-          ></iframe>
+          <video src="SPIRoDemo.mov" controls class="media-item"></video>
           <img src="SPIRoRotate.gif" alt="SPIRo animation" class="media-item" />
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
@@ -277,14 +271,7 @@
         <div class="media-items">
           <img src="HASELMain.png" alt="HASEL main" class="media-item active" />
           <img src="HASELSystem.png" alt="HASEL second" class="media-item" />
-          <iframe
-            class="media-item"
-            src="https://youtu.be/7qaNm5ZdhyI"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            style="border-radius: 6px; max-height: 300px; width: 100%;"
-          ></iframe>
+          <video src="HASELDemo.mov" controls class="media-item"></video>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
@@ -294,6 +281,57 @@
         <p>Heart Failure blah blah blah</p>
       </div>
     </div>
+
+    <div class="project">
+        <h3>Microscope Side Illumination and Enclosure</h3>
+        <div class="media-gallery">
+          <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+          <div class="media-items">
+            <img src="SideIllumination.jpeg" alt="HASEL main" class="media-item active" />
+            <img src="BehavioralApparatus.JPG" alt="HASEL main" class="media-item active" />
+            <img src="Enclosure.jpeg" alt="HASEL main" class="media-item active" />
+          </div>
+          <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+        </div>
+        <p class="tagline">Collimator Mount and Enclosure for Crystal Skull Microscope</p>
+        <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
+        <div class="project-details" style="display: none;">
+          <p>blah blah blah</p>
+        </div>
+      </div>
+
+    <div class="project">
+        <h3>Rotary Encoder interface and PCB</h3>
+        <div class="media-gallery">
+          <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+          <div class="media-items">
+            <video src="rotaryencoder.mp4" controls class="media-item"></video>
+          </div>
+          <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+        </div>
+        <p class="tagline">Rotary encoder interface for motion tracking and PCB design.</p>
+        <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
+        <div class="project-details" style="display: none;">
+          <p>blah blah blah</p>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>More coming...</h3>
+        <div class="media-gallery">
+          <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+          <div class="media-items">
+
+          </div>
+          <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+        </div>
+        <p class="tagline">grrrrrrrr</p>
+        <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
+        <div class="project-details" style="display: none;">
+          <p>blah blah blah</p>
+        </div>
+      </div>
+
   </section>
 
   <script>
