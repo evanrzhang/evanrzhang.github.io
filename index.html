@@ -65,8 +65,14 @@
     .about-container {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 2rem;
-      flex-wrap: nowrap;
+      text-align: left;
+    }
+
+    .about-wrapper {
+      display: flex;
+      justify-content: center;
     }
 
     .about-photo {
@@ -154,6 +160,58 @@
       color: #333;
       margin-top: 0.5rem;
     }
+
+    .media-gallery {
+      position: relative;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto 1rem auto;
+      overflow: hidden;
+    }
+
+    .media-items {
+      display: flex;
+      transition: transform 0.4s ease;
+      will-change: transform;
+    }
+
+    .media-item {
+      flex: 0 0 40%; /* show partial next/prev */
+      max-height: 300px;
+      border-radius: 6px;
+      object-fit: contain;
+      margin-right: 0.05rem;
+      user-select: none;
+    }
+
+    .media-item:last-child {
+      margin-right: 0;
+    }
+
+    .gallery-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(68, 136, 255, 0.7);
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      user-select: none;
+      z-index: 100;
+    }
+
+    .prev-btn {
+      left: 10px;
+    }
+
+    .next-btn {
+      right: 10px;
+    }
   </style>
 </head>
 
@@ -172,12 +230,14 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <div class="about-container">
-      <img src="headshot.jpg" alt="Evan Zhang" class="about-photo">
-      <p style="flex: 1;">
-        I'm Evan, a high school senior interested in mechanical engineering and business. 
-        I am better than Eddie.
-      </p>
+    <div class="about-wrapper">
+      <div class="about-container">
+        <img src="headshot.jpg" alt="Evan Zhang" class="about-photo">
+        <p style="flex: 1;">
+          I'm Evan, a high school senior interested in mechanical engineering and business. 
+          I am better than Eddie.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -186,7 +246,23 @@
 
     <div class="project">
       <h3>SPIRo</h3>
-      <img src="SPIRoMain.jpg" alt="Project image" class="project-image">
+      <div class="media-gallery">
+        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+        <div class="media-items">
+          <img src="SPIRoMain.jpg" alt="SPIRo main" class="media-item active" />
+          <img src="SPIRoField.jpg" alt="SPIRo second" class="media-item" />
+          <iframe
+            class="media-item"
+            src="https://youtu.be/Btl4Zmm5sTo"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="border-radius: 6px; max-height: 300px; width: 100%;"
+          ></iframe>
+          <img src="SPIRoRotate.gif" alt="SPIRo animation" class="media-item" />
+        </div>
+        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+      </div>
       <p class="tagline">Soft Pneumatic Inspection Robot for Environmental Protection.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
       <div class="project-details" style="display: none;">
@@ -196,7 +272,22 @@
 
     <div class="project">
       <h3>HASEL Actuators for Cardiac Assist</h3>
-      <img src="HASELMain.png" alt="Project image" class="project-image">
+      <div class="media-gallery">
+        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+        <div class="media-items">
+          <img src="HASELMain.png" alt="HASEL main" class="media-item active" />
+          <img src="HASELSystem.png" alt="HASEL second" class="media-item" />
+          <iframe
+            class="media-item"
+            src="https://youtu.be/7qaNm5ZdhyI"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="border-radius: 6px; max-height: 300px; width: 100%;"
+          ></iframe>
+        </div>
+        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+      </div>
       <p class="tagline">Hydraulically Amplified Self-Healing Electrostatic Actuators for more personal medical care.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
       <div class="project-details" style="display: none;">
@@ -259,6 +350,24 @@
       details.style.display = "none";
       button.textContent = "Learn More";
     }
+  }
+</script>
+
+<script>
+  function changeMedia(button, direction) {
+    const gallery = button.parentElement;
+    const mediaItems = gallery.querySelectorAll('.media-item');
+    const container = gallery.querySelector('.media-items');
+    const totalItems = mediaItems.length;
+    if (!gallery.currentIndex && gallery.currentIndex !== 0) gallery.currentIndex = 0;
+
+    gallery.currentIndex += direction;
+    if (gallery.currentIndex < 0) gallery.currentIndex = 0;
+    if (gallery.currentIndex > totalItems - 1) gallery.currentIndex = totalItems - 1;
+
+    const itemWidth = mediaItems[0].getBoundingClientRect().width + parseFloat(getComputedStyle(mediaItems[0]).marginRight);
+    const offset = -gallery.currentIndex * itemWidth;
+    container.style.transform = `translateX(${offset}px)`;
   }
 </script>
 
