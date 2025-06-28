@@ -15,6 +15,77 @@
       font-weight: 600;
     }
 
+    /* Animation keyframes */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Apply animation to sections */
+    section {
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(15px);
+      animation-delay: 0.1s;
+    }
+
+    /* Stagger animations for projects */
+    .project {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .project:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .project:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .project:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    .project:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    .project:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    /* Animate award categories with stagger */
+    .award-category {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .award-category:nth-child(1) {
+      animation-delay: 1.2s;
+    }
+    .award-category:nth-child(2) {
+      animation-delay: 1.4s;
+    }
+    .award-category:nth-child(3) {
+      animation-delay: 1.6s;
+    }
+    .award-category:nth-child(4) {
+      animation-delay: 1.8s;
+    }
+
+    /* Animate community service and publications */
+    #community-service, #publications {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 0.8s ease forwards;
+      animation-delay: 2s;
+    }
+
     header {
       background-color: #000000; 
       color: white;
@@ -51,12 +122,84 @@
       margin: auto;
       text-align: center;
       color: #665500;
+      margin-bottom: 2rem;
+      background-color: #ffffff;
     }
 
     #community-service p {
       font-size: 1.1rem;
       max-width: 800px;
       margin: 0 auto;
+    }
+
+    #awards, #publications {
+      padding: 2rem;
+      text-align: center;
+      background-color: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    #awards {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .awards-grid {
+      display: grid;
+      grid-template-areas:
+        "research business"
+        "olympiads volunteering";
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 1rem;
+      text-align: left;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .award-category {
+      background-color: #f8faff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .award-category:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .award-category h3 {
+      color: #224488;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .award-category ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    .award-category li::before {
+      content: "• ";
+      color: #4488FF;
+    }
+
+    .publications-list {
+      list-style: none;
+      padding-left: 0;
+      max-width: 800px;
+      margin: 1rem auto 0 auto;
+      text-align: left;
+    }
+
+    .publications-list li::before {
+      content: "📄 ";
+      margin-right: 0.5rem;
     }
 
     section {
@@ -202,7 +345,7 @@
     .media-item {
       flex: 0 0 40%; /* show partial next/prev */
       max-height: 300px;
-      border-radius: 10px;
+      border-radius: 6px;
       object-fit: contain;
       margin-right: 0.05rem;
       user-select: none;
@@ -250,6 +393,7 @@
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#community-service">Community Service</a>
+        <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
     </nav>
 </header> 
 
@@ -259,8 +403,9 @@
       <div class="about-container">
         <img src="headshot.jpg" alt="Evan Zhang" class="about-photo">
         <p style="flex: 1;">
-          I'm Evan, a high school senior interested in mechanical engineering and business. 
-          I am better than Eddie.
+          I'm Evan, a high school senior interested in mechanical engineering, aerospace, and business. I'm a maker and tinkerer at heart, 
+          and I love working on solving pressing issues, from medical challenges to environmental protection. I was probably born with a 
+          roll of duct tape in my right hand.
         </p>
       </div>
     </div>
@@ -325,39 +470,42 @@
         </div>
       </div>
 
-    <div class="project">
-        <h3>Rotary Encoder interface and PCB</h3>
-        <div class="media-gallery">
-          <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-          <div class="media-items">
-            <img src="KicadModel.png" alt="pcbmodel" class="media-item active" />
-            <img src="KicadSchematic.png" alt="pcbschematic" class="media-item active" />
-            <video src="rotaryencoder.mp4" controls class="media-item"></video>
-          </div>
-          <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
-        </div>
-        <p class="tagline">Rotary encoder interface for motion tracking and PCB design.</p>
-        <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
-        <div class="project-details" style="display: none;">
-          <p>blah blah blah</p>
-        </div>
-      </div>
-
+    <button id="toggle-projects-btn" class="expand-button" onclick="toggleProjects()" style="margin-bottom: 2rem;">Show More Projects</button>
+    <div id="extra-projects" style="display: none;">
       <div class="project">
-        <h3>More coming...</h3>
-        <div class="media-gallery">
-          <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-          <div class="media-items">
-
+          <h3>Rotary Encoder interface and PCB</h3>
+          <div class="media-gallery">
+            <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+            <div class="media-items">
+              <img src="KicadModel.png" alt="pcbmodel" class="media-item active" />
+              <img src="KicadSchematic.png" alt="pcbschematic" class="media-item active" />
+              <video src="rotaryencoder.mp4" controls class="media-item"></video>
+            </div>
+            <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
           </div>
-          <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+          <p class="tagline">Rotary encoder interface for motion tracking and PCB design.</p>
+          <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
+          <div class="project-details" style="display: none;">
+            <p>blah blah blah</p>
+          </div>
         </div>
-        <p class="tagline">grrrrrrrr</p>
-        <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
-        <div class="project-details" style="display: none;">
-          <p>blah blah blah</p>
+
+        <div class="project">
+          <h3>More coming...</h3>
+          <div class="media-gallery">
+            <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+            <div class="media-items">
+
+            </div>
+            <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+          </div>
+          <p class="tagline">grrrrrrrr</p>
+          <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
+          <div class="project-details" style="display: none;">
+            <p>blah blah blah</p>
+          </div>
         </div>
-      </div>
+    </div>
 
   </section>
 
@@ -366,6 +514,53 @@
     <p>
       blah yap blah
     </p>
+  </section>
+
+  <section id="awards">
+    <h2>Awards</h2>
+    <div class="awards-grid">
+      <div class="award-category" style="grid-area: research;">
+        <h3>Research</h3>
+        <ul>
+          <li>ISEF Finalist</li>
+          <li>JSHS National Qualifier</li>
+        </ul>
+      </div>
+      <div class="award-category" style="grid-area: business;">
+        <h3>Business</h3>
+        <ul>
+          <li>diamond</li>
+          <li>conrad, medici, etc</li>
+        </ul>
+      </div>
+      <div class="award-category" style="grid-area: olympiads;">
+        <h3>Olympiads</h3>
+        <ul>
+          <li>aime</li>
+          <li>tems</li>
+        </ul>
+      </div>
+      <div class="award-category" style="grid-area: volunteering;">
+        <h3>Volunteering / Misc.</h3>
+        <ul>
+          <li>pvsa</li>
+          <li>TOC, tennis</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <p>
+      View my full list of publications on
+      <a href="https://scholar.google.com/citations?user=SviwYmkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+        Google Scholar
+      </a>.
+    </p>
+    <ul class="publications-list">
+      <li>Zhang, Zhang, Robosoft.</li>
+    </ul>
   </section>
 
   <script>
@@ -386,31 +581,33 @@
     })();
   </script>
 
-  <script>
-    document.addEventListener("mousemove", function(e) {
-      const particle = document.createElement("div");
-      particle.classList.add("particle");
-      particle.style.left = e.pageX + "px";
-      particle.style.top = e.pageY + "px";
+  <!--
+<script>
+  document.addEventListener("mousemove", function(e) {
+    const particle = document.createElement("div");
+    particle.classList.add("particle");
+    particle.style.left = e.pageX + "px";
+    particle.style.top = e.pageY + "px";
 
-      const colors = ['#FFAA00', '#FF4444', '#4488FF']; // Medium yellow, red, blue
-      const color = colors[Math.floor(Math.random() * colors.length)];
-      particle.style.background = color;
-      particle.style.boxShadow = `0 0 10px ${color}`;
+    const colors = ['#FFAA00', '#FF4444', '#4488FF'];
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    particle.style.background = color;
+    particle.style.boxShadow = `0 0 10px ${color}`;
 
-      const angle = Math.random() * 2 * Math.PI;
-      const distance = 5 + Math.random() * 10;
-      const dx = Math.cos(angle) * distance;
-      const dy = Math.sin(angle) * distance;
-      particle.style.transform = `translate(${dx}px, ${dy}px) scale(1)`;
+    const angle = Math.random() * 2 * Math.PI;
+    const distance = 5 + Math.random() * 10;
+    const dx = Math.cos(angle) * distance;
+    const dy = Math.sin(angle) * distance;
+    particle.style.transform = `translate(${dx}px, ${dy}px) scale(1)`;
 
-      document.body.appendChild(particle);
+    document.body.appendChild(particle);
 
-      setTimeout(() => {
-        particle.remove();
-      }, 1000); // particle disappears after 1s
-    });
-  </script>
+    setTimeout(() => {
+      particle.remove();
+    }, 1000);
+  });
+</script>
+-->
 
 <script>
   function toggleDetails(button) {
@@ -434,8 +631,8 @@
     if (!gallery.currentIndex && gallery.currentIndex !== 0) gallery.currentIndex = 0;
 
     gallery.currentIndex += direction;
-    if (gallery.currentIndex < 0) gallery.currentIndex = 0;
-    if (gallery.currentIndex > totalItems - 1) gallery.currentIndex = totalItems - 1;
+    if (gallery.currentIndex < 0) gallery.currentIndex = totalItems - 1;
+    if (gallery.currentIndex >= totalItems) gallery.currentIndex = 0;
 
     const itemWidth = mediaItems[0].getBoundingClientRect().width + parseFloat(getComputedStyle(mediaItems[0]).marginRight);
     const offset = -gallery.currentIndex * itemWidth;
@@ -443,5 +640,26 @@
   }
 </script>
 
+</script>
+
+<script>
+  function toggleProjects() {
+    const extraProjects = document.getElementById("extra-projects");
+    const button = document.getElementById("toggle-projects-btn");
+    const isVisible = extraProjects.style.display === "block";
+    extraProjects.style.display = isVisible ? "none" : "block";
+    button.textContent = isVisible ? "Show More Projects" : "Show Fewer Projects";
+  }
+</script>
+
 </body>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('section, .project, .award-category, #community-service, #publications');
+    animatedElements.forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    });
+  });
+</script>
 </html>
