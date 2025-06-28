@@ -50,10 +50,7 @@
       max-width: 100%;
       margin: auto;
       text-align: center;
-      background-color: #fff8e1; /* subtle light yellow background */
-      border-radius: 10px;
       color: #665500;
-      margin-top: 2rem;
     }
 
     #community-service p {
@@ -63,9 +60,13 @@
     }
 
     section {
-    padding: 0.1rem 2rem;
-    max-width: 100%;
-    margin: auto;
+      padding: 3rem 2rem;
+      max-width: 100%;
+      margin: auto;
+      margin-bottom: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      background-color: #ffffff;
     }
 
     #about {
@@ -101,17 +102,22 @@
       border: 3px solid #FFAA00;
     }
     #projects {
-      background-color: #f0f4ff;
       padding: 0.2rem 2rem 2rem 2rem;
-      border-radius: 10px;
     }
 
     .project {
-      background-color: white;
+      background-color: #f8faff;
       border-left: 4px solid #4488FF;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
     .project h3 {
@@ -165,7 +171,7 @@
       padding: 0.5rem 1rem;
       cursor: pointer;
       font-weight: bold;
-      border-radius: 4px;
+      border-radius: 6px;
       margin-bottom: 0.5rem;
     }
 
@@ -196,7 +202,7 @@
     .media-item {
       flex: 0 0 40%; /* show partial next/prev */
       max-height: 300px;
-      border-radius: 6px;
+      border-radius: 10px;
       object-fit: contain;
       margin-right: 0.05rem;
       user-select: none;
@@ -306,9 +312,9 @@
         <div class="media-gallery">
           <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
           <div class="media-items">
-            <img src="SideIllumination.jpeg" alt="HASEL main" class="media-item active" />
-            <img src="BehavioralApparatus.JPG" alt="HASEL main" class="media-item active" />
-            <img src="Enclosure.jpeg" alt="HASEL main" class="media-item active" />
+            <img src="SideIllumination.jpeg" alt="Mount" class="media-item active" />
+            <img src="BehavioralApparatus.JPG" alt="Apparatusn" class="media-item active" />
+            <img src="Enclosure.jpeg" alt="enclosure" class="media-item active" />
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
@@ -324,6 +330,8 @@
         <div class="media-gallery">
           <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
           <div class="media-items">
+            <img src="KicadModel.png" alt="pcbmodel" class="media-item active" />
+            <img src="KicadSchematic.png" alt="pcbschematic" class="media-item active" />
             <video src="rotaryencoder.mp4" controls class="media-item"></video>
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
@@ -391,7 +399,7 @@
       particle.style.boxShadow = `0 0 10px ${color}`;
 
       const angle = Math.random() * 2 * Math.PI;
-      const distance = 20 + Math.random() * 30;
+      const distance = 5 + Math.random() * 10;
       const dx = Math.cos(angle) * distance;
       const dy = Math.sin(angle) * distance;
       particle.style.transform = `translate(${dx}px, ${dy}px) scale(1)`;
