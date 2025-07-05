@@ -132,6 +132,7 @@
       margin: 0 auto;
     }
 
+
     #awards, #publications {
       padding: 2rem;
       text-align: center;
@@ -200,6 +201,15 @@
     .publications-list li::before {
       content: "📄 ";
       margin-right: 0.5rem;
+    }
+
+    .publications-list a {
+      color: #224488;
+      text-decoration: none;
+    }
+
+    .publications-list a:hover {
+      text-decoration: underline;
     }
 
     section {
@@ -324,8 +334,19 @@
 
     .project-details {
       font-size: 0.95rem;
-      color: #333;
+      color: #444;
+      line-height: 1.6;
       margin-top: 0.5rem;
+    }
+
+    .project-details p {
+      margin-bottom: 1rem;
+    }
+
+    .project-details li {
+      color: #555;
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
     }
 
     .media-gallery {
@@ -431,7 +452,63 @@
       <p class="tagline">Soft Pneumatic Inspection Robot for Environmental Protection.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
       <div class="project-details" style="display: none;">
-        <p>SPIRo is a robot blah blah blah blah blah blah blah</p>
+        <p>Current industrial methods for gas leak detection, including hydrostatic testing and camera inspection, 
+          fall short of meeting today’s needs. Nearly 100 million barrels of oil are transported through pipelines 
+          annually, with 90% of the United States crude oil traveling across the country via these systems. 
+          However, pipeline leaks are both frequent and dangerous; in the U.S. alone, a significant leak occurs every 
+          40 hours, with smaller fugitive leaks often going undetected and unreported. Inspection approaches are often 
+          inaccurate, expensive, and labor-intensive, requiring extensive human involvement. Consequently, many leaks remain 
+          unnoticed for extended periods of time, all the while causing severe damage to both the environment and populations. 
+          These leaks endanger nearby populations, cause millions of dollars in losses, and contribute to the release of 
+          nearly three million tons of methane into the atmosphere each year. Methane is uniquely concerning because it is 
+          30 times more potent than carbon dioxide in terms of global warming potential, and it alone accounts for one-third 
+          of the world’s warming from greenhouse emissions. Therefore, early detection of gas infrastructure leaks has become 
+          an urgent and efficient way to reduce harmful emissions.</p>
+
+        <p>SPIRo (Soft Pipe Inspection Robot) is a pneumatically actuated soft pipe inspection robot for the accurate 
+          inspection of gas pipes in difficult-to-reach environments. It uses a compliant scissor linkage, McKibben artificial 
+          muscle actuators, and magnetic grippers. It achieves a speed of 15 mm/s when crawling on a horizontal surface and 9 mm/s 
+          when climbing up a vertical surface. It can also deform its body 60 degrees vertically and 40 degrees horizontally to 
+          clear obstacles. The robot’s origami-inspired grippers support a total weight of 417 grams of extra payload to account 
+          for the necessary leak detection sensors and equipment.
+        </p>
+
+        <p>Also implemented on the robot is a lightweight multimodal machine learning architecture based on CNNs and deep forest 
+          classifiers for gas pipeline leak detection systems using thermal image and gas sensor data. 
+        </p>
+
+        <p>I reached out to dozens of labs and professionals across the country to seek out advice for improving the robot 
+          to make it more suitable for field use. I was offered an opportunity to conduct real-field testing at the Methane 
+          Emissions Technology Evaluation Center (METEC), thoroughly evaluating SPIRo’s real-world capabilities and achieving an 
+          accuracy of 95% throughout these tests. I also worked with the MIT Media Lab to implement FlowIO, a standalone air 
+          compressor system on the robot and the Southwest Research Institute for calibrating the robot in tests at home. 
+        </p>
+
+        <h4>Recognition</h4>
+        <ul>
+          <li><strong>Conrad Challenge</strong> – Pete Conrad Scholar, received $10K to fund innovation</li>
+          <li><strong>Diamond Challenge Finalists</strong></li>
+          <li><strong>National Junior Science and Humanities Symposium</strong> – Oral Presentation</li>
+          <li><strong>Medici Grant</strong> – $1000 from 1517 Fund</li>
+          <li><strong>Sigma Xi Honorific Research Society</strong> – Research Showcase First Place, $500 Prize</li>
+          <li><strong>JSHS Northern California</strong> – 2nd Place, $250</li>
+          <li><strong>Synopsys Science Fair (2024)</strong> – 2nd Award, Physical Sciences</li>
+        </ul>
+
+        <h4>Publications</h4>
+        <ul>
+          <li><a href="https://ieeexplore.ieee.org/abstract/document/11020922" target="_blank" rel="noopener noreferrer">IEEE Robosoft 2025</a></li>
+          <li><a href="https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1569621/full" target="_blank" rel="noopener noreferrer">Frontiers in Environmental Science, 2025</a></li>
+          <li><a href="https://ieeexplore.ieee.org/abstract/document/10587655" target="_blank" rel="noopener noreferrer">IEEE CCDC 2024</a></li>
+          <li><a href="https://ieeexplore.ieee.org/abstract/document/10585716" target="_blank" rel="noopener noreferrer">IEEE ICMI 2024 (Best Paper Award)</a></li>
+          <li>Patent Pending</li>
+        </ul>
+
+        <h4>Presentations</h4>
+        <ul>
+          <li><a href="https://youtu.be/hdthXFKD-o8" target="_blank" rel="noopener noreferrer">IEEE Robosoft 2025 Talk</a></li>
+          <li><a href="https://youtu.be/50oD8eqm3gQ" target="_blank" rel="noopener noreferrer">Conrad Challenge 2025, Pete Conrad Scholar Winner</a></li>
+        </ul>
       </div>
     </div>
 
@@ -472,49 +549,131 @@
       </div>
 
     <button id="toggle-projects-btn" class="expand-button" onclick="toggleProjects()" style="margin-bottom: 2rem;">Show More Projects</button>
+    
     <div id="extra-projects" style="display: none;">
       <div class="project">
-          <h3>Rotary Encoder interface and PCB</h3>
-          <div class="media-gallery">
-            <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-            <div class="media-items">
-              <img src="KicadModel.png" alt="pcbmodel" class="media-item active" />
-              <img src="KicadSchematic.png" alt="pcbschematic" class="media-item active" />
-              <video src="rotaryencoder.mp4" controls class="media-item"></video>
-            </div>
-            <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+        <h3>Rotary Encoder interface and PCB</h3>
+        <div class="media-gallery">
+          <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+          <div class="media-items">
+            <img src="KicadModel.png" alt="pcbmodel" class="media-item active" />
+            <img src="KicadSchematic.png" alt="pcbschematic" class="media-item active" />
+            <video src="rotaryencoder.mp4" controls class="media-item"></video>
           </div>
-          <p class="tagline">Rotary encoder interface for motion tracking and PCB design.</p>
-          <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
-          <div class="project-details" style="display: none;">
-            <p>blah blah blah</p>
-          </div>
+          <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
-
-        <div class="project">
-          <h3>More coming...</h3>
-          <div class="media-gallery">
-            <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-            <div class="media-items">
-
-            </div>
-            <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
-          </div>
-          <p class="tagline">grrrrrrrr</p>
-          <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
-          <div class="project-details" style="display: none;">
-            <p>blah blah blah</p>
-          </div>
+        <p class="tagline">Rotary encoder interface for motion tracking and PCB design.</p>
+        <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
+        <div class="project-details" style="display: none;">
+          <p>blah blah blah</p>
         </div>
+      </div>
+      <div class="project">
+        <h3>FIRST Tech Challenge (FTC) Robots</h3>
+        <div class="media-gallery">
+          <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+          <div class="media-items">
+            <img src="KicadModel.png" alt="pcbmodel" class="media-item active" />
+            <img src="KicadSchematic.png" alt="pcbschematic" class="media-item active" />
+            <video src="rotaryencoder.mp4" controls class="media-item"></video>
+          </div>
+          <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+        </div>
+        <p class="tagline">FTC Robots designed from 2020 to 2023</p>
+        <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
+        <div class="project-details" style="display: none;">
+          <p>blah blah blah</p>
+        </div>
+      </div>
+      <div class="project">
+        <h3>Model Rocketry and Remote Control Aircraft</h3>
+        <div class="media-gallery">
+          <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+          <div class="media-items">
+            <img src="KicadModel.png" alt="pcbmodel" class="media-item active" />
+            <img src="KicadSchematic.png" alt="pcbschematic" class="media-item active" />
+            <video src="rotaryencoder.mp4" controls class="media-item"></video>
+          </div>
+          <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+        </div>
+        <p class="tagline">FTC Robots designed from 2020 to 2023</p>
+        <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
+        <div class="project-details" style="display: none;">
+          <p>blah blah blah</p>
+        </div>
+      </div>
     </div>
 
   </section>
 
   <section id="community-service">
     <h2>Community Service</h2>
-    <p>
-      blah yap blah
-    </p>
+    <div class="project">
+      <h3>STEM Workshops</h3>
+      <div class="media-gallery">
+        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+        <div class="media-items">
+          <img src="stem_workshops.jpg" alt="STEM Workshops" class="media-item active" />
+        </div>
+        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+      </div>
+      <p class="tagline">Led hands-on STEM sessions at local elementary schools using LEGO robotics and coding games.</p>
+      <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
+      <div class="project-details" style="display: none;">
+        <p>Conducted workshops to teach basic programming and engineering principles through interactive activities with students.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>Tutoring</h3>
+      <div class="media-gallery">
+        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+        <div class="media-items">
+          <img src="tutoring.jpg" alt="Tutoring" class="media-item active" />
+        </div>
+        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+      </div>
+      <p class="tagline">Provided weekly academic tutoring in math and science to under-resourced middle school students.</p>
+      <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
+      <div class="project-details" style="display: none;">
+        <p>Volunteered through a community outreach program to provide consistent academic support and mentorship.</p>
+      </div>
+    </div>
+
+    <button id="toggle-community-btn" class="expand-button" onclick="toggleCommunity()" style="margin-bottom: 2rem;">Show More</button>
+    
+    <div id="extra-community" style="display: none;">
+      <div class="project">
+        <h3>Environmental Efforts</h3>
+        <div class="media-gallery">
+          <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+          <div class="media-items">
+            <img src="cleanup.jpg" alt="Environmental Efforts" class="media-item active" />
+          </div>
+          <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+        </div>
+        <p class="tagline">Organized community cleanups and sustainability awareness events in local parks.</p>
+        <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
+        <div class="project-details" style="display: none;">
+          <p>Led teams to remove trash, plant trees, and host local sustainability campaigns.</p>
+        </div>
+      </div>
+      <div class="project">
+        <h3>Mentoring</h3>
+        <div class="media-gallery">
+          <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+          <div class="media-items">
+            <img src="mentoring.jpg" alt="Mentoring" class="media-item active" />
+          </div>
+          <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+        </div>
+        <p class="tagline">Mentored younger students in research and robotics clubs, guiding project development and competitions.</p>
+        <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
+        <div class="project-details" style="display: none;">
+          <p>Supported early learners in understanding technical skills, collaboration, and preparing for STEM contests.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="awards">
@@ -553,15 +712,35 @@
 
   <section id="publications">
     <h2>Publications</h2>
+    <ul class="publications-list">
+      <li>
+        <a href="https://ieeexplore.ieee.org/abstract/document/11020922" target="_blank" rel="noopener noreferrer">
+          IEEE Robosoft 2025
+        </a>
+      </li>
+      <li>
+        <a href="https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1569621/full" target="_blank" rel="noopener noreferrer">
+          Frontiers in Environmental Science, 2025
+        </a>
+      </li>
+      <li>
+        <a href="https://ieeexplore.ieee.org/abstract/document/10587655" target="_blank" rel="noopener noreferrer">
+          IEEE CCDC 2024
+        </a>
+      </li>
+      <li>
+        <a href="https://ieeexplore.ieee.org/abstract/document/10585716" target="_blank" rel="noopener noreferrer">
+          IEEE ICMI 2024 (Best Paper Award)
+        </a>
+      </li>
+      <li><a href="https://asmedigitalcollection.asme.org/tribology/article-abstract/147/7/071701/1209744/Mitigating-Low-Speed-Crawling-and-Jitter-in?redirectedFrom=fulltext" target="_blank" rel="noopener noreferrer">Journal of Tribology, 2025</a></li>
+    </ul>
     <p>
       View my full list of publications on
       <a href="https://scholar.google.com/citations?user=SviwYmkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
         Google Scholar
       </a>.
     </p>
-    <ul class="publications-list">
-      <li>Zhang, Zhang, Robosoft.</li>
-    </ul>
   </section>
 
   <script>
@@ -653,6 +832,15 @@
   }
 </script>
 
+  <script>
+    function toggleCommunity() {
+      const extra = document.getElementById("extra-community");
+      const button = document.getElementById("toggle-community-btn");
+      const isVisible = extra.style.display === "block";
+      extra.style.display = isVisible ? "none" : "block";
+      button.textContent = isVisible ? "Show More" : "Show Less";
+    }
+  </script>
 </body>
 <script>
   window.addEventListener('DOMContentLoaded', () => {
