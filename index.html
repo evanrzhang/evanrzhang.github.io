@@ -266,6 +266,10 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       border-radius: 12px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      max-width: 95%;   /* Add this */
+      margin-left: auto;  /* Center horizontally */
+      margin-right: auto; /* Center horizontally */
     }
 
     .project:hover {
@@ -400,6 +404,37 @@
     .next-btn {
       right: 10px;
     }
+
+    .project {
+      width: 100%;
+    }
+
+    .main-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* keep small gap overall */
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    }
+
+    .main-image {
+      width: 500px;                 /* Exact image size */
+      height: auto;
+      display: block;
+      border: 2px solid #ccc;       /* Visible border */
+      border-radius: 12px;
+      box-sizing: border-box;       /* Prevents overflow from border */
+      padding: 0;                   /* Ensure no padding */
+      margin: 0;                    /* Prevent margin from affecting spacing */
+    }
+
+    .tagline {
+      max-width: 3000px;
+      font-style: italic;
+      color: #555;
+      margin-left: 3rem;
+    }
+
   </style>
 </head>
 
@@ -439,19 +474,26 @@
 
     <div class="project">
       <h3>SPIRo</h3>
-      <div class="media-gallery">
-        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-        <div class="media-items">
-          <img src="SPIRoMain.jpg" alt="SPIRo main" class="media-item active" />
-          <img src="SPIRoField.jpg" alt="SPIRo second" class="media-item" />
-          <video src="SPIRoDemo.mov" controls class="media-item"></video>
-          <img src="SPIRoRotate.gif" alt="SPIRo animation" class="media-item" />
-        </div>
-        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+      <div class="main-content">
+        <img src="SPIRoMain.jpg" alt="SPIRo main" class="main-image" />
+        <p class="tagline">Soft Pneumatic Inspection Robot for Environmental Protection.</p>
       </div>
-      <p class="tagline">Soft Pneumatic Inspection Robot for Environmental Protection.</p>
+      
       <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
       <div class="project-details" style="display: none;">
+
+        <div class="media-gallery">
+          <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+          <div class="media-items">
+            <video src="SPIRoDemo.mov" controls class="media-item"></video>
+            <img src="SPIRo Conrad 1.jpg" alt="SPIRo main" class="media-item active" />
+            <img src="SPIRoField.jpg" alt="SPIRo second" class="media-item" />
+            <img src="SPIRo Conrad 2.jpg" alt="SPIRo main" class="media-item active" />
+            <img src="SPIRoRotate.gif" alt="SPIRo animation" class="media-item" />
+          </div>
+          <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+        </div>
+
         <p>Current industrial methods for gas leak detection, including hydrostatic testing and camera inspection, 
           fall short of meeting today’s needs. Nearly 100 million barrels of oil are transported through pipelines 
           annually, with 90% of the United States crude oil traveling across the country via these systems. 
@@ -486,28 +528,60 @@
 
         <h4>Recognition</h4>
         <ul>
-          <li><strong>Conrad Challenge</strong> – Pete Conrad Scholar, received $10K to fund innovation</li>
-          <li><strong>Diamond Challenge Finalists</strong></li>
-          <li><strong>National Junior Science and Humanities Symposium</strong> – Oral Presentation</li>
-          <li><strong>Medici Grant</strong> – $1000 from 1517 Fund</li>
-          <li><strong>Sigma Xi Honorific Research Society</strong> – Research Showcase First Place, $500 Prize</li>
-          <li><strong>JSHS Northern California</strong> – 2nd Place, $1500</li>
-          <li><strong>Synopsys Science Fair (2024)</strong> – 2nd Award, Physical Sciences</li>
+          <li><strong><a href="https://www.conradchallenge.org/2025-summit-wrap-up" target="_blank" rel="noopener noreferrer">Conrad Challenge</a></strong> – Pete Conrad Scholar, received $10K to fund innovation (2025), 
+            <a href="https://youtu.be/CBESifTSLgg" target="_blank" rel="noopener noreferrer">(Presentation)</a>
+          </li>
+          <li><strong><a href="https://diamondchallenge.org/finalists/" target="_blank" rel="noopener noreferrer">Diamond Challenge</a> Finalists (2025)</strong></li>
+          <li><strong><a href="https://jshs.org/wp-content/uploads/2024/05/62nd-NJSHS-Abstract-Book.pdf" target="_blank" rel="noopener noreferrer">National Junior Science and Humanities Symposium</a></strong> – Oral Presentation (2024)</li>
+          <li><strong>Medici Grant</strong> – $1000 from 1517 Fund (2025)</li>
+          <li><strong><a href="https://www.sigmaxi.org/news/article/2025/04/15/winners-announced-for-2025-sigma-xi-student-research-showcase" target="_blank" rel="noopener noreferrer">Sigma Xi Honorific Research Society</a></strong> – Research Showcase First Place, $500 Prize (2025)</li>
+          <li><strong><a href="https://jshs.org/wp-content/uploads/2024/05/62nd-NJSHS-Abstract-Book.pdf" target="_blank" rel="noopener noreferrer">JSHS Northern California</a></strong> – 2nd Place, $1500 (2024)</li>
+          <li><strong>Synopsys Science Fair (2024)</strong> – 2nd Award, Physical Sciences (2024)</li>
+          <li><strong>Synopsys Science Fair (2024)</strong> – IEEE Special Award (2024)</li>
         </ul>
 
         <h4>Publications</h4>
         <ul>
-          <li><a href="https://ieeexplore.ieee.org/abstract/document/11020922" target="_blank" rel="noopener noreferrer">IEEE Robosoft 2025</a></li>
-          <li><a href="https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1569621/full" target="_blank" rel="noopener noreferrer">Frontiers in Environmental Science, 2025</a></li>
-          <li><a href="https://ieeexplore.ieee.org/abstract/document/10587655" target="_blank" rel="noopener noreferrer">IEEE CCDC 2024</a></li>
-          <li><a href="https://ieeexplore.ieee.org/abstract/document/10585716" target="_blank" rel="noopener noreferrer">IEEE ICMI 2024 (Best Paper Award)</a></li>
-          <li>Patent Pending</li>
-        </ul>
+          <li>
+            E. Zhang and E. Zhang, 
+            "<a href="https://ieeexplore.ieee.org/abstract/document/11020922" target="_blank" rel="noopener noreferrer">
+              Omnimobile and Load Capable Pneumatic Soft Robot for Gas Distribution Pipeline Inspection
+            </a>," 
+            2025 IEEE 8th International Conference on Soft Robotics (RoboSoft), Lausanne, Switzerland, 2025, pp. 1-6, 
+            doi: <a href="https://doi.org/10.1109/RoboSoft63089.2025.11020922" target="_blank" rel="noopener noreferrer">10.1109/RoboSoft63089.2025.11020922</a>.
+            (<a href="https://docs.google.com/presentation/d/1-sF1N4rO-7iCKxS-nM50NiEAu8bXiT3p/edit?usp=sharing&ouid=111561540897091449886&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Slides</a>, 
+            <a href="https://youtu.be/hdthXFKD-o8" target="_blank" rel="noopener noreferrer">Talk</a>)
+          </li>
 
-        <h4>Presentations</h4>
-        <ul>
-          <li><a href="https://youtu.be/hdthXFKD-o8" target="_blank" rel="noopener noreferrer">IEEE Robosoft 2025 Talk</a></li>
-          <li><a href="https://youtu.be/50oD8eqm3gQ" target="_blank" rel="noopener noreferrer">Conrad Challenge 2025, Pete Conrad Scholar Winner</a></li>
+          <li>
+            E. Zhang and E. Zhang, 
+            "<a href="https://ieeexplore.ieee.org/abstract/document/10587655" target="_blank" rel="noopener noreferrer">
+              SPIRo: An AI Based Origami Inspired Soft Robot with Multidimensional Locomotion and Multimodal Data Analysis for Infrastructure Assessments
+            </a>," 
+            2024 36th Chinese Control and Decision Conference (CCDC), Xi'an, China, 2024, pp. 3056-3061, 
+            doi: <a href="https://doi.org/10.1109/CCDC62350.2024.10587655" target="_blank" rel="noopener noreferrer">10.1109/CCDC62350.2024.10587655</a>.
+            (<a href="https://docs.google.com/presentation/d/1cLq0BMWZ9x4hjpzt3K-KKAxXx3ZzsX22-PQVRJxfpGc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Slides</a>)
+          </li>
+
+          <li>
+            E. Zhang and E. Zhang, 
+            "<a href="https://ieeexplore.ieee.org/abstract/document/10585716" target="_blank" rel="noopener noreferrer">
+              Development of A Multimodal Deep Feature Fusion with Ensemble Learning Architecture for Real-Time Gas Leak Detection
+            </a>," 
+            2024 IEEE 3rd International Conference on Computing and Machine Intelligence (ICMI), Mt Pleasant, MI, USA, 2024, pp. 1-6, 
+            doi: <a href="https://doi.org/10.1109/ICMI60790.2024.10585716" target="_blank" rel="noopener noreferrer">10.1109/ICMI60790.2024.10585716</a>.
+            (<a href="https://docs.google.com/presentation/d/1_KfaM6-ugVSldSBNru1gA3N591IqWTrmo03MowQ4adg/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Slides</a>)
+          </li>
+
+          <li>
+            Zhang E and Zhang E (2025) 
+            "<a href="https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1569621/full" target="_blank" rel="noopener noreferrer">
+              Gas pipeline leakage detection based on multiple multimodal deep feature selections and optimized deep forest classifier
+            </a>." 
+            Frontiers in Environmental Science, 13:1569621. 
+            doi: <a href="https://doi.org/10.3389/fenvs.2025.1569621" target="_blank" rel="noopener noreferrer">10.3389/fenvs.2025.1569621</a>.
+          </li>
+          <li>Patent Pending</li>
         </ul>
       </div>
     </div>
@@ -745,7 +819,7 @@
 
   <script>
     (function() {
-      const correctPassword = "password"; // Change this to your password
+      const correctPassword = "1"; // Change this to your password
 
       function promptPassword() {
         const entered = prompt("Enter password to access this site:");
