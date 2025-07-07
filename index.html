@@ -319,6 +319,7 @@
       font-size: 1rem;
       margin-bottom: 0.5rem;
       color: #555;
+      margin-right: 3rem;
     }
 
     .expand-button {
@@ -370,9 +371,9 @@
     .media-item {
       flex: 0 0 40%; /* show partial next/prev */
       max-height: 300px;
-      border-radius: 6px;
+      border-radius: 8px;
       object-fit: contain;
-      margin-right: 0.05rem;
+      margin-right: 0.1rem;
       user-select: none;
     }
 
@@ -418,8 +419,8 @@
     }
 
     .main-image {
-      width: 500px;                 /* Exact image size */
-      height: auto;
+      width: auto;                 /* Exact image size */
+      max-height: 400px;
       display: block;
       border: 2px solid #ccc;       /* Visible border */
       border-radius: 12px;
@@ -429,10 +430,12 @@
     }
 
     .tagline {
-      max-width: 3000px;
+      max-width: 700px;
       font-style: italic;
       color: #555;
       margin-left: 3rem;
+      margin-bottom: 1rem;
+
     }
 
   </style>
@@ -588,19 +591,59 @@
 
     <div class="project">
       <h3>HASEL Actuators for Cardiac Assist</h3>
-      <div class="media-gallery">
-        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-        <div class="media-items">
-          <img src="HASELMain.png" alt="HASEL main" class="media-item active" />
-          <img src="HASELSystem.png" alt="HASEL second" class="media-item" />
-          <video src="HASELDemo.mov" controls class="media-item"></video>
-        </div>
-        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+
+      <div class="main-content">
+        <p class="tagline">Hydraulically Amplified Self-Healing Electrostatic Actuators for Personalized Medical Care</p>
+        <img src="HASEL Sized.png" alt="HASEL Sized" class="main-image" />
       </div>
-      <p class="tagline">Hydraulically Amplified Self-Healing Electrostatic Actuators for more personal medical care.</p>
+
       <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
       <div class="project-details" style="display: none;">
-        <p>Heart Failure blah blah blah</p>
+
+        <div class="media-gallery">
+          <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+          <div class="media-items">
+            <img src="HASELMain.png" alt="HASEL main" class="media-item active" />
+            <img src="HASELSystem.png" alt="HASEL second" class="media-item" />
+            <video src="HASELDemo.mov" controls class="media-item"></video>
+          </div>
+          <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+        </div>
+        
+        <p>Cardiovascular diseases are the leading cause of death globally, claiming 17.9 million lives each year. 
+          Heart failure, one of the most serious variations of cardiovascular disease, is a chronic condition in 
+          which the heart is unable to pump enough blood to support the body’s needs. While simple lifestyle changes 
+          and medication can treat HF in its early stages, more serious cases, called class III or IV, often require 
+          more intensive treatment. For these scenarios, a heart transplant is the ideal treatment. However, the 
+          demand for donor hearts far exceeds their supply, leaving many individuals without access to it. Additionally, 
+          many individuals are deemed unfit for this process due to reasons such as age or other health conditions. 
+          These challenges underscore the urgent need for alternative solutions to address the growing issue of heart 
+          failure. </p>
+
+        <p>Soft robotics has emerged as a promising solution for the limitations of VADs. Unlike rigid robots, 
+          soft robots are composed of flexible, deformable materials that enable them to operate in complex, 
+          delicate, and unpredictable environments.I propose a cardiac assist system that integrates HASEL actuators 
+          with AI-based control to address the challenges of heart failure. The system demonstrates versatility, 
+          combining the flexible and safe characteristics of soft robotics with AI to advance VADs. The implementation 
+          of HASEL actuators with self-healing capabilities allows for increased reliability and performance. Using 
+          multi-material 3D printing ensures precise and reproducible geometries, which improves performance. The 
+          integration of machine learning for control allows the system to effectively address the nonlinear 
+          characteristics of HASEL actuators. Our algorithm achieves a R2 value of 0.91 in predicting stress. 
+          The device also achieves a maximum strain of 32.9% and a maximum energy output of 5.49 N•mm, exceeding 
+          requirements for cardiac assist applications. This work impacts medical care more broadly by making it 
+          more personal. with the use of DIW 3D printing and soft materials. </p>
+          
+        <h4>Recognition</h4>
+          
+        <ul>
+          <li>International Science and Engineering Fair (ISEF) - 4th Place Grand Award in Biomedical Engineering (2025)</li>
+          <li>California Science and Engineering Fair (CSEF) - 5th Place Award in Applied Mechanics and Structures (2025)</li>
+          <li>Synopsys Science and Technology Championship - Grand Award, Best of Championship in Physical Sciences (2025)</li>
+          <li>Junior Science and Hummanities Symposium (JSHS) - 2nd place, Chemistry (2025)</li>
+          <li>ASEI Award Honorable Mention (2025)</li>
+          <li>Kindeva Innovator Award - $250 prize (2025)</li>
+        </ul>
+
       </div>
     </div>
 
@@ -699,54 +742,57 @@
     </div>
 
     <div class="project">
-      <h3>Tutoring</h3>
+      <h3>STEM Workshops</h3>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-items">
-          <img src="tutoring.jpg" alt="Tutoring" class="media-item active" />
+          <img src="stem_workshops.jpg" alt="STEM Workshops" class="media-item active" />
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
-      <p class="tagline">Provided weekly academic tutoring in math and science to under-resourced middle school students.</p>
+      <p class="tagline">Led hands-on STEM sessions at local elementary schools using LEGO robotics and coding games.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
       <div class="project-details" style="display: none;">
-        <p>Volunteered through a community outreach program to provide consistent academic support and mentorship.</p>
+        <p>Conducted workshops to teach basic programming and engineering principles through interactive activities with students.</p>
       </div>
     </div>
 
-    <button id="toggle-community-btn" class="expand-button" onclick="toggleCommunity()" style="margin-bottom: 2rem;">Show More</button>
-    
+    <button id="toggle-community-btn" class="expand-button" onclick="toggleCommunity()" style="margin-bottom: 2rem;" style="margin-top: 1rem;">Show More</button>
+
     <div id="extra-community" style="display: none;">
+
       <div class="project">
-        <h3>Environmental Efforts</h3>
+        <h3>STEM Workshops</h3>
         <div class="media-gallery">
           <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
           <div class="media-items">
-            <img src="cleanup.jpg" alt="Environmental Efforts" class="media-item active" />
+            <img src="stem_workshops.jpg" alt="STEM Workshops" class="media-item active" />
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
-        <p class="tagline">Organized community cleanups and sustainability awareness events in local parks.</p>
+        <p class="tagline">Led hands-on STEM sessions at local elementary schools using LEGO robotics and coding games.</p>
         <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
         <div class="project-details" style="display: none;">
-          <p>Led teams to remove trash, plant trees, and host local sustainability campaigns.</p>
+          <p>Conducted workshops to teach basic programming and engineering principles through interactive activities with students.</p>
         </div>
       </div>
+      
       <div class="project">
-        <h3>Mentoring</h3>
+        <h3>STEM Workshops</h3>
         <div class="media-gallery">
           <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
           <div class="media-items">
-            <img src="mentoring.jpg" alt="Mentoring" class="media-item active" />
+            <img src="stem_workshops.jpg" alt="STEM Workshops" class="media-item active" />
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
-        <p class="tagline">Mentored younger students in research and robotics clubs, guiding project development and competitions.</p>
+        <p class="tagline">Led hands-on STEM sessions at local elementary schools using LEGO robotics and coding games.</p>
         <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
         <div class="project-details" style="display: none;">
-          <p>Supported early learners in understanding technical skills, collaboration, and preparing for STEM contests.</p>
+          <p>Conducted workshops to teach basic programming and engineering principles through interactive activities with students.</p>
         </div>
       </div>
+
     </div>
   </section>
 
