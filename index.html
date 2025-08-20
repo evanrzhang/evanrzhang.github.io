@@ -348,6 +348,24 @@
       margin-bottom: 1rem;
     }
 
+    .project-details p {
+      font-family: Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .project-details ul,
+    .project-details li {
+      font-family: Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .project-details h4 {
+      font-family: Arial, sans-serif;
+      font-weight: 600;
+    }
+
     .project-details li {
       color: #555;
       margin-bottom: 0.5rem;
@@ -636,17 +654,25 @@
         <h4>Recognition</h4>
           
         <ul>
-          <li>International Science and Engineering Fair (ISEF) - 4th Place Grand Award in Biomedical Engineering (2025)</li>
-          <li>California Science and Engineering Fair (CSEF) - 5th Place Award in Applied Mechanics and Structures (2025)</li>
-          <li>Synopsys Science and Technology Championship - Grand Award, Best of Championship in Physical Sciences (2025)</li>
-          <li>Junior Science and Hummanities Symposium (JSHS) - 2nd place, Chemistry (2025)</li>
-          <li>ASEI Award Honorable Mention (2025)</li>
-          <li>Kindeva Innovator Award - $250 prize (2025)</li>
+          <li>International Science and Engineering Fair (<a href="https://isef.net/project/enbm042-ai-driven-hasel-actuators-for-cardiac-assist" target="_blank" rel="noopener noreferrer">ISEF</a>) - 4th Place Grand Award in Biomedical Engineering (2025)</li>
+          <li>California Science and Engineering Fair (<a href="https://csef.usc.edu/Current/Awards/CategoryAwards2025.pdf" target="_blank" rel="noopener noreferrer">CSEF</a>) - 5th Place Award in Applied Mechanics and Structures (2025)</li>
+          <li>Synopsys Science and Technology Championship - <a href="https://science-fair.org/2025-winner-summary/" target="_blank" rel="noopener noreferrer">Grand Award</a>, Best of Championship in Physical Sciences (2025)</li>
+          <li>Junior Science and Hummanities Symposium (<a href="https://cob.sfsu.edu/initiatives-centers/jshs" target="_blank" rel="noopener noreferrer">JSHS</a>) - 2nd place, Chemistry (2025)</li>
+          <li>ASEI Award Honorable Mention (<a href="https://www.science-fair.org/database/project_awards.php?school_year=2425&all&special_order&_gl=1*lt1l14*_ga*MTA3OTMyODg3MC4xNzU1MDM0NzQw*_ga_ECJM45NJHR*czE3NTU2NTM4ODckbzMkZzEkdDE3NTU2NTQwNDAkajQ5JGwwJGgw" target="_blank" rel="noopener noreferrer">2025</a>)</li>
+          <li>Kindeva Innovator Award - $250 prize (<a href="https://csef.usc.edu/Current/Awards/SponsoredAwards2025.pdf" target="_blank" rel="noopener noreferrer">2025</a>)</li>
+        </ul>
+
+        <h4>Recognition</h4>
+        <ul>
+          <li>E. Zhang and A. Chortos, “3D-Printed HASEL Actuators With Integrated Fluidic Piezoresistive Pressure Sensor for Cardiac Assist Applications,” 2025 11th International Conference on Mechatronics Systems and Robots, Singapore, 2025 (In Press)</li>
         </ul>
 
       </div>
     </div>
 
+    <button id="toggle-projects-btn" class="expand-button" onclick="toggleProjects()" style="margin-bottom: 2rem;">Show More Projects</button>
+
+    <div id="extra-projects" style="display: none;">
     <div class="project">
         <h3>Microscope Side Illumination and Enclosure</h3>
         <div class="media-gallery">
@@ -661,13 +687,11 @@
         <p class="tagline">Collimator Mount and Enclosure for Crystal Skull Microscope</p>
         <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
         <div class="project-details" style="display: none;">
-          <p>blah blah blah</p>
+          <p>The Schnitzer Group works at the intersection of neuroscience, physics, engineering, and artificial intelligence to develop and apply advanced optical, robotic, and computational techniques for elucidating neural dynamics and information processing in behaving animals.
+             </p>
+          <p>My work centers around designing and fabricating behavioral apparatus used in experiments. I have developed various components for microscopes, from a full 1P microscope to an enclosure and side illumination method. I have also built behavioral apparatus for mice, including training wheels and experimental rigs to stimulate mouse behavior.</p>
         </div>
       </div>
-
-    <button id="toggle-projects-btn" class="expand-button" onclick="toggleProjects()" style="margin-bottom: 2rem;">Show More Projects</button>
-    
-    <div id="extra-projects" style="display: none;">
       <div class="project">
         <h3>Rotary Encoder interface and PCB</h3>
         <div class="media-gallery">
@@ -682,7 +706,7 @@
         <p class="tagline">Rotary encoder interface for motion tracking and PCB design.</p>
         <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
         <div class="project-details" style="display: none;">
-          <p>blah blah blah</p>
+          <p>As a part of my research at the Schnitzer lab, I designed a PCB for rotary encoders used to track the movement of mice. I standarized commonly used hardware parts including this PCB, as well as behavioral rig and camera mount designs. </p>
         </div>
       </div>
       <div class="project">
@@ -690,16 +714,32 @@
         <div class="media-gallery">
           <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
           <div class="media-items">
-            <img src="KicadModel.png" alt="pcbmodel" class="media-item active" />
-            <img src="KicadSchematic.png" alt="pcbschematic" class="media-item active" />
-            <video src="rotaryencoder.mp4" controls class="media-item"></video>
+            <img src="IntoTheDeep.png" alt="IntoTheDeep" class="media-item active" />
+            <img src="Freight Frenzy Robot.png" alt="Frenzy" class="media-item active" />
+            <img src="Power Play Robot.png" alt="PPP" class="media-item active" />
+            <img src="Power Play Robot CAD.png" alt="PPP" class="media-item active" />
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
         <p class="tagline">FTC Robots designed from 2020 to 2023</p>
         <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
         <div class="project-details" style="display: none;">
-          <p>blah blah blah</p>
+          <p>Led design and fabrication of three FIRST Tech Challenge robots from 2020 to 2024 (Freight Frenz, Power Play, Centerstage). All three feature abilities to lift, transport, and deposit various game pieces in specified locations. 
+          </p>
+
+          <h4>Awards</h4>
+          
+        <ul>
+          <li>2024 San Jose Qualifying Tournament Winners, Think Award Winners</li>
+          <li>2024 Norcal Regional Qualifiers</li>
+          <li>2023 Norcal Regional Gold Division Finalists</li>
+          <li>2023 Metro League Winning Alliance, Control Award 3rd Place</li>
+          <li>2022 San Jose Qualifying Tournament Design Award</li>
+          <li>2022 Sunnyvale Qualifying Tournament Design Award</li>
+          <li>2022 Sunnyvale Qualifying Tournament Winners</li>
+        </ul>
+
+
         </div>
       </div>
       <div class="project">
@@ -707,16 +747,17 @@
         <div class="media-gallery">
           <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
           <div class="media-items">
-            <img src="KicadModel.png" alt="pcbmodel" class="media-item active" />
-            <img src="KicadSchematic.png" alt="pcbschematic" class="media-item active" />
-            <video src="rotaryencoder.mp4" controls class="media-item"></video>
+            <img src="Rocket1.png" alt="Rocket1" class="media-item active" />
+            <video src="RCPlane.mp4" controls class="media-item"></video>
+            <video src="Rocket2.mov" controls class="media-item"></video>
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
         <p class="tagline">FTC Robots designed from 2020 to 2023</p>
         <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
         <div class="project-details" style="display: none;">
-          <p>blah blah blah</p>
+          <p>Model Rocketry and Remote Control Airplanes as a hobby. The rocket competed in the American Rocketry Competition, aiming to reach a height of 790 feet. The remote control plane was custom built from foam board. It features gyro stabilization for smooth flight.
+          </p>
         </div>
       </div>
     </div>
