@@ -234,24 +234,27 @@
       text-align: center;
     }
 
-    .about-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      text-align: left;
-    }
-
     .about-wrapper {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
     }
 
     .about-photo {
-      width: 200px;
-      height: 200px;
+      width: 275px;
+      height: 300px;
       object-fit: cover;
-      border-radius: 50%;
+      border-radius: 20px; /* Rounded corners instead of circle */
       border: 3px solid #FFAA00;
     }
     #projects {
@@ -479,8 +482,8 @@
     <h2>About Me</h2>
     <div class="about-wrapper">
       <div class="about-container">
-        <img src="headshot.jpg" alt="Evan Zhang" class="about-photo">
-        <p style="flex: 1;">
+        <img src="headshot2.png" alt="Evan Zhang" class="about-photo">
+        <p>
           I'm Evan, a high school senior interested in mechanical engineering, aerospace, and business. I'm a maker and tinkerer at heart, 
           and I love working on solving pressing issues, from medical challenges to environmental protection. I was probably born with a 
           roll of duct tape in my right hand.
@@ -796,7 +799,10 @@
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-items">
-          <img src="stem_workshops.jpg" alt="STEM Workshops" class="media-item active" />
+          <img src="coaching1.png" alt="coaching" class="media-item active" />
+          <img src="coaching2.png" alt="coaching" class="media-item active" />
+          <img src="coaching3.png" alt="coaching" class="media-item active" />
+          <img src="coaching4.png" alt="coaching" class="media-item active" />
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
@@ -816,7 +822,13 @@
         <div class="media-gallery">
           <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
           <div class="media-items">
-            <img src="stem_workshops.jpg" alt="STEM Workshops" class="media-item active" />
+            <img src="plane1.png" alt="Plane Workshops" class="media-item active" />
+            <img src="plane2.png" alt="Plane Workshops" class="media-item active" />
+            <img src="plane3.png" alt="Plane Workshops" class="media-item active" />
+            <img src="plane4.png" alt="Plane Workshops" class="media-item active" />
+            <img src="plane5.png" alt="Plane Workshops" class="media-item active" />
+            <img src="plane6.png" alt="Plane Workshops" class="media-item active" />
+            <img src="plane7.png" alt="Plane Workshops" class="media-item active" />
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
@@ -832,7 +844,8 @@
         <div class="media-gallery">
           <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
           <div class="media-items">
-            <img src="stem_workshops.jpg" alt="STEM Workshops" class="media-item active" />
+            <img src="Hiller1.png" alt="STEM Workshops" class="media-item active" />
+            <img src="Hiller2.png" alt="STEM Workshops" class="media-item active" />
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
@@ -848,7 +861,9 @@
         <div class="media-gallery">
           <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
           <div class="media-items">
-            <img src="stem_workshops.jpg" alt="STEM Workshops" class="media-item active" />
+            <img src="Enable1.png" alt="STEM Workshops" class="media-item active" />
+            <video src="Enable2.mov" controls class="media-item"></video>
+            <img src="Enable3.png" alt="STEM Workshops" class="media-item active" />
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
@@ -868,8 +883,8 @@
       <div class="award-category" style="grid-area: research;">
         <h3>Research</h3>
         <ul>
-          <li>ISEF Finalist</li>
-          <li>JSHS National Qualifier</li>
+          <li>4th ISEF Grand Award, Biomedical Engineering, 2025</li>
+          <li>Junior Science and Humanities Symposium, National Oral Presenter, 2024</li>
         </ul>
       </div>
       <div class="award-category" style="grid-area: business;">
@@ -898,6 +913,14 @@
 
   <section id="publications">
     <h2>Publications</h2>
+    
+    <p>
+      View my full list of publications on
+      <a href="https://scholar.google.com/citations?user=SviwYmkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+        Google Scholar
+      </a>.
+    </p>
+
     <ul class="publications-list">
       <li>
         <a href="https://ieeexplore.ieee.org/abstract/document/11020922" target="_blank" rel="noopener noreferrer">
@@ -921,12 +944,7 @@
       </li>
       <li><a href="https://asmedigitalcollection.asme.org/tribology/article-abstract/147/7/071701/1209744/Mitigating-Low-Speed-Crawling-and-Jitter-in?redirectedFrom=fulltext" target="_blank" rel="noopener noreferrer">Journal of Tribology, 2025</a></li>
     </ul>
-    <p>
-      View my full list of publications on
-      <a href="https://scholar.google.com/citations?user=SviwYmkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-        Google Scholar
-      </a>.
-    </p>
+    
   </section>
 
   <script>
