@@ -152,12 +152,12 @@
       grid-template-areas:
         "research business"
         "olympiads volunteering";
-      grid-template-columns: 1.7fr 1.7fr;
+      grid-template-columns: 2.2fr 2.2fr;
       grid-template-rows: 1fr 1fr;
       gap: 2rem;
       margin-top: 1rem;
       text-align: left;
-      max-width: 1200px;
+      max-width: 1400px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -510,25 +510,21 @@
     <h2>Projects & Entrepreneurship</h2>
     <div class="project">
       <h3>SPIRo</h3>
-      <div class="main-content">
-        <img src="SPIRoMain.jpg" alt="SPIRo main" class="main-image" />
-        <p class="tagline">Soft Pneumatic Inspection Robot for Environmental Protection.</p>
+      <div class="media-gallery">
+        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+        <div class="media-items">
+          <img src="SPIRoMain.jpg" alt="SPIRo main" class="media-item active" />
+          <video src="SPIRoDemo.mov" controls class="media-item"></video>
+          <img src="SPIRo Conrad 1.jpg" alt="SPIRo main" class="media-item" />
+          <img src="SPIRoField.jpg" alt="SPIRo second" class="media-item" />
+          <img src="SPIRo Conrad 2.jpg" alt="SPIRo main" class="media-item" />
+          <img src="SPIRoRotate.gif" alt="SPIRo animation" class="media-item" />
+        </div>
+        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
-      
+      <p class="tagline" style="text-align:center;">Soft Pneumatic Inspection Robot for Environmental Protection.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
       <div class="project-details" style="display: none;">
-        <!-- ... content unchanged ... -->
-        <div class="media-gallery">
-          <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-          <div class="media-items">
-            <video src="SPIRoDemo.mov" controls class="media-item"></video>
-            <img src="SPIRo Conrad 1.jpg" alt="SPIRo main" class="media-item active" />
-            <img src="SPIRoField.jpg" alt="SPIRo second" class="media-item" />
-            <img src="SPIRo Conrad 2.jpg" alt="SPIRo main" class="media-item active" />
-            <img src="SPIRoRotate.gif" alt="SPIRo animation" class="media-item" />
-          </div>
-          <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
-        </div>
         <p>Current industrial methods for gas leak detection, including hydrostatic testing and camera inspection, 
           fall short of meeting today’s needs. Nearly 100 million barrels of oil are transported through pipelines 
           annually, with 90% of the United States crude oil traveling across the country via these systems. 
@@ -614,22 +610,19 @@
     </div>
     <div class="project">
       <h3>HASEL Actuators for Cardiac Assist</h3>
-      <div class="main-content">
-        <p class="tagline">Hydraulically Amplified Self-Healing Electrostatic Actuators for Personalized Medical Care</p>
-        <img src="HASEL Sized.png" alt="HASEL Sized" class="main-image" />
+      <div class="media-gallery">
+        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+        <div class="media-items">
+          <img src="HASEL Sized.png" alt="HASEL Sized" class="media-item active" />
+          <img src="HASELMain.png" alt="HASEL main" class="media-item" />
+          <img src="HASELSystem.png" alt="HASEL second" class="media-item" />
+          <video src="HASELDemo.mov" controls class="media-item"></video>
+        </div>
+        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
+      <p class="tagline" style="text-align:center;">Hydraulically Amplified Self-Healing Electrostatic Actuators for Personalized Medical Care</p>
       <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
       <div class="project-details" style="display: none;">
-        <!-- ... content unchanged ... -->
-        <div class="media-gallery">
-          <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-          <div class="media-items">
-            <img src="HASELMain.png" alt="HASEL main" class="media-item active" />
-            <img src="HASELSystem.png" alt="HASEL second" class="media-item" />
-            <video src="HASELDemo.mov" controls class="media-item"></video>
-          </div>
-          <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
-        </div>
         <p>Cardiovascular diseases are the leading cause of death globally, claiming 17.9 million lives each year. 
           Heart failure, one of the most serious variations of cardiovascular disease, is a chronic condition in 
           which the heart is unable to pump enough blood to support the body’s needs. While simple lifestyle changes 
@@ -668,27 +661,24 @@
     </div>
     <div class="project">
       <h3>Amphibious Robotic Turtle</h3>
-      <div class="main-content">
-        <img src="turtle1.png" alt="Turtle1" class="main-image" />
-        <p class="tagline">Deep-Water Shape Morphing Amphibious Robotic Turtle at Yale</p>
+      <div class="media-gallery">
+        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+        <div class="media-items">
+          <img src="turtle1.png" alt="Turtle1" class="media-item active" />
+          <img src="turtle2.png" alt="turtle2" class="media-item" />
+          <img src="turtle3.png" alt="turtle2" class="media-item" />
+          <video src="turtleswim.MOV" controls class="media-item"></video>
+        </div>
+        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
+      <p class="tagline" style="text-align:center;">Deep-Water Shape Morphing Amphibious Robotic Turtle at Yale</p>
       <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
       <div class="project-details" style="display: none;">
-        <div class="media-gallery">
-          <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-          <div class="media-items">
-            <img src="turtle2.png" alt="turtle2" class="media-item active" />
-            <img src="turtle3.png" alt="turtle2" class="media-item active" />
-            <video src="turtleswim.MOV" controls class="media-item"></video>
-          </div>
-          <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
-        </div>
         <p>turtle turtle turtleee</p>
       </div>
     </div>
-    <button id="toggle-projects-btn" class="expand-button" onclick="toggleProjects()" style="margin-bottom: 2rem;">Show More Projects</button>
+    <button id="toggle-projects-btn" class="expand-button" onclick="toggleProjects()">Show More Projects</button>
     <div id="extra-projects" style="display: none;">
-      <!-- ... extra projects unchanged ... -->
       <div class="project">
         <h3>Microscope Side Illumination and Enclosure</h3>
         <div class="media-gallery">
@@ -700,7 +690,7 @@
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
-        <p class="tagline">Collimator Mount and Enclosure for Crystal Skull Microscope</p>
+        <p class="tagline" style="text-align:center;">Collimator Mount and Enclosure for Crystal Skull Microscope</p>
         <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
         <div class="project-details" style="display: none;">
           <p>The Schnitzer Group works at the intersection of neuroscience, physics, engineering, and artificial intelligence to develop and apply advanced optical, robotic, and computational techniques for elucidating neural dynamics and information processing in behaving animals.
@@ -719,7 +709,7 @@
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
-        <p class="tagline">Rotary encoder interface for motion tracking and PCB design.</p>
+        <p class="tagline" style="text-align:center;">Rotary encoder interface for motion tracking and PCB design.</p>
         <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
         <div class="project-details" style="display: none;">
           <p>As a part of my research at the Schnitzer lab, I designed a PCB for rotary encoders used to track the movement of mice. I standarized commonly used hardware parts including this PCB, as well as behavioral rig and camera mount designs. </p>
@@ -737,7 +727,7 @@
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
-        <p class="tagline">FTC Robots designed from 2020 to 2023</p>
+        <p class="tagline" style="text-align:center;">FTC Robots designed from 2020 to 2023</p>
         <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
         <div class="project-details" style="display: none;">
           <p>Led design and fabrication of three FIRST Tech Challenge robots from 2020 to 2024 (Freight Frenz, Power Play, Centerstage). All three feature abilities to lift, transport, and deposit various game pieces in specified locations. 
@@ -765,7 +755,7 @@
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
-        <p class="tagline">FTC Robots designed from 2020 to 2023</p>
+        <p class="tagline" style="text-align:center;">FTC Robots designed from 2020 to 2023</p>
         <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
         <div class="project-details" style="display: none;">
           <p>Model Rocketry and Remote Control Airplanes as a hobby. The rocket competed in the American Rocketry Competition, aiming to reach a height of 790 feet. The remote control plane was custom built from foam board. It features gyro stabilization for smooth flight.
@@ -1021,15 +1011,6 @@
 
 </script>
 
-<script>
-  function toggleProjects() {
-    const extraProjects = document.getElementById("extra-projects");
-    const button = document.getElementById("toggle-projects-btn");
-    const isVisible = extraProjects.style.display === "block";
-    extraProjects.style.display = isVisible ? "none" : "block";
-    button.textContent = isVisible ? "Show More Projects" : "Show Fewer Projects";
-  }
-</script>
 
 </body>
 <script>
@@ -1066,4 +1047,17 @@ function showPage(page) {
     }
   }
 }
+</script>
+<script>
+  function toggleProjects() {
+    var extra = document.getElementById('extra-projects');
+    var btn = document.getElementById('toggle-projects-btn');
+    if (extra.style.display === "none") {
+      extra.style.display = "block";
+      btn.textContent = "Show Fewer Projects";
+    } else {
+      extra.style.display = "none";
+      btn.textContent = "Show More Projects";
+    }
+  }
 </script>

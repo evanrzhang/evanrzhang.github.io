@@ -1,5 +1,3 @@
- <!-- This version is saved before the change to 2 pages. -->
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Evan Zhang - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -153,12 +152,12 @@
       grid-template-areas:
         "research business"
         "olympiads volunteering";
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.7fr 1.7fr;
       grid-template-rows: 1fr 1fr;
       gap: 2rem;
       margin-top: 1rem;
       text-align: left;
-      max-width: 1000px;
+      max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -168,6 +167,7 @@
       border-radius: 12px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .award-category:hover {
@@ -180,11 +180,18 @@
       color: #224488;
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
+      font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 700;
     }
 
     .award-category ul {
       list-style: none;
       padding-left: 1rem;
+      font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .award-category li {
+      font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .award-category li::before {
@@ -333,9 +340,12 @@
       border: none;
       padding: 0.5rem 1rem;
       cursor: pointer;
-      font-weight: bold;
+      font-weight: 700;
+      font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1rem;
       border-radius: 6px;
       margin-bottom: 0.5rem;
+      transition: background 0.2s, box-shadow 0.2s;
     }
 
     .expand-button:hover {
@@ -472,14 +482,15 @@
         <h1>Evan Zhang</h1>
     </div>
     <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#community-service">Community Service</a>
-        <a href="#awards">Awards</a>
+        <a href="#" onclick="showPage('home'); return false;">Home</a>
+        <a href="#" onclick="showPage('projects'); return false;">Projects</a>
+        <a href="#" onclick="showPage('awards'); return false;">Awards</a>
+        <a href="#" onclick="showPage('community'); return false;">Community Service</a>
         <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
     </nav>
 </header> 
 
+<div id="page-home">
   <section id="about">
     <h2>About Me</h2>
     <div class="about-wrapper">
@@ -493,11 +504,10 @@
       </div>
     </div>
   </section>
-
-
+  <!-- Projects & Awards and Awards sections moved here from #page-projects -->
   <section id="projects">
-    <h2>Projects</h2>
-
+    <!-- ... projects content unchanged ... -->
+    <h2>Projects & Entrepreneurship</h2>
     <div class="project">
       <h3>SPIRo</h3>
       <div class="main-content">
@@ -507,7 +517,7 @@
       
       <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
       <div class="project-details" style="display: none;">
-
+        <!-- ... content unchanged ... -->
         <div class="media-gallery">
           <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
           <div class="media-items">
@@ -519,7 +529,6 @@
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
-
         <p>Current industrial methods for gas leak detection, including hydrostatic testing and camera inspection, 
           fall short of meeting today’s needs. Nearly 100 million barrels of oil are transported through pipelines 
           annually, with 90% of the United States crude oil traveling across the country via these systems. 
@@ -532,7 +541,6 @@
           30 times more potent than carbon dioxide in terms of global warming potential, and it alone accounts for one-third 
           of the world’s warming from greenhouse emissions. Therefore, early detection of gas infrastructure leaks has become 
           an urgent and efficient way to reduce harmful emissions.</p>
-
         <p>SPIRo (Soft Pipe Inspection Robot) is a pneumatically actuated soft pipe inspection robot for the accurate 
           inspection of gas pipes in difficult-to-reach environments. It uses a compliant scissor linkage, McKibben artificial 
           muscle actuators, and magnetic grippers. It achieves a speed of 15 mm/s when crawling on a horizontal surface and 9 mm/s 
@@ -540,18 +548,15 @@
           clear obstacles. The robot’s origami-inspired grippers support a total weight of 417 grams of extra payload to account 
           for the necessary leak detection sensors and equipment.
         </p>
-
         <p>Also implemented on the robot is a lightweight multimodal machine learning architecture based on CNNs and deep forest 
           classifiers for gas pipeline leak detection systems using thermal image and gas sensor data. 
         </p>
-
         <p>I reached out to dozens of labs and professionals across the country to seek out advice for improving the robot 
           to make it more suitable for field use. I was offered an opportunity to conduct real-field testing at the Methane 
           Emissions Technology Evaluation Center (METEC), thoroughly evaluating SPIRo’s real-world capabilities and achieving an 
           accuracy of 95% throughout these tests. I also worked with the MIT Media Lab to implement FlowIO, a standalone air 
           compressor system on the robot and the Southwest Research Institute for calibrating the robot in tests at home. 
         </p>
-
         <h4>Recognition</h4>
         <ul>
           <li><strong><a href="https://www.conradchallenge.org/2025-summit-wrap-up" target="_blank" rel="noopener noreferrer">Conrad Challenge</a></strong> – Pete Conrad Scholar, received $10K to fund innovation (2025), 
@@ -565,7 +570,6 @@
           <li><strong>Synopsys Science Fair (2024)</strong> – 2nd Award, Physical Sciences (2024)</li>
           <li><strong>Synopsys Science Fair (2024)</strong> – IEEE Special Award (2024)</li>
         </ul>
-
         <h4>Publications</h4>
         <ul>
           <li>
@@ -578,7 +582,6 @@
             (<a href="https://docs.google.com/presentation/d/1-sF1N4rO-7iCKxS-nM50NiEAu8bXiT3p/edit?usp=sharing&ouid=111561540897091449886&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Slides</a>, 
             <a href="https://youtu.be/hdthXFKD-o8" target="_blank" rel="noopener noreferrer">Talk</a>)
           </li>
-
           <li>
             E. Zhang and E. Zhang, 
             "<a href="https://ieeexplore.ieee.org/abstract/document/10587655" target="_blank" rel="noopener noreferrer">
@@ -588,7 +591,6 @@
             doi: <a href="https://doi.org/10.1109/CCDC62350.2024.10587655" target="_blank" rel="noopener noreferrer">10.1109/CCDC62350.2024.10587655</a>.
             (<a href="https://docs.google.com/presentation/d/1cLq0BMWZ9x4hjpzt3K-KKAxXx3ZzsX22-PQVRJxfpGc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Slides</a>)
           </li>
-
           <li>
             E. Zhang and E. Zhang, 
             "<a href="https://ieeexplore.ieee.org/abstract/document/10585716" target="_blank" rel="noopener noreferrer">
@@ -598,7 +600,6 @@
             doi: <a href="https://doi.org/10.1109/ICMI60790.2024.10585716" target="_blank" rel="noopener noreferrer">10.1109/ICMI60790.2024.10585716</a>.
             (<a href="https://docs.google.com/presentation/d/1_KfaM6-ugVSldSBNru1gA3N591IqWTrmo03MowQ4adg/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Slides</a>)
           </li>
-
           <li>
             Zhang E and Zhang E (2025) 
             "<a href="https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1569621/full" target="_blank" rel="noopener noreferrer">
@@ -611,18 +612,15 @@
         </ul>
       </div>
     </div>
-
     <div class="project">
       <h3>HASEL Actuators for Cardiac Assist</h3>
-
       <div class="main-content">
         <p class="tagline">Hydraulically Amplified Self-Healing Electrostatic Actuators for Personalized Medical Care</p>
         <img src="HASEL Sized.png" alt="HASEL Sized" class="main-image" />
       </div>
-
       <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
       <div class="project-details" style="display: none;">
-
+        <!-- ... content unchanged ... -->
         <div class="media-gallery">
           <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
           <div class="media-items">
@@ -632,7 +630,6 @@
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
-        
         <p>Cardiovascular diseases are the leading cause of death globally, claiming 17.9 million lives each year. 
           Heart failure, one of the most serious variations of cardiovascular disease, is a chronic condition in 
           which the heart is unable to pump enough blood to support the body’s needs. While simple lifestyle changes 
@@ -642,7 +639,6 @@
           many individuals are deemed unfit for this process due to reasons such as age or other health conditions. 
           These challenges underscore the urgent need for alternative solutions to address the growing issue of heart 
           failure. </p>
-
         <p>Soft robotics has emerged as a promising solution for the limitations of VADs. Unlike rigid robots, 
           soft robots are composed of flexible, deformable materials that enable them to operate in complex, 
           delicate, and unpredictable environments.I propose a cardiac assist system that integrates HASEL actuators 
@@ -655,9 +651,7 @@
           The device also achieves a maximum strain of 32.9% and a maximum energy output of 5.49 N•mm, exceeding 
           requirements for cardiac assist applications. This work impacts medical care more broadly by making it 
           more personal. with the use of DIW 3D printing and soft materials. </p>
-          
         <h4>Recognition</h4>
-          
         <ul>
           <li>International Science and Engineering Fair (<a href="https://isef.net/project/enbm042-ai-driven-hasel-actuators-for-cardiac-assist" target="_blank" rel="noopener noreferrer">ISEF</a>) - 4th Place Grand Award in Biomedical Engineering (2025)</li>
           <li>California Science and Engineering Fair (<a href="https://csef.usc.edu/Current/Awards/CategoryAwards2025.pdf" target="_blank" rel="noopener noreferrer">CSEF</a>) - 5th Place Award in Applied Mechanics and Structures (2025)</li>
@@ -666,27 +660,20 @@
           <li>ASEI Award Honorable Mention (<a href="https://www.science-fair.org/database/project_awards.php?school_year=2425&all&special_order&_gl=1*lt1l14*_ga*MTA3OTMyODg3MC4xNzU1MDM0NzQw*_ga_ECJM45NJHR*czE3NTU2NTM4ODckbzMkZzEkdDE3NTU2NTQwNDAkajQ5JGwwJGgw" target="_blank" rel="noopener noreferrer">2025</a>)</li>
           <li>Kindeva Innovator Award - $250 prize (<a href="https://csef.usc.edu/Current/Awards/SponsoredAwards2025.pdf" target="_blank" rel="noopener noreferrer">2025</a>)</li>
         </ul>
-
         <h4>Recognition</h4>
         <ul>
           <li>E. Zhang and A. Chortos, “3D-Printed HASEL Actuators With Integrated Fluidic Piezoresistive Pressure Sensor for Cardiac Assist Applications,” 2025 11th International Conference on Mechatronics Systems and Robots, Singapore, 2025 (In Press)</li>
         </ul>
-
       </div>
     </div>
-
-
     <div class="project">
       <h3>Amphibious Robotic Turtle</h3>
-
       <div class="main-content">
-        <p class="tagline">Deep-Water Shape Morphing Amphibious Robotic Turtle at Yale</p>
         <img src="turtle1.png" alt="Turtle1" class="main-image" />
+        <p class="tagline">Deep-Water Shape Morphing Amphibious Robotic Turtle at Yale</p>
       </div>
-
       <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
       <div class="project-details" style="display: none;">
-
         <div class="media-gallery">
           <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
           <div class="media-items">
@@ -696,17 +683,13 @@
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
-        
         <p>turtle turtle turtleee</p>
-
       </div>
     </div>
-
-
     <button id="toggle-projects-btn" class="expand-button" onclick="toggleProjects()" style="margin-bottom: 2rem;">Show More Projects</button>
-
     <div id="extra-projects" style="display: none;">
-    <div class="project">
+      <!-- ... extra projects unchanged ... -->
+      <div class="project">
         <h3>Microscope Side Illumination and Enclosure</h3>
         <div class="media-gallery">
           <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
@@ -759,9 +742,7 @@
         <div class="project-details" style="display: none;">
           <p>Led design and fabrication of three FIRST Tech Challenge robots from 2020 to 2024 (Freight Frenz, Power Play, Centerstage). All three feature abilities to lift, transport, and deposit various game pieces in specified locations. 
           </p>
-
           <h4>Awards</h4>
-          
         <ul>
           <li>2024 San Jose Qualifying Tournament Winners, Think Award Winners</li>
           <li>2024 Norcal Regional Qualifiers</li>
@@ -771,8 +752,6 @@
           <li>2022 Sunnyvale Qualifying Tournament Design Award</li>
           <li>2022 Sunnyvale Qualifying Tournament Winners</li>
         </ul>
-
-
         </div>
       </div>
       <div class="project">
@@ -794,9 +773,65 @@
         </div>
       </div>
     </div>
-
   </section>
+  <section id="awards">
+    <h2>Awards</h2>
+    <div class="awards-grid">
+      <div class="award-category" style="grid-area: research;">
+        <h3>Research</h3>
+        <ul>
+          <li>4th ISEF Grand Award, Biomedical Engineering, 2025</li>
+          <li>Junior Science and Humanities Symposium, National Oral Presenter, 2024</li>
+          <li>Best Paper Award, 3rd Place, IEEE 3rd International Conference on Machine Intelligence, 2024</li>
+          <li>California Science & Engineering Fair 5th Place, Kindeva Innovator Award ($250), 2025</li>
+          <li>Synopsys Championship Grand Award, Best of Championship, 2025 </li>
+          <li>Synopsys Championship First Place, Biomedical Engineering, 2025</li>
+          <li>Sigma Xi Student Research Compeition Grand Prize, 2025</li>
+          <li>Junior Science and Humanities Symposium, Northern California 2nd Place in Chem, 2025</li>
+          <li>Synopsys Championship 2nd Place in Electrical Engineering, 2024</li>
+          <li>American Society for Engineers of Indian Origin Award, Honorable Mention, 2025</li>
+        </ul>
+      </div>
+      <div class="award-category" style="grid-area: business;">
+        <h3>Entrepreneurship</h3>
+        <ul>
+          <li>Pete Conrad Scholar, Energy & Environment Category, 2025</li>
+          <li>Diamond Challenge Finalist, 2025</li>
+          <li>1517 Fund Medici Grant of $1k</li>
+        </ul>
+      </div>
+      <div class="award-category" style="grid-area: olympiads;">
+        <h3>Olympiads & Competitions</h3>
+        <ul>
+          <li>2x AIME Qualifier (2023 & 2024), 1x w/ Distinction (2023)</li>
+          <li>USACO Silver (2023)</li>
+          <li>FRC Worlds Qualifier 2023, Impact Award</li>
+          <li>FTC NorCal Regional Finalist, Control Award 2nd Place, Inspire Award 2nd</li>
+          <li>Tournament of Champions Qualifier, Public Forum Debate, 2025</li>
+          <li>NSDA Degree of Distinction, 2025</li>
+          <li>Technology Student Association, Tests of Engineering Aptitude, Math, and Science Nationals Qualifying Team, 2023 & 2025 </li>
+          <li>Scholastic Art and Writing Silver Key, 2022 & 2023</li>
+          <li>AP Scholar w/ Distinction (2024, 2025)</li> 
+        </ul>
+      </div>
+      <div class="award-category" style="grid-area: volunteering;">
+        <h3>Volunteering / Misc.</h3>
+        <ul>
+          <li>Coca-Cola Scholars Semifinalist, 2025</li>
+          <li>President's Volunteer Service Award Gold, 2024</li>
+          <li>President's Volunteer Service Award Bronze, 2023</li>
+          <li>Section Runner Up, Varsity Tennis, 2025</li>
+          <li>All-League 3rd Team, Top 30 Player, 2024</li>
+          <li>Section Semi-finalist, League Runner Up, 2024 </li>
+          <li>Bay Area Tennis Classic, Runner Up, 2025</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
 
+
+<div id="page-community" style="display:none">
   <section id="community-service">
     <h2>Community Service</h2>
     <div class="project">
@@ -843,9 +878,7 @@
       </div>
     </div>
 
-    <button id="toggle-community-btn" class="expand-button" onclick="toggleCommunity()" style="margin-bottom: 2rem;" style="margin-top: 1rem;">Show More</button>
-
-    <div id="extra-community" style="display: none;">
+    <div id="extra-community" style="display: block;">
 
       <div class="project">
         <h3>Introduction to Remote Control Airplanes</h3>
@@ -906,76 +939,8 @@
 
     </div>
   </section>
+</div>
 
-  <section id="awards">
-    <h2>Awards</h2>
-    <div class="awards-grid">
-      <div class="award-category" style="grid-area: research;">
-        <h3>Research</h3>
-        <ul>
-          <li>4th ISEF Grand Award, Biomedical Engineering, 2025</li>
-          <li>Junior Science and Humanities Symposium, National Oral Presenter, 2024</li>
-        </ul>
-      </div>
-      <div class="award-category" style="grid-area: business;">
-        <h3>Business</h3>
-        <ul>
-          <li>diamond</li>
-          <li>conrad, medici, etc</li>
-        </ul>
-      </div>
-      <div class="award-category" style="grid-area: olympiads;">
-        <h3>Olympiads</h3>
-        <ul>
-          <li>aime</li>
-          <li>tems</li>
-        </ul>
-      </div>
-      <div class="award-category" style="grid-area: volunteering;">
-        <h3>Volunteering / Misc.</h3>
-        <ul>
-          <li>pvsa</li>
-          <li>TOC, tennis</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="publications">
-    <h2>Publications</h2>
-    
-    <p>
-      View my full list of publications on
-      <a href="https://scholar.google.com/citations?user=SviwYmkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-        Google Scholar
-      </a>.
-    </p>
-
-    <ul class="publications-list">
-      <li>
-        <a href="https://ieeexplore.ieee.org/abstract/document/11020922" target="_blank" rel="noopener noreferrer">
-          IEEE Robosoft 2025
-        </a>
-      </li>
-      <li>
-        <a href="https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1569621/full" target="_blank" rel="noopener noreferrer">
-          Frontiers in Environmental Science, 2025
-        </a>
-      </li>
-      <li>
-        <a href="https://ieeexplore.ieee.org/abstract/document/10587655" target="_blank" rel="noopener noreferrer">
-          IEEE CCDC 2024
-        </a>
-      </li>
-      <li>
-        <a href="https://ieeexplore.ieee.org/abstract/document/10585716" target="_blank" rel="noopener noreferrer">
-          IEEE ICMI 2024 (Best Paper Award)
-        </a>
-      </li>
-      <li><a href="https://asmedigitalcollection.asme.org/tribology/article-abstract/147/7/071701/1209744/Mitigating-Low-Speed-Crawling-and-Jitter-in?redirectedFrom=fulltext" target="_blank" rel="noopener noreferrer">Journal of Tribology, 2025</a></li>
-    </ul>
-    
-  </section>
 
   <script>
     (function() {
@@ -995,8 +960,8 @@
     })();
   </script>
 
-  <!--
-<script>
+<!-- particles -->
+<!-- <script>
   document.addEventListener("mousemove", function(e) {
     const particle = document.createElement("div");
     particle.classList.add("particle");
@@ -1020,8 +985,8 @@
       particle.remove();
     }, 1000);
   });
-</script>
--->
+</script> -->
+
 
 <script>
   function toggleDetails(button) {
@@ -1066,15 +1031,6 @@
   }
 </script>
 
-  <script>
-    function toggleCommunity() {
-      const extra = document.getElementById("extra-community");
-      const button = document.getElementById("toggle-community-btn");
-      const isVisible = extra.style.display === "block";
-      extra.style.display = isVisible ? "none" : "block";
-      button.textContent = isVisible ? "Show More" : "Show Less";
-    }
-  </script>
 </body>
 <script>
   window.addEventListener('DOMContentLoaded', () => {
@@ -1086,3 +1042,28 @@
   });
 </script>
 </html>
+<script>
+function showPage(page) {
+  const home = document.getElementById('page-home');
+  const community = document.getElementById('page-community');
+
+  if (page === 'community') {
+    home.style.display = 'none';
+    community.style.display = 'block';
+    window.location.hash = '#community-service';
+  } else {
+    // Always show home page first
+    home.style.display = 'block';
+    community.style.display = 'none';
+
+    // Scroll to section if applicable
+    if (page === 'projects') {
+      document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+    } else if (page === 'awards') {
+      document.getElementById('awards').scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+}
+</script>
