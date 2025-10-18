@@ -673,6 +673,34 @@
       </div>
     </div>
 
+
+    <div class="project">
+      <h3>Amphibious Robotic Turtle</h3>
+
+      <div class="main-content">
+        <p class="tagline">Deep-Water Shape Morphing Amphibious Robotic Turtle at Yale</p>
+        <img src="turtle1.png" alt="Turtle1" class="main-image" />
+      </div>
+
+      <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
+      <div class="project-details" style="display: none;">
+
+        <div class="media-gallery">
+          <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+          <div class="media-items">
+            <img src="turtle2.png" alt="turtle2" class="media-item active" />
+            <img src="turtle3.png" alt="turtle2" class="media-item active" />
+            <video src="turtleswim.MOV" controls class="media-item"></video>
+          </div>
+          <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+        </div>
+        
+        <p>turtle turtle turtleee</p>
+
+      </div>
+    </div>
+
+
     <button id="toggle-projects-btn" class="expand-button" onclick="toggleProjects()" style="margin-bottom: 2rem;">Show More Projects</button>
 
     <div id="extra-projects" style="display: none;">
