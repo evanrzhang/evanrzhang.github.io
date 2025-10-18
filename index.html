@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Evan Zhang - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -151,12 +152,12 @@
       grid-template-areas:
         "research business"
         "olympiads volunteering";
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.7fr 1.7fr;
       grid-template-rows: 1fr 1fr;
       gap: 2rem;
       margin-top: 1rem;
       text-align: left;
-      max-width: 1000px;
+      max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -166,6 +167,7 @@
       border-radius: 12px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .award-category:hover {
@@ -178,11 +180,18 @@
       color: #224488;
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
+      font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 700;
     }
 
     .award-category ul {
       list-style: none;
       padding-left: 1rem;
+      font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .award-category li {
+      font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .award-category li::before {
@@ -660,8 +669,8 @@
     <div class="project">
       <h3>Amphibious Robotic Turtle</h3>
       <div class="main-content">
-        <p class="tagline">Deep-Water Shape Morphing Amphibious Robotic Turtle at Yale</p>
         <img src="turtle1.png" alt="Turtle1" class="main-image" />
+        <p class="tagline">Deep-Water Shape Morphing Amphibious Robotic Turtle at Yale</p>
       </div>
       <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
       <div class="project-details" style="display: none;">
@@ -773,27 +782,48 @@
         <ul>
           <li>4th ISEF Grand Award, Biomedical Engineering, 2025</li>
           <li>Junior Science and Humanities Symposium, National Oral Presenter, 2024</li>
+          <li>Best Paper Award, 3rd Place, IEEE 3rd International Conference on Machine Intelligence, 2024</li>
+          <li>California Science & Engineering Fair 5th Place, Kindeva Innovator Award ($250), 2025</li>
+          <li>Synopsys Championship Grand Award, Best of Championship, 2025 </li>
+          <li>Synopsys Championship First Place, Biomedical Engineering, 2025</li>
+          <li>Sigma Xi Student Research Compeition Grand Prize, 2025</li>
+          <li>Junior Science and Humanities Symposium, Northern California 2nd Place in Chem, 2025</li>
+          <li>Synopsys Championship 2nd Place in Electrical Engineering, 2024</li>
+          <li>American Society for Engineers of Indian Origin Award, Honorable Mention, 2025</li>
         </ul>
       </div>
       <div class="award-category" style="grid-area: business;">
-        <h3>Business</h3>
+        <h3>Entrepreneurship</h3>
         <ul>
-          <li>diamond</li>
-          <li>conrad, medici, etc</li>
+          <li>Pete Conrad Scholar, Energy & Environment Category, 2025</li>
+          <li>Diamond Challenge Finalist, 2025</li>
+          <li>1517 Fund Medici Grant of $1k</li>
         </ul>
       </div>
       <div class="award-category" style="grid-area: olympiads;">
-        <h3>Olympiads</h3>
+        <h3>Olympiads & Competitions</h3>
         <ul>
-          <li>aime</li>
-          <li>tems</li>
+          <li>2x AIME Qualifier (2023 & 2024), 1x w/ Distinction (2023)</li>
+          <li>USACO Silver (2023)</li>
+          <li>FRC Worlds Qualifier 2023, Impact Award</li>
+          <li>FTC NorCal Regional Finalist, Control Award 2nd Place, Inspire Award 2nd</li>
+          <li>Tournament of Champions Qualifier, Public Forum Debate, 2025</li>
+          <li>NSDA Degree of Distinction, 2025</li>
+          <li>Technology Student Association, Tests of Engineering Aptitude, Math, and Science Nationals Qualifying Team, 2023 & 2025 </li>
+          <li>Scholastic Art and Writing Silver Key, 2022 & 2023</li>
+          <li>AP Scholar w/ Distinction (2024, 2025)</li> 
         </ul>
       </div>
       <div class="award-category" style="grid-area: volunteering;">
         <h3>Volunteering / Misc.</h3>
         <ul>
-          <li>pvsa</li>
-          <li>TOC, tennis</li>
+          <li>Coca-Cola Scholars Semifinalist, 2025</li>
+          <li>President's Volunteer Service Award Gold, 2024</li>
+          <li>President's Volunteer Service Award Bronze, 2023</li>
+          <li>Section Runner Up, Varsity Tennis, 2025</li>
+          <li>All-League 3rd Team, Top 30 Player, 2024</li>
+          <li>Section Semi-finalist, League Runner Up, 2024 </li>
+          <li>Bay Area Tennis Classic, Runner Up, 2025</li>
         </ul>
       </div>
     </div>
@@ -932,8 +962,8 @@
     })();
   </script>
 
-  <!--
-<script>
+<!-- particles -->
+<!-- <script>
   document.addEventListener("mousemove", function(e) {
     const particle = document.createElement("div");
     particle.classList.add("particle");
@@ -957,8 +987,8 @@
       particle.remove();
     }, 1000);
   });
-</script>
--->
+</script> -->
+
 
 <script>
   function toggleDetails(button) {
