@@ -878,9 +878,7 @@
       </div>
     </div>
 
-    <button id="toggle-community-btn" class="expand-button" onclick="toggleCommunity()" style="margin-bottom: 2rem;" style="margin-top: 1rem;">Show More</button>
-
-    <div id="extra-community" style="display: none;">
+    <div id="extra-community" style="display: block;">
 
       <div class="project">
         <h3>Introduction to Remote Control Airplanes</h3>
@@ -1033,15 +1031,6 @@
   }
 </script>
 
-  <script>
-    function toggleCommunity() {
-      const extra = document.getElementById("extra-community");
-      const button = document.getElementById("toggle-community-btn");
-      const isVisible = extra.style.display === "block";
-      extra.style.display = isVisible ? "none" : "block";
-      button.textContent = isVisible ? "Show More" : "Show Less";
-    }
-  </script>
 </body>
 <script>
   window.addEventListener('DOMContentLoaded', () => {
