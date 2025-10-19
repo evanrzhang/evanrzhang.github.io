@@ -536,6 +536,21 @@
     }
 
   </style>
+  <style>
+    /* Make Yale Turtle first row taller */
+    #page-home .project h3:has(> strong:empty), /* avoid matching others, fallback for Safari */
+    #page-home .project h3:contains("Amphibious Robotic Turtle") ~ .media-gallery .media-container .media-row:first-child .media-item {
+      max-height: 400px !important;
+    }
+    /* For better browser support (since :contains is non-standard), use attribute selector as backup: */
+    #page-home .project h3[innerText="Amphibious Robotic Turtle"] ~ .media-gallery .media-container .media-row:first-child .media-item {
+      max-height: 400px !important;
+    }
+    /* Most robust, but the line above is fallback, the main selector is: */
+    #page-home .project h3:contains("Amphibious Robotic Turtle") ~ .media-gallery .media-container .media-row:first-child .media-item {
+      max-height: 400px !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -784,18 +799,18 @@
               <p class="media-caption">Robotic turtle in pool.</p>
             </div>
             <div class="media-wrapper">
-              <video src="turtleswim.MOV" controls class="media-item"></video>
+              <video src="turtlecrop.mov" controls class="media-item"></video>
               <p class="media-caption">Swimming demonstration video.</p>
             </div>
           </div>
           <div class="media-row">
             <div class="media-wrapper">
               <img src="turtle3.png" alt="turtle3" class="media-item" />
-              <p class="media-caption">Turtle mechanism close-up.</p>
+              <p class="media-caption">Turtle at Yale's Tank</p>
             </div>
             <div class="media-wrapper">
-              <video src="turtleswim.MOV" controls class="media-item"></video>
-              <p class="media-caption">Swimming demonstration video (repeat).</p>
+              <video src="swimaway.mov" controls class="media-item"></video>
+              <p class="media-caption">Swimming demonstration video.</p>
             </div>
           </div>
         </div>
