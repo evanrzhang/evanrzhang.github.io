@@ -4,11 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Evan Zhang - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Nunito:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Nunito:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    html {
+      font-size: 115%;
+    }
     body {
       margin: 0;
-      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Open Sans', 'Segoe UI', sans-serif;
       background-color: #f4f4f4;
       color: #333;
       scroll-behavior: smooth;
@@ -383,6 +386,86 @@
       font-weight: 700;
     }
 
+    /* Font assignments */
+    p, .project-details, .project-details p, .project-details ul, .project-details li {
+      font-family: 'Open Sans', 'Segoe UI', sans-serif;
+    }
+    .award-category, .award-category ul, .award-category li, nav a {
+      font-family: 'Nunito', 'Segoe UI', sans-serif;
+    }
+    h1, h2, h3, .award-category h3 {
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+    }
+
+
+    /* --- Media Gallery Styling Improvements --- */
+    .media-gallery {
+      position: relative;
+      max-width: 100%;
+      margin: 1rem auto;
+      overflow: hidden;
+      border-radius: 12px;
+      /* border: 2px solid #4488FF; */ /* removed border */
+      padding: 0.5rem;
+      background-color: #f0f4ff;
+    }
+
+    .media-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .media-items {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      flex-wrap: nowrap;
+    }
+
+    .media-row {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .media-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .media-caption {
+      font-size: 0.85rem;
+      color: #333;
+      margin-top: 0.25rem;
+      text-align: center;
+      max-width: 100%;
+    }
+
+    .media-item {
+      flex: 0 0 auto;
+      max-height: 300px;
+      border-radius: 12px;
+      /* border: 2px solid #4488FF; */ /* removed border */
+      object-fit: contain;
+      margin: 0;
+      user-select: none;
+    }
+
+    /* Make two-row project galleries shorter */
+    .media-gallery .media-row .media-item {
+      max-height: 300px; /* previously 400px */
+    }
+
+    /* Tall aspect ratio items spanning both rows in gallery */
+    .media-container > .tall-item {
+      flex: 0 0 auto;
+      height: 600px; /* approximately double first Yale image */
+      object-fit: contain;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      border-radius: 12px;
+    }
+
     .project-details li {
       color: #555;
       margin-bottom: 0.5rem;
@@ -390,31 +473,11 @@
       font-weight: 400;
     }
 
-    .media-gallery {
-      position: relative;
-      max-width: 1200px;
-      width: 100%;
-      margin: 0 auto 1rem auto;
-      overflow: hidden;
-    }
-
+    /* Ensure smooth sliding for media-row and media-items */
+    .media-row,
     .media-items {
-      display: flex;
       transition: transform 0.4s ease;
       will-change: transform;
-    }
-
-    .media-item {
-      flex: 0 0 40%; /* show partial next/prev */
-      max-height: 300px;
-      border-radius: 8px;
-      object-fit: contain;
-      margin-right: 0.1rem;
-      user-select: none;
-    }
-
-    .media-item:last-child {
-      margin-right: 0;
     }
 
     .gallery-btn {
@@ -433,11 +496,9 @@
       user-select: none;
       z-index: 100;
     }
-
     .prev-btn {
       left: 10px;
     }
-
     .next-btn {
       right: 10px;
     }
@@ -487,7 +548,6 @@
     <nav>
         <a href="#" onclick="showPage('home'); return false;">Home</a>
         <a href="#" onclick="showPage('projects'); return false;">Research &amp; Entrepreneurship</a>
-        <a href="#" onclick="showPage('awards'); return false;">Awards</a>
         <a href="#" onclick="showPage('stem-projects'); return false;">STEM Projects</a>
         <a href="#" onclick="showPage('community'); return false;">Community Service</a>
         <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
@@ -516,13 +576,35 @@
       <h3>SPIRo, Product of <strong><a href="https://www.enviro-ai.tech/" target="_blank" rel="noopener noreferrer">Enviro-AI</a></strong></h3>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-        <div class="media-items">
-          <img src="SPIRoMain.jpg" alt="SPIRo main" class="media-item active" />
-          <video src="SPIRoDemo.mov" controls class="media-item"></video>
-          <img src="SPIRo Conrad 1.jpg" alt="SPIRo main" class="media-item" />
-          <img src="SPIRoField.jpg" alt="SPIRo second" class="media-item" />
-          <img src="SPIRo Conrad 2.jpg" alt="SPIRo main" class="media-item" />
-          <img src="SPIRoRotate.gif" alt="SPIRo animation" class="media-item" />
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="SPIRo Conrad 2.jpg" alt="SPIRo main" class="media-item" />
+              <p class="media-caption">SPIRo at Conrad Challenge presentation.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="SPIRoMain.jpg" alt="SPIRo main" class="media-item active" />
+              <p class="media-caption">SPIRo crawling on a horizontal pipe.</p>
+            </div>
+            <div class="media-wrapper">
+              <video src="SPIRoDemo.mov" controls class="media-item"></video>
+              <p class="media-caption">SPIRo crawling demonstration video.</p>
+            </div>
+          </div>
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="SPIRo Conrad 1.jpg" alt="SPIRo main" class="media-item" />
+              <p class="media-caption">SPIRo at Conrad Challenge event.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="SPIRoField.jpg" alt="SPIRo second" class="media-item" />
+              <p class="media-caption">SPIRo in field testing at METEC.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="SPIRoRotate.gif" alt="SPIRo animation" class="media-item" />
+              <p class="media-caption">SPIRo rotation animation.</p>
+            </div>
+          </div>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
@@ -620,15 +702,31 @@
       <h3>HASEL Actuators for Cardiac Assist</h3>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-        <div class="media-items">
-          <img src="HASEL Sized.png" alt="HASEL Sized" class="media-item active" />
-          <img src="HASELMain.png" alt="HASEL main" class="media-item" />
-          <img src="HASELSystem.png" alt="HASEL second" class="media-item" />
-          <video src="HASELDemo.mov" controls class="media-item"></video>
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="HASEL Sized.png" alt="HASEL Sized" class="media-item active" />
+              <p class="media-caption">Size comparison of HASEL actuator.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="HASELMain.png" alt="HASEL main" class="media-item" />
+              <p class="media-caption">Main HASEL actuator prototype.</p>
+            </div>
+          </div>
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="HASELSystem.png" alt="HASEL second" class="media-item" />
+              <p class="media-caption">HASEL system setup.</p>
+            </div>
+            <div class="media-wrapper">
+              <video src="HASELDemo.mov" controls class="media-item"></video>
+              <p class="media-caption">HASEL actuator demonstration video.</p>
+            </div>
+          </div>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
-      <p class="tagline" style="text-align:center;">Hydraulically Amplified Self-Healing Electrostatic Actuators for Personalized Medical Care</p>
+      <p class="tagline" style="text-align:center; white-space: nowrap;">Hydraulically Amplified Self-Healing Electrostatic Actuators for Personalized Medical Care</p>
       <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
       <div class="project-details" style="display: none;">
         <p>Cardiovascular diseases are the leading cause of death globally, claiming 17.9 million lives each year. 
@@ -675,11 +773,31 @@
       <h3>Amphibious Robotic Turtle</h3>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-        <div class="media-items">
-          <img src="turtle1.png" alt="Turtle1" class="media-item active" />
-          <img src="turtle2.png" alt="turtle2" class="media-item" />
-          <img src="turtle3.png" alt="turtle2" class="media-item" />
-          <video src="turtleswim.MOV" controls class="media-item"></video>
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="turtle1.png" alt="Turtle1" class="media-item active" />
+              <p class="media-caption">Robotic turtle on land.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="turtle2.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Robotic turtle in pool.</p>
+            </div>
+            <div class="media-wrapper">
+              <video src="turtleswim.MOV" controls class="media-item"></video>
+              <p class="media-caption">Swimming demonstration video.</p>
+            </div>
+          </div>
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="turtle3.png" alt="turtle3" class="media-item" />
+              <p class="media-caption">Turtle mechanism close-up.</p>
+            </div>
+            <div class="media-wrapper">
+              <video src="turtleswim.MOV" controls class="media-item"></video>
+              <p class="media-caption">Swimming demonstration video (repeat).</p>
+            </div>
+          </div>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
@@ -698,26 +816,87 @@
       <h3><a href="https://3dsolutions.shop/" target="_blank" rel="noopener noreferrer">3DSolutions.shop</a></h3>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-        <div class="media-items">
-          <img src="3D1.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D2.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D3.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D4.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D5.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D6.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D7.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D8.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D9.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D10.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D11.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D12.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D13.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D14.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D15.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D16.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D17.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D18.png" alt="3DSolutions Main" class="media-item active" />
-          <img src="3D19.png" alt="3DSolutions Main" class="media-item active" />
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="3D1.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption">3D printed part - order example 1</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D2.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption">3D printed part - order example 2</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D3.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D4.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D5.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D6.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D7.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D8.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D9.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+          </div>
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="3D11.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D12.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D13.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D14.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D15.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D16.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D17.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D18.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D19.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D10.png" alt="3DSolutions Main" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+          </div>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
@@ -738,60 +917,6 @@
       </div>
     </div>
   </section>
-  <section id="awards">
-    <h2>Awards</h2>
-    <div class="awards-grid">
-      <div class="award-category" style="grid-area: research;">
-        <h3>Research</h3>
-        <ul>
-          <li>4th ISEF Grand Award, Biomedical Engineering, 2025</li>
-          <li>Junior Science and Humanities Symposium, National Oral Presenter, 2024</li>
-          <li>Best Paper Award, 3rd Place, IEEE 3rd International Conference on Machine Intelligence, 2024</li>
-          <li>California Science & Engineering Fair 5th Place, Kindeva Innovator Award ($250), 2025</li>
-          <li>Synopsys Championship Grand Award, Best of Championship, 2025 </li>
-          <li>Synopsys Championship First Place, Biomedical Engineering, 2025</li>
-          <li>Sigma Xi Student Research Compeition Grand Prize, 2025</li>
-          <li>Junior Science and Humanities Symposium, Northern California 2nd Place in Chem, 2025</li>
-          <li>Synopsys Championship 2nd Place in Electrical Engineering, 2024</li>
-          <li>American Society for Engineers of Indian Origin Award, Honorable Mention, 2025</li>
-        </ul>
-      </div>
-      <div class="award-category" style="grid-area: business;">
-        <h3>Entrepreneurship</h3>
-        <ul>
-          <li>Pete Conrad Scholar, Energy & Environment Category, Conrad Challenge, 2025</li>
-          <li>Diamond Challenge Finalist, 2025</li>
-          <li>1517 Fund Medici Grant of $1k</li>
-        </ul>
-      </div>
-      <div class="award-category" style="grid-area: olympiads;">
-        <h3>Olympiads & Competitions</h3>
-        <ul>
-          <li>2x AIME Qualifier (2023 & 2024), 1x w/ Distinction (2023)</li>
-          <li>USACO Silver (2023)</li>
-          <li>FRC Worlds Qualifier 2023, Impact Award</li>
-          <li>FTC NorCal Regional Finalist, Control Award 2nd Place, Inspire Award 2nd</li>
-          <li>Tournament of Champions Qualifier, Public Forum Debate, 2025</li>
-          <li>NSDA Degree of Distinction, 2025</li>
-          <li>Technology Student Association, Tests of Engineering Aptitude, Math, and Science Nationals Qualifying Team, 2023 & 2025 </li>
-          <li>Scholastic Art and Writing Silver Key, 2022 & 2023</li>
-          <li>AP Scholar w/ Distinction (2024, 2025)</li> 
-        </ul>
-      </div>
-      <div class="award-category" style="grid-area: volunteering;">
-        <h3>Volunteering / Misc.</h3>
-        <ul>
-          <li>Coca-Cola Scholars Semifinalist, 2025</li>
-          <li>President's Volunteer Service Award Gold, 2024</li>
-          <li>President's Volunteer Service Award Bronze, 2023</li>
-          <li>Section Runner Up, Varsity Tennis, 2025</li>
-          <li>All-League 3rd Team, Top 30 Player, 2024</li>
-          <li>Section Semi-finalist, League Runner Up, 2024 </li>
-          <li>Bay Area Tennis Classic, Runner Up, 2025</li>
-        </ul>
-      </div>
-    </div>
-  </section>
 </div>
 
 <!-- STEM Projects Page -->
@@ -803,9 +928,18 @@
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-items">
-          <img src="Rocket1.png" alt="Rocket1" class="media-item active" />
-          <video src="RCPlane.mp4" controls class="media-item"></video>
-          <video src="Rocket2.mov" controls class="media-item"></video>
+          <div class="media-wrapper">
+            <img src="Rocket1.png" alt="Rocket1" class="media-item active" />
+            <p class="media-caption">Model rocket at launch site.</p>
+          </div>
+          <div class="media-wrapper">
+            <video src="RCPlane.mp4" controls class="media-item"></video>
+            <p class="media-caption">RC airplane flight video.</p>
+          </div>
+          <div class="media-wrapper">
+            <video src="Rocket2.mov" controls class="media-item"></video>
+            <p class="media-caption">Rocket launch video.</p>
+          </div>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
@@ -821,10 +955,22 @@
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-items">
-          <img src="IntoTheDeep.png" alt="IntoTheDeep" class="media-item active" />
-          <img src="Freight Frenzy Robot.png" alt="Frenzy" class="media-item active" />
-          <img src="Power Play Robot.png" alt="PPP" class="media-item active" />
-          <img src="Power Play Robot CAD.png" alt="PPP" class="media-item active" />
+          <div class="media-wrapper">
+            <img src="IntoTheDeep.png" alt="IntoTheDeep" class="media-item active" />
+            <p class="media-caption">FTC robot: Into the Deep season.</p>
+          </div>
+          <div class="media-wrapper">
+            <img src="Freight Frenzy Robot.png" alt="Frenzy" class="media-item active" />
+            <p class="media-caption">Freight Frenzy robot build.</p>
+          </div>
+          <div class="media-wrapper">
+            <img src="Power Play Robot.png" alt="PPP" class="media-item active" />
+            <p class="media-caption">Power Play robot.</p>
+          </div>
+          <div class="media-wrapper">
+            <img src="Power Play Robot CAD.png" alt="PPP" class="media-item active" />
+            <p class="media-caption">Power Play robot CAD model.</p>
+          </div>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
@@ -850,9 +996,18 @@
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-items">
-          <img src="SideIllumination.jpeg" alt="Mount" class="media-item active" />
-          <img src="BehavioralApparatus.JPG" alt="Apparatusn" class="media-item active" />
-          <img src="Enclosure.jpeg" alt="enclosure" class="media-item active" />
+          <div class="media-wrapper">
+            <img src="SideIllumination.jpeg" alt="Mount" class="media-item active" />
+            <p class="media-caption">Side illumination mount for microscope.</p>
+          </div>
+          <div class="media-wrapper">
+            <img src="BehavioralApparatus.JPG" alt="Apparatusn" class="media-item active" />
+            <p class="media-caption">Behavioral apparatus for mice.</p>
+          </div>
+          <div class="media-wrapper">
+            <img src="Enclosure.jpeg" alt="enclosure" class="media-item active" />
+            <p class="media-caption">Microscope enclosure.</p>
+          </div>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
@@ -869,9 +1024,18 @@
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-items">
-          <img src="KicadModel.png" alt="pcbmodel" class="media-item active" />
-          <img src="KicadSchematic.png" alt="pcbschematic" class="media-item active" />
-          <video src="rotaryencoder.mp4" controls class="media-item"></video>
+          <div class="media-wrapper">
+            <img src="KicadModel.png" alt="pcbmodel" class="media-item active" />
+            <p class="media-caption">3D model of rotary encoder PCB.</p>
+          </div>
+          <div class="media-wrapper">
+            <img src="KicadSchematic.png" alt="pcbschematic" class="media-item active" />
+            <p class="media-caption">Schematic of rotary encoder PCB.</p>
+          </div>
+          <div class="media-wrapper">
+            <video src="rotaryencoder.mp4" controls class="media-item"></video>
+            <p class="media-caption">Rotary encoder working video.</p>
+          </div>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
@@ -886,11 +1050,42 @@
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-items">
-          <!-- No images provided -->
+          <div class="media-wrapper">
+            <img src="harvard1.png" alt="pcbmodel" class="media-item active" />
+            <p class="media-caption">Team project at Harvard Ventures Tech Program.</p>
+          </div>
+          <div class="media-wrapper">
+            <img src="harvard2.png" alt="pcbschematic" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="harvard3.png" alt="pcbmodel" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="harvard4.png" alt="pcbschematic" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="harvard5.png" alt="pcbmodel" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="harvard6.png" alt="pcbschematic" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="harvard7.png" alt="pcbmodel" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="harvard8.png" alt="pcbschematic" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
-      <p class="tagline" style="text-align:center;">Participation in an intensive technology entrepreneurship program at Harvard University.</p>
+      <p class="tagline" style="text-align:center; white-space: nowrap;">Participation in an intensive technology entrepreneurship program at Harvard University.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Learn More</button>
       <div class="project-details" style="display: none;">
         <p>Selected to join the Harvard Ventures Tech Program, an intensive program designed to teach participants how to turn technical ideas into viable startups. I worked on team projects focused on product development, market research, and pitching to investors.</p>
@@ -901,6 +1096,61 @@
         </ul>
       </div>
     </div>
+    <!-- Awards section moved here from #page-community -->
+    <section id="awards">
+      <h2>Awards</h2>
+      <div class="awards-grid">
+        <div class="award-category" style="grid-area: research;">
+          <h3>Research</h3>
+          <ul>
+            <li>4th ISEF Grand Award, Biomedical Engineering, 2025</li>
+            <li>Junior Science and Humanities Symposium, National Oral Presenter, 2024</li>
+            <li>Best Paper Award, 3rd Place, IEEE 3rd International Conference on Machine Intelligence, 2024</li>
+            <li>California Science & Engineering Fair 5th Place, Kindeva Innovator Award ($250), 2025</li>
+            <li>Synopsys Championship Grand Award, Best of Championship, 2025 </li>
+            <li>Synopsys Championship First Place, Biomedical Engineering, 2025</li>
+            <li>Sigma Xi Student Research Compeition Grand Prize, 2025</li>
+            <li>Junior Science and Humanities Symposium, Northern California 2nd Place in Chem, 2025</li>
+            <li>Synopsys Championship 2nd Place in Electrical Engineering, 2024</li>
+            <li>American Society for Engineers of Indian Origin Award, Honorable Mention, 2025</li>
+          </ul>
+        </div>
+        <div class="award-category" style="grid-area: business;">
+          <h3>Entrepreneurship</h3>
+          <ul>
+            <li>Pete Conrad Scholar, Energy & Environment Category, Conrad Challenge, 2025</li>
+            <li>Diamond Challenge Finalist, 2025</li>
+            <li>1517 Fund Medici Grant of $1k</li>
+          </ul>
+        </div>
+        <div class="award-category" style="grid-area: olympiads;">
+          <h3>Olympiads & Competitions</h3>
+          <ul>
+            <li>2x AIME Qualifier (2023 & 2024), 1x w/ Distinction (2023)</li>
+            <li>USACO Silver (2023)</li>
+            <li>FRC Worlds Qualifier 2023, Impact Award</li>
+            <li>FTC NorCal Regional Finalist, Control Award 2nd Place, Inspire Award 2nd</li>
+            <li>Tournament of Champions Qualifier, Public Forum Debate, 2025</li>
+            <li>NSDA Degree of Distinction, 2025</li>
+            <li>Technology Student Association, Tests of Engineering Aptitude, Math, and Science Nationals Qualifying Team, 2023 & 2025 </li>
+            <li>Scholastic Art and Writing Silver Key, 2022 & 2023</li>
+            <li>AP Scholar w/ Distinction (2024, 2025)</li> 
+          </ul>
+        </div>
+        <div class="award-category" style="grid-area: volunteering;">
+          <h3>Volunteering / Misc.</h3>
+          <ul>
+            <li>Coca-Cola Scholars Semifinalist, 2025</li>
+            <li>President's Volunteer Service Award Gold, 2024</li>
+            <li>President's Volunteer Service Award Bronze, 2023</li>
+            <li>Section Runner Up, Varsity Tennis, 2025</li>
+            <li>All-League 3rd Team, Top 30 Player, 2024</li>
+            <li>Section Semi-finalist, League Runner Up, 2024 </li>
+            <li>Bay Area Tennis Classic, Runner Up, 2025</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </section>
 </div>
 
@@ -913,16 +1163,46 @@
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-items">
-          <img src="StemWK1.png" alt="STEM Workshops" class="media-item active" />
-          <img src="StemWK2.png" alt="STEM Workshops" class="media-item active" />
-          <img src="StemWK3.png" alt="STEM Workshops" class="media-item active" />
-          <img src="StemWK4.png" alt="STEM Workshops" class="media-item active" />
-          <img src="StemWK5.png" alt="STEM Workshops" class="media-item active" />
-          <img src="StemWK6.png" alt="STEM Workshops" class="media-item active" />
-          <img src="StemWK7.png" alt="STEM Workshops" class="media-item active" />
-          <img src="StemWK8.png" alt="STEM Workshops" class="media-item active" />
-          <img src="StemWK9.png" alt="STEM Workshops" class="media-item active" />
-          <video src="IMG_4440 copy.MOV" controls class="media-item"></video>
+          <div class="media-wrapper">
+            <img src="StemWK1.png" alt="STEM Workshops" class="media-item active" />
+            <p class="media-caption">STEM workshop - group activity 1.</p>
+          </div>
+          <div class="media-wrapper">
+            <img src="StemWK2.png" alt="STEM Workshops" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="StemWK3.png" alt="STEM Workshops" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="StemWK4.png" alt="STEM Workshops" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="StemWK5.png" alt="STEM Workshops" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="StemWK6.png" alt="STEM Workshops" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="StemWK7.png" alt="STEM Workshops" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="StemWK8.png" alt="STEM Workshops" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="StemWK9.png" alt="STEM Workshops" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <video src="IMG_4440 copy.MOV" controls class="media-item"></video>
+            <p class="media-caption">Workshop video.</p>
+          </div>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
@@ -938,10 +1218,22 @@
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-items">
-          <img src="coaching1.png" alt="coaching" class="media-item active" />
-          <img src="coaching2.png" alt="coaching" class="media-item active" />
-          <img src="coaching3.png" alt="coaching" class="media-item active" />
-          <img src="coaching4.png" alt="coaching" class="media-item active" />
+          <div class="media-wrapper">
+            <img src="coaching1.png" alt="coaching" class="media-item active" />
+            <p class="media-caption">FTC coaching session 1.</p>
+          </div>
+          <div class="media-wrapper">
+            <img src="coaching2.png" alt="coaching" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="coaching3.png" alt="coaching" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="coaching4.png" alt="coaching" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
@@ -959,13 +1251,34 @@
         <div class="media-gallery">
           <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
           <div class="media-items">
-            <img src="plane1.png" alt="Plane Workshops" class="media-item active" />
-            <img src="plane2.png" alt="Plane Workshops" class="media-item active" />
-            <img src="plane3.png" alt="Plane Workshops" class="media-item active" />
-            <img src="plane4.png" alt="Plane Workshops" class="media-item active" />
-            <img src="plane5.png" alt="Plane Workshops" class="media-item active" />
-            <img src="plane6.png" alt="Plane Workshops" class="media-item active" />
-            <img src="plane7.png" alt="Plane Workshops" class="media-item active" />
+            <div class="media-wrapper">
+              <img src="plane1.png" alt="Plane Workshops" class="media-item active" />
+              <p class="media-caption">RC airplane workshop - build session.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="plane2.png" alt="Plane Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="plane3.png" alt="Plane Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="plane4.png" alt="Plane Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="plane5.png" alt="Plane Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="plane6.png" alt="Plane Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="plane7.png" alt="Plane Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
@@ -981,8 +1294,14 @@
         <div class="media-gallery">
           <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
           <div class="media-items">
-            <img src="Hiller1.png" alt="STEM Workshops" class="media-item active" />
-            <img src="Hiller2.png" alt="STEM Workshops" class="media-item active" />
+            <div class="media-wrapper">
+              <img src="Hiller1.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption">Hiller Aviation Museum STEM session.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Hiller2.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
@@ -998,9 +1317,18 @@
         <div class="media-gallery">
           <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
           <div class="media-items">
-            <img src="Enable1.png" alt="STEM Workshops" class="media-item active" />
-            <video src="Enable2.mov" controls class="media-item"></video>
-            <img src="Enable3.png" alt="STEM Workshops" class="media-item active" />
+            <div class="media-wrapper">
+              <img src="Enable1.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption">Enable the Future - prosthetic arm design.</p>
+            </div>
+            <div class="media-wrapper">
+              <video src="Enable2.mov" controls class="media-item"></video>
+              <p class="media-caption">Prosthetic hand demo video.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Enable3.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
@@ -1012,7 +1340,7 @@
       </div>
 
     </div>
-  </section>
+</section>
 </div>
 
 
@@ -1076,21 +1404,70 @@
 </script>
 
 <script>
+  // Update gallery navigation button states - now does nothing (arrows always enabled)
+  function updateGalleryButtons(gallery) {
+    // No disabling or graying out; arrows always active.
+  }
+
   function changeMedia(button, direction) {
     const gallery = button.parentElement;
-    const mediaItems = gallery.querySelectorAll('.media-item');
-    const container = gallery.querySelector('.media-items');
-    const totalItems = mediaItems.length;
+    const isTwoRow = !!gallery.querySelector('.media-container');
+    let container, mediaItems;
+
+    if (isTwoRow) {
+      container = gallery.querySelector('.media-container');
+      // Select .media-wrapper instead of .media-item for sliding
+      mediaItems = Array.from(container.querySelectorAll('.media-row .media-wrapper'));
+    } else {
+      container = gallery.querySelector('.media-items');
+      mediaItems = Array.from(container.querySelectorAll('.media-wrapper'));
+    }
+    // For backward compatibility (if .media-wrapper missing), fallback to .media-item
+    if (mediaItems.length === 0) {
+      if (isTwoRow) {
+        mediaItems = Array.from(container.querySelectorAll('.media-row .media-item'));
+      } else {
+        mediaItems = Array.from(container.querySelectorAll('.media-item'));
+      }
+    }
+
     if (!gallery.currentIndex && gallery.currentIndex !== 0) gallery.currentIndex = 0;
 
-    gallery.currentIndex += direction;
-    if (gallery.currentIndex < 0) gallery.currentIndex = totalItems - 1;
-    if (gallery.currentIndex >= totalItems) gallery.currentIndex = 0;
+    const galleryWidth = gallery.getBoundingClientRect().width;
 
-    const itemWidth = mediaItems[0].getBoundingClientRect().width + parseFloat(getComputedStyle(mediaItems[0]).marginRight);
-    const offset = -gallery.currentIndex * itemWidth;
-    container.style.transform = `translateX(${offset}px)`;
+    // Compute the width of one item (including margin)
+    const itemWidth = mediaItems[0].getBoundingClientRect().width + parseFloat(getComputedStyle(mediaItems[0]).marginRight || 0);
+
+    // Calculate total width of all items
+    let totalWidth = mediaItems.reduce((sum, item) => {
+      return sum + item.getBoundingClientRect().width + parseFloat(getComputedStyle(item).marginRight || 0);
+    }, 0);
+
+    // Maximum offset so last item aligns to the right edge
+    const maxOffset = Math.max(totalWidth - galleryWidth, 0);
+
+    // Update index
+    gallery.currentIndex += direction;
+    if (gallery.currentIndex < 0) gallery.currentIndex = 0;
+
+    let offset = gallery.currentIndex * itemWidth;
+    if (offset > maxOffset) offset = maxOffset;
+
+    if (isTwoRow) {
+      const rows = gallery.querySelectorAll('.media-row');
+      rows.forEach(row => {
+        row.style.transform = `translateX(${-offset}px)`;
+      });
+    } else {
+      container.style.transform = `translateX(${-offset}px)`;
+    }
   }
+
+  // Initialize gallery button states on page load (no longer needed, but function is a no-op)
+  window.addEventListener('DOMContentLoaded', () => {
+    const galleries = document.querySelectorAll('.media-gallery');
+    galleries.forEach(gallery => updateGalleryButtons(gallery));
+  });
 </script>
 
 </script>
