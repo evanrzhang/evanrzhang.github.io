@@ -445,6 +445,20 @@
 
 
     /* --- Media Gallery Styling Improvements --- */
+    .scroll-hint {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #888;
+      font-style: italic;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+      user-select: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .scroll-hint:hover {
+      opacity: 0.7;
+    }
     .media-gallery {
       position: relative;
       max-width: 100%;
@@ -456,21 +470,20 @@
       background-color: #f0f4ff;
     }
 
+    /* Grid-based scrollable galleries with max 3 rows and smaller gaps */
     .media-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .media-items {
-      display: flex;
-      flex-direction: row;
-      gap: 0.5rem;
-      flex-wrap: nowrap;
+      display: grid;
+      grid-template-rows: repeat(3, auto); /* maximum of 3 rows */
+      gap: 0.25rem; /* smaller gap between rows and columns */
+      overflow-x: auto; /* horizontal scroll */
+      scroll-behavior: smooth;
+      padding-bottom: 0.5rem;
     }
 
     .media-row {
-      display: flex;
-      gap: 0.5rem;
+      display: grid;
+      grid-auto-flow: column; /* horizontal placement of images within the row */
+      gap: 0.25rem; /* smaller gap between images */
     }
 
     .media-wrapper {
@@ -491,7 +504,6 @@
       flex: 0 0 auto;
       max-height: 300px;
       border-radius: 12px;
-      /* border: 2px solid #4488FF; */ /* removed border */
       object-fit: contain;
       margin: 0;
       user-select: none;
@@ -662,7 +674,7 @@
       <div class="about-container">
         <img src="headshot2.png" alt="Evan Zhang" class="about-photo">
         <p>
-          I'm Evan, a high school senior interested in mechanical engineering, aerospace, and business. I'm a maker and tinkerer at heart, 
+          I'm Evan, a high school senior interested in mechanical engineering and entrepreneurship. I'm a maker and tinkerer at heart, 
           and I love working on solving pressing issues, from medical challenges to environmental protection. I was probably born with a 
           roll of duct tape in my right hand.
         </p>
@@ -675,6 +687,7 @@
     <h2>Research Projects</h2>
     <div class="project" id="SPIRo">
       <h3>SPIRo</h3>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-container">
@@ -771,6 +784,7 @@
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <p class="tagline" style="text-align:center;">Soft Pneumatic Inspection Robot for Environmental Protection.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -865,6 +879,7 @@
     <!-- Pulsar Robotics project moved to Entrepreneurship page -->
     <div class="project" id="HASEL">
       <h3>HASEL Actuators</h3>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-container">
@@ -937,6 +952,7 @@
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <p class="tagline" style="text-align:center; white-space: nowrap;">Hydraulically Amplified Self-Healing Electrostatic Actuators for Personalized Medical Care</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -982,6 +998,7 @@
     </div>
     <div class="project" id="AmphibiousTurtle">
       <h3>Amphibious Robotic Turtle</h3>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-container">
@@ -998,20 +1015,93 @@
               <video src="turtlecrop.mov" controls class="media-item"></video>
               <p class="media-caption">Swimming demonstration video.</p>
             </div>
+            <div class="media-wrapper">
+              <img src="magmotor.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Magnetically Driven Motors Prototype</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="legset.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Set of flippers</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="legtransition.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Transformation between states</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="proposal.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Proposed deep water design</p>
+            </div>
           </div>
+
           <div class="media-row">
             <div class="media-wrapper">
               <img src="turtle3.png" alt="turtle3" class="media-item" />
               <p class="media-caption">Turtle at Yale's Tank</p>
             </div>
             <div class="media-wrapper">
+              <img src="leavingwtr.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">ART leaving the water</p>
+            </div>
+            <div class="media-wrapper">
               <video src="swimaway.mov" controls class="media-item"></video>
               <p class="media-caption">Swimming demonstration video.</p>
+            </div>
+            <div class="media-wrapper">
+              <video src="walking.mp4" controls class="media-item"></video>
+              <p class="media-caption">walking demonstration video.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="turtle2.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Robotic turtle in pool.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="labphoto4.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Preparing flippers</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="labphoto6.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">ART with new flippers</p>
+            </div>
+          </div>
+
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="labphoto1.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Holding ART</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="labphoto2.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Robotic turtle in Lab.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="waterproofasm.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Waterproofed Motor Assembly</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="legmount.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">New flipper mounting system</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="waterproofcase.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Encased high depth motor</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="labphoto3.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Lab Photo</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="labphoto7.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">At Mason Laboratory</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="labphoto5.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Preparing motor cases</p>
             </div>
           </div>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <p class="tagline" style="text-align:center;">Deep-Water Shape Morphing Amphibious Robotic Turtle at Yale's Faboratory</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1034,6 +1124,7 @@
     <h2>Entrepreneurship</h2>
     <div class="project" id="EnviroAI">
       <h3><a href="https://www.enviro-ai.tech/" target="_blank" rel="noopener noreferrer">Enviro-AI</a></h3>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-container">
@@ -1068,6 +1159,7 @@
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <p class="tagline" style="text-align:center; font-style:italic; color:#333;">Turning SPIRo’s soft robotics innovation into real-world environmental solutions.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1088,6 +1180,7 @@
     </div>
     <div class="project" id="3DSolutions">
       <h3><a href="https://3dsolutions.shop/" target="_blank" rel="noopener noreferrer">3DSolutions.shop</a></h3>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-container">
@@ -1166,6 +1259,7 @@
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <p class="tagline" style="text-align:center;">Rapid prototyping and custom 3D printed solutions for students, makers, and researchers.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1186,6 +1280,7 @@
     <!-- Pulsar Robotics Project Block -->
     <div class="project" id="PulsarRobotics">
       <h3>Pulsar Robotics</h3>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-container" style="justify-content: center; align-items: center; min-height: 120px;">
@@ -1195,6 +1290,7 @@
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <p class="tagline" style="text-align:center; white-space: nowrap;">Hydraulically Amplified Self-Healing Electrostatic Actuators for Personalized Medical Care</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1211,6 +1307,7 @@
     <h2>Leadership in STEM & Debate</h2>
     <div class="project" id="Rocketry">
       <h3>Model Rocketry and Remote Control Aircraft</h3>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-items">
@@ -1229,6 +1326,7 @@
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <p class="tagline" style="text-align:center;">Model rockets I built as co-presidetn of the Aerospace club and RC Airplanes I custom designed.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1238,6 +1336,7 @@
     </div>
     <div class="project" id="FTC">
       <h3>FIRST Tech Challenge (FTC) Robots</h3>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-items">
@@ -1260,6 +1359,7 @@
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <p class="tagline" style="text-align:center;">FTC Robots designed from 2020 to 2023</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1279,6 +1379,7 @@
     </div>
     <div class="project" id="Microscope">
       <h3>Microscope Side Illumination and Enclosure</h3>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-items">
@@ -1297,6 +1398,7 @@
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <p class="tagline" style="text-align:center;">Collimator Mount and Enclosure for Crystal Skull Microscope</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1307,6 +1409,7 @@
     </div>
     <div class="project" id="RotaryEncoder">
       <h3>Rotary Encoder interface and PCB</h3>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-items">
@@ -1325,6 +1428,7 @@
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <p class="tagline" style="text-align:center;">Rotary encoder interface for motion tracking and PCB design.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1333,6 +1437,7 @@
     </div>
     <div class="project" id="HarvardVentures">
       <h3>Harvard Ventures Tech Program</h3>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-items">
@@ -1371,6 +1476,7 @@
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <p class="tagline" style="text-align:center; white-space: nowrap;">Participation in an intensive technology entrepreneurship program at Harvard University.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1446,6 +1552,7 @@
     <h2>Community Service</h2>
     <div class="project" id="STEMWorkshops">
       <h3>STEM Workshops</h3>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-container">
@@ -1496,6 +1603,7 @@
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <p class="tagline">Led hands-on STEM sessions at local Title 1 elementary schools using LEGO robotics and coding games.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1505,6 +1613,7 @@
 
     <div class="project" id="FTC_Coaching">
       <h3>FTC Robotics Coaching</h3>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-items">
@@ -1527,6 +1636,7 @@
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
+      <div class="scroll-hint">↔ Scroll to see more</div>
       <p class="tagline">Coached FLL and FTC Teams to regional and state accolades.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1538,6 +1648,7 @@
 
       <div class="project" id="RCPlanes">
         <h3>Introduction to Remote Control Airplanes</h3>
+        <div class="scroll-hint">↔ Scroll to see more</div>
         <div class="media-gallery">
           <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
           <div class="media-items">
@@ -1572,6 +1683,7 @@
           </div>
           <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
         </div>
+        <div class="scroll-hint">↔ Scroll to see more</div>
         <p class="tagline">Led hands-on sessions building remote-control airplanes.</p>
         <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
         <div class="project-details" style="display: block;">
@@ -1880,3 +1992,4 @@ function showPage(page) {
     }
   }
 </script>
+
