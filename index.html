@@ -599,6 +599,66 @@
 
     }
 
+    /* Make STEM Leadership and Community Service galleries scrollable like research page */
+    #page-stem-projects .media-container,
+    #page-stem-projects .media-row,
+    #page-stem-projects .media-items {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      overflow-x: auto !important;
+      gap: 0.25rem;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch; /* for smooth scrolling on mobile */
+    }
+
+    #page-stem-projects .media-item {
+      flex: 0 0 auto;
+      max-height: 300px;
+    }
+
+  </style>
+  <style>
+  /* All other Community Service galleries (except STEMWorkshops) in single horizontal row */
+  #page-community .project:not(#STEMWorkshops) .media-container,
+  #page-community .project:not(#STEMWorkshops) .media-row,
+  #page-community .project:not(#STEMWorkshops) .media-items {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 0.25rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #page-community .project:not(#STEMWorkshops) .media-item {
+    flex: 0 0 auto;
+    max-height: 300px;
+  }
+  </style>
+  <style>
+  /* Fix STEM Workshops gallery: two rows scroll together in a horizontal grid, independent of other galleries */
+  #STEMWorkshops .media-container {
+    display: grid !important;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, auto); /* two rows stacked vertically */
+    gap: 0.25rem; 
+    overflow-x: auto !important; 
+    scroll-behavior: smooth; 
+    -webkit-overflow-scrolling: touch; 
+  }
+
+  #STEMWorkshops .media-row {
+    display: contents; /* make items participate in grid rather than separate horizontal rows */
+  }
+
+  #STEMWorkshops .media-wrapper {
+    display: block; /* standard block display for grid placement */
+  }
+
+  #STEMWorkshops .media-item {
+    flex: 0 0 auto; 
+    max-height: 300px;
+  }
   </style>
   <style>
     /* Make Yale Turtle first row taller */
@@ -1310,18 +1370,22 @@
       <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-        <div class="media-items">
-          <div class="media-wrapper">
-            <img src="Rocket1.png" alt="Rocket1" class="media-item active" />
-            <p class="media-caption">Model rocket at launch site.</p>
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="Rocket1.png" alt="Rocket1" class="media-item active" />
+              <p class="media-caption">Model rocket at launch site.</p>
+            </div>
+            <div class="media-wrapper">
+              <video src="RCPlane.mp4" controls class="media-item"></video>
+              <p class="media-caption">RC airplane flight video.</p>
+            </div>
           </div>
-          <div class="media-wrapper">
-            <video src="RCPlane.mp4" controls class="media-item"></video>
-            <p class="media-caption">RC airplane flight video.</p>
-          </div>
-          <div class="media-wrapper">
-            <video src="Rocket2.mov" controls class="media-item"></video>
-            <p class="media-caption">Rocket launch video.</p>
+          <div class="media-row">
+            <div class="media-wrapper">
+              <video src="Rocket2.mov" controls class="media-item"></video>
+              <p class="media-caption">Rocket launch video.</p>
+            </div>
           </div>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
@@ -1339,22 +1403,26 @@
       <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-        <div class="media-items">
-          <div class="media-wrapper">
-            <img src="IntoTheDeep.png" alt="IntoTheDeep" class="media-item active" />
-            <p class="media-caption">FTC robot: Into the Deep season.</p>
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="IntoTheDeep.png" alt="IntoTheDeep" class="media-item active" />
+              <p class="media-caption">FTC robot: Into the Deep season.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Freight Frenzy Robot.png" alt="Frenzy" class="media-item active" />
+              <p class="media-caption">Freight Frenzy robot build.</p>
+            </div>
           </div>
-          <div class="media-wrapper">
-            <img src="Freight Frenzy Robot.png" alt="Frenzy" class="media-item active" />
-            <p class="media-caption">Freight Frenzy robot build.</p>
-          </div>
-          <div class="media-wrapper">
-            <img src="Power Play Robot.png" alt="PPP" class="media-item active" />
-            <p class="media-caption">Power Play robot.</p>
-          </div>
-          <div class="media-wrapper">
-            <img src="Power Play Robot CAD.png" alt="PPP" class="media-item active" />
-            <p class="media-caption">Power Play robot CAD model.</p>
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="Power Play Robot.png" alt="PPP" class="media-item active" />
+              <p class="media-caption">Power Play robot.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Power Play Robot CAD.png" alt="PPP" class="media-item active" />
+              <p class="media-caption">Power Play robot CAD model.</p>
+            </div>
           </div>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
@@ -1382,18 +1450,20 @@
       <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-        <div class="media-items">
-          <div class="media-wrapper">
-            <img src="SideIllumination.jpeg" alt="Mount" class="media-item active" />
-            <p class="media-caption">Side illumination mount for microscope.</p>
-          </div>
-          <div class="media-wrapper">
-            <img src="BehavioralApparatus.JPG" alt="Apparatusn" class="media-item active" />
-            <p class="media-caption">Behavioral apparatus for mice.</p>
-          </div>
-          <div class="media-wrapper">
-            <img src="Enclosure.jpeg" alt="enclosure" class="media-item active" />
-            <p class="media-caption">Microscope enclosure.</p>
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="SideIllumination.jpeg" alt="Mount" class="media-item active" />
+              <p class="media-caption">Side illumination mount for microscope.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="BehavioralApparatus.JPG" alt="Apparatusn" class="media-item active" />
+              <p class="media-caption">Behavioral apparatus for mice.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Enclosure.jpeg" alt="enclosure" class="media-item active" />
+              <p class="media-caption">Microscope enclosure.</p>
+            </div>
           </div>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
@@ -1412,18 +1482,20 @@
       <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-        <div class="media-items">
-          <div class="media-wrapper">
-            <img src="KicadModel.png" alt="pcbmodel" class="media-item active" />
-            <p class="media-caption">3D model of rotary encoder PCB.</p>
-          </div>
-          <div class="media-wrapper">
-            <img src="KicadSchematic.png" alt="pcbschematic" class="media-item active" />
-            <p class="media-caption">Schematic of rotary encoder PCB.</p>
-          </div>
-          <div class="media-wrapper">
-            <video src="rotaryencoder.mp4" controls class="media-item"></video>
-            <p class="media-caption">Rotary encoder working video.</p>
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="KicadModel.png" alt="pcbmodel" class="media-item active" />
+              <p class="media-caption">3D model of rotary encoder PCB.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="KicadSchematic.png" alt="pcbschematic" class="media-item active" />
+              <p class="media-caption">Schematic of rotary encoder PCB.</p>
+            </div>
+            <div class="media-wrapper">
+              <video src="rotaryencoder.mp4" controls class="media-item"></video>
+              <p class="media-caption">Rotary encoder working video.</p>
+            </div>
           </div>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
@@ -1440,38 +1512,42 @@
       <div class="scroll-hint">↔ Scroll to see more</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
-        <div class="media-items">
-          <div class="media-wrapper">
-            <img src="harvard1.png" alt="pcbmodel" class="media-item active" />
-            <p class="media-caption">Team project at Harvard Ventures Tech Program.</p>
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="harvard1.png" alt="pcbmodel" class="media-item active" />
+              <p class="media-caption">Team project at Harvard Ventures Tech Program.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="harvard2.png" alt="pcbschematic" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="harvard3.png" alt="pcbmodel" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="harvard4.png" alt="pcbschematic" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
           </div>
-          <div class="media-wrapper">
-            <img src="harvard2.png" alt="pcbschematic" class="media-item active" />
-            <p class="media-caption"></p>
-          </div>
-          <div class="media-wrapper">
-            <img src="harvard3.png" alt="pcbmodel" class="media-item active" />
-            <p class="media-caption"></p>
-          </div>
-          <div class="media-wrapper">
-            <img src="harvard4.png" alt="pcbschematic" class="media-item active" />
-            <p class="media-caption"></p>
-          </div>
-          <div class="media-wrapper">
-            <img src="harvard5.png" alt="pcbmodel" class="media-item active" />
-            <p class="media-caption"></p>
-          </div>
-          <div class="media-wrapper">
-            <img src="harvard6.png" alt="pcbschematic" class="media-item active" />
-            <p class="media-caption"></p>
-          </div>
-          <div class="media-wrapper">
-            <img src="harvard7.png" alt="pcbmodel" class="media-item active" />
-            <p class="media-caption"></p>
-          </div>
-          <div class="media-wrapper">
-            <img src="harvard8.png" alt="pcbschematic" class="media-item active" />
-            <p class="media-caption"></p>
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="harvard5.png" alt="pcbmodel" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="harvard6.png" alt="pcbschematic" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="harvard7.png" alt="pcbmodel" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="harvard8.png" alt="pcbschematic" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
           </div>
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
@@ -1550,6 +1626,7 @@
 <div id="page-community" style="display:none">
   <section id="community-service">
     <h2>Community Service</h2>
+    <h3 style="text-align:center; color:#4488FF; margin-bottom:1rem;">Under my Non-Profit: Cream of the Crop</h3>
     <div class="project" id="STEMWorkshops">
       <h3>STEM Workshops</h3>
       <div class="scroll-hint">↔ Scroll to see more</div>
@@ -1708,7 +1785,7 @@
           <p>Coached middle and high school students in tennis, focusing on technique, strategy, and physical conditioning. Developed personalized lesson plans and conducted practice matches to improve skills and sportsmanship.</p>
         </div>
       </div>
-
+      <h3 style="text-align:center; color:#4488FF; margin-bottom:1rem;">Other Volunteering Activities</h3>
       <div class="project" id="Hiller">
         <h3>Hiller Aviation Museum Volunteer</h3>
         <div class="media-gallery">
