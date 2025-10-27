@@ -447,7 +447,7 @@
     /* --- Media Gallery Styling Improvements --- */
     .scroll-hint {
       text-align: center;
-      font-size: 1rem;  /* larger text */
+      font-size: 0.9rem;  /* larger text */
       color: #de900a;
       font-style: italic;
       font-weight: 700;
@@ -631,7 +631,42 @@
       background-color: #3366cc;
     }
 
-  </style>
+
+    .image-modal {
+  display: none;
+  position: fixed;
+  z-index: 20000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.image-modal img {
+  margin: auto;
+  display: block;
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 10px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close-modal:hover {
+  color: #ccc;
+}
+
+</style>
 </head>
 
 <body>
@@ -704,7 +739,7 @@
     <h2>Research Projects</h2>
     <div class="project" id="SPIRo">
       <h3>SPIR (Soft Pipe Inspection Robot)</h3>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <div class="media-gallery">
         <!-- <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button> -->
         <div class="media-container">
@@ -799,7 +834,7 @@
         <!-- <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button> -->
       
       </div>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <p class="tagline" style="text-align:center;">Soft Pneumatic Inspection Robot for Environmental Protection.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -850,7 +885,7 @@
         <h4>Publications</h4>
         <ul>
           <li>
-            E. Zhang and E. Zhang, 
+            <strong>E. Zhang</strong> and E. Zhang, 
             "<a href="https://ieeexplore.ieee.org/abstract/document/11020922" target="_blank" rel="noopener noreferrer">
               Omnimobile and Load Capable Pneumatic Soft Robot for Gas Distribution Pipeline Inspection
             </a>," 
@@ -860,7 +895,7 @@
             <a href="https://youtu.be/hdthXFKD-o8" target="_blank" rel="noopener noreferrer">Full-form 8-minute Talk</a>)
           </li>
           <li>
-            E. Zhang and E. Zhang, 
+            <strong>E. Zhang</strong> and E. Zhang, 
             "<a href="https://ieeexplore.ieee.org/abstract/document/10587655" target="_blank" rel="noopener noreferrer">
               SPIRo: An AI Based Origami Inspired Soft Robot with Multidimensional Locomotion and Multimodal Data Analysis for Infrastructure Assessments
             </a>," 
@@ -869,7 +904,7 @@
             (<a href="https://docs.google.com/presentation/d/1cLq0BMWZ9x4hjpzt3K-KKAxXx3ZzsX22-PQVRJxfpGc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Slides</a>)
           </li>
           <li>
-            E. Zhang and E. Zhang, 
+            E. Zhang and <strong>E. Zhang</strong>, 
             "<a href="https://ieeexplore.ieee.org/abstract/document/10585716" target="_blank" rel="noopener noreferrer">
               Development of A Multimodal Deep Feature Fusion with Ensemble Learning Architecture for Real-Time Gas Leak Detection
             </a>," 
@@ -878,7 +913,7 @@
             (<a href="https://docs.google.com/presentation/d/1_KfaM6-ugVSldSBNru1gA3N591IqWTrmo03MowQ4adg/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Slides</a>), (Won Best Paper Award)
           </li>
           <li>
-            Zhang E and Zhang E (2025) 
+            E. Zhang and <strong>E. Zhang</strong> (2025) 
             "<a href="https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1569621/full" target="_blank" rel="noopener noreferrer">
               Gas pipeline leakage detection based on multiple multimodal deep feature selections and optimized deep forest classifier
             </a>." 
@@ -893,7 +928,7 @@
     <!-- Pulsar Robotics project moved to Entrepreneurship page -->
     <div class="project" id="HASEL">
       <h3>HASEL Actuators</h3>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <div class="media-gallery">
         <!-- <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button> -->
         <div class="media-container">
@@ -967,7 +1002,7 @@
         </div>
         <!-- <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button> -->
       </div>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <p class="tagline" style="text-align:center; white-space: nowrap;">Hydraulically Amplified Self-Healing Electrostatic Actuators for Personalized Medical Care</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1006,14 +1041,14 @@
         </ul>
         <h4>Recognition</h4>
         <ul>
-          <li>E. Zhang and A. Chortos, “3D-Printed HASEL Actuators With Integrated Fluidic Piezoresistive Pressure Sensor for Cardiac Assist Applications,” 2025 11th International Conference on Mechatronics Systems and Robots, Singapore, 2025 (In Press)</li>
-          <li>Z. Ma, ... E. Zhang, ... A. Chortos, "Thermally Elongated Thermoplastic Nozzles Unlock Micro-Scale Direct Ink Writing," Advanced Materials Technologies, 2025 (In-Press)</li>
+          <li><strong>E. Zhang</strong> and A. Chortos, “3D-Printed HASEL Actuators With Integrated Fluidic Piezoresistive Pressure Sensor for Cardiac Assist Applications,” 2025 11th International Conference on Mechatronics Systems and Robots, Singapore, 2025 (In Press)</li>
+          <li>Z. Ma, ... <strong>E. Zhang</strong>, ... A. Chortos, "Thermally Elongated Thermoplastic Nozzles Unlock Micro-Scale Direct Ink Writing," Advanced Materials Technologies, 2025 (In-Press)</li>
         </ul>
       </div>
     </div>
     <div class="project" id="AmphibiousTurtle">
       <h3>Amphibious Robotic Turtle</h3>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <div class="media-gallery">
         <!-- <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button> -->
         <div class="media-container">
@@ -1116,7 +1151,7 @@
         </div>
         <!-- <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button> -->
       </div>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <p class="tagline" style="text-align:center;">Deep-Water Shape Morphing Amphibious Robotic Turtle at Yale's Faboratory</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1133,7 +1168,7 @@
 
     <div class="project" id="Microscope">
       <h3>Mechanical Design work at the Schnitzer Lab, Stanford University</h3>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <div class="media-gallery">
         <!-- <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button> -->
         <div class="media-container">
@@ -1181,7 +1216,7 @@
         </div>
         <!-- <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button> -->
       </div>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate more</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <p class="tagline" style="text-align:center;">Collimator Mount, PCBs, and Enclosure for Crystal Skull Microscope</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1202,7 +1237,7 @@
     <h2>Entrepreneurship</h2>
     <div class="project" id="EnviroAI">
       <h3><a href="https://www.enviro-ai.tech/" target="_blank" rel="noopener noreferrer">Enviro-AI</a> (SPIRo)</h3>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <div class="media-gallery">
         <!-- <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button> -->
         <div class="media-container">
@@ -1331,7 +1366,7 @@
         </div>
         <!-- <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button> -->
       </div>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <p class="tagline" style="text-align:center; font-style:italic; color:#333;">Turning SPIRo’s soft robotics innovation into real-world environmental solutions.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1353,7 +1388,7 @@
 
     <div class="project" id="PulsarRobotics">
       <h3>Pulsar Robotics (In Progress)</h3>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-container">
@@ -1372,7 +1407,7 @@
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <p class="tagline" style="text-align:center; white-space: nowrap;">Hydraulically Amplified Self-Healing Electrostatic Actuators for Personalized Medical Care</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1383,7 +1418,7 @@
     
     <div class="project" id="3DSolutions">
       <h3><a href="https://3dsolutions.shop/" target="_blank" rel="noopener noreferrer">3DSolutions.shop</a></h3>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <div class="media-gallery">
         <!-- <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button> -->
         <div class="media-container">
@@ -1462,7 +1497,7 @@
         </div>
         <!-- <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button> -->
       </div>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <p class="tagline" style="text-align:center;">Rapid prototyping and custom 3D printed solutions for students, makers, and researchers.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1489,7 +1524,7 @@
     <h2>Leadership in STEM & Debate</h2>
     <div class="project" id="Rocketry">
       <h3>Model Rocketry and Remote Control Aircraft</h3>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <div class="media-gallery">
         <!-- <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button> -->
         <div class="media-container">
@@ -1549,7 +1584,7 @@
         </div>
         <!-- <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button> -->
       </div>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <p class="tagline" style="text-align:center;">Rockets I built as co-president of Aerospace club and RC Airplanes I designed.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1561,7 +1596,7 @@
     </div>
     <div class="project" id="FTC">
       <h3>FIRST Tech Challenge (FTC) Robots</h3>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <div class="media-gallery">
         <!-- <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button> -->
         <div class="media-container">
@@ -1608,7 +1643,7 @@
         </div>
         <!-- <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button> -->
       </div>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <p class="tagline" style="text-align:center;">FTC Robots designed from 2020 to 2023</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1629,7 +1664,7 @@
     
     <div class="project" id="VarsityDebateTeamCaptainCoach">
       <h3>Varsity Debate Team Captain and Coach</h3>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate more</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-container">
@@ -1654,7 +1689,7 @@
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate more</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <p class="tagline" style="text-align:center; white-space: nowrap;">Nationally Ranked Public Forum Debater</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1664,7 +1699,7 @@
     
     <div class="project" id="HarvardVentures">
       <h3>Harvard Ventures Tech Program</h3>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate more</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-container">
@@ -1705,7 +1740,7 @@
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate more</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <p class="tagline" style="text-align:center; white-space: nowrap;">Participation in an intensive technology entrepreneurship program at Harvard University.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1782,7 +1817,7 @@
     <h3 style="text-align:center; color:#4488FF; margin-bottom:1rem;">Under my 501(c) 3 Non-Profit: <a href="https://www.creamofthecropeducation.org/" target="_blank" rel="noopener noreferrer">Cream of the Crop</a></h3>
     <div class="project" id="STEMWorkshops">
       <h3>STEM Workshops</h3>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate more</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-container">
@@ -1833,7 +1868,7 @@
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate more</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <p class="tagline">Led hands-on STEM sessions at local Title 1 elementary schools using LEGO robotics and coding games.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1843,7 +1878,7 @@
 
     <div class="project" id="FTC_Coaching">
       <h3>FTC Robotics Coaching</h3>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate more</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
         <div class="media-container">
@@ -1872,7 +1907,7 @@
         </div>
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
-      <div class="scroll-hint">↔ Scroll or use arrow keys to navigate more</div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
       <p class="tagline">Coached FLL and FTC Teams to regional and state accolades.</p>
       <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
       <div class="project-details" style="display: block;">
@@ -1884,7 +1919,7 @@
 
       <div class="project" id="RCPlanes">
         <h3>Introduction to Remote Control Airplanes</h3>
-        <div class="scroll-hint">↔ Scroll or use arrow keys to navigate more</div>
+        <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
 
         <div class="media-gallery">
         <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
@@ -1925,7 +1960,7 @@
         <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
       </div>
 
-        <div class="scroll-hint">↔ Scroll or use arrow keys to navigate more</div>
+        <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
         <p class="tagline">Led hands-on sessions building remote-control airplanes.</p>
         <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
         <div class="project-details" style="display: block;">
@@ -2238,6 +2273,62 @@
     }
   });
   </script>
+
+
+  <!-- Image Modal -->
+<div id="imageModal" class="image-modal">
+  <span class="close-modal">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+
+<script>
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  const closeBtn = document.querySelector('.close-modal');
+  let currentGallery = [];
+  let currentIndex = 0;
+
+  // Open modal when image clicked
+  document.querySelectorAll('.media-item').forEach(item => {
+    if (item.tagName.toLowerCase() === 'img') {
+      item.addEventListener('click', e => {
+        const gallery = Array.from(e.target.closest('.media-container')
+          .querySelectorAll('.media-item'))
+          .filter(el => el.tagName.toLowerCase() === 'img');
+        currentGallery = gallery;
+        currentIndex = gallery.indexOf(e.target);
+
+        modal.style.display = 'block';
+        modalImg.src = e.target.src;
+      });
+    }
+  });
+
+  // Close modal on X or background click
+  closeBtn.onclick = () => { modal.style.display = 'none'; };
+  modal.onclick = e => { if (e.target === modal) modal.style.display = 'none'; };
+
+  // Keyboard controls
+  document.addEventListener('keydown', e => {
+    if (modal.style.display === 'block') {
+      if (e.key === 'Escape') modal.style.display = 'none';
+      else if (e.key === 'ArrowRight') showNextImage();
+      else if (e.key === 'ArrowLeft') showPrevImage();
+    }
+  });
+
+  function showNextImage() {
+    if (currentGallery.length === 0) return;
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    modalImg.src = currentGallery[currentIndex].src;
+  }
+
+  function showPrevImage() {
+    if (currentGallery.length === 0) return;
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    modalImg.src = currentGallery[currentIndex].src;
+  }
+</script>
 
 </body>
 <script>
