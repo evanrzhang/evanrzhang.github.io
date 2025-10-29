@@ -845,7 +845,7 @@
           inaccurate, expensive, and labor-intensive, requiring extensive human involvement. Consequently, many leaks remain 
           unnoticed for extended periods of time, all the while causing severe damage to both the environment and populations. 
           These leaks endanger nearby populations, cause millions of dollars in losses, and contribute to the release of 
-          nearly three million tons of methane into the atmosphere each year. Methane is uniquely concerning because it is 
+          nearly seven million tons of methane into the atmosphere each year. Methane is uniquely concerning because it is 
           30 times more potent than carbon dioxide in terms of global warming potential, and it alone accounts for one-third 
           of the world’s warming from greenhouse emissions. Therefore, early detection of gas infrastructure leaks has become 
           an urgent and efficient way to reduce harmful emissions.</p>
@@ -2403,50 +2403,38 @@ function showPage(page) {
 
 
 </body>
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const modal = document.querySelector('.image-modal');
-  const modalImg = modal ? modal.querySelector('img') : null;
-  const closeBtn = document.querySelector('.close-modal');
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImg');
+  const closeModalBtn = document.getElementById('closeModal');
 
-  function closeEverything() {
-    // Hide the modal overlay
-    if (modal) modal.style.display = 'none';
-    // Clear modal image source
-    if (modalImg) modalImg.src = '';
-
-    // Also unzoom any images that were enlarged directly
-    document.querySelectorAll('img').forEach(img => {
-      img.classList.remove('enlarged', 'zoomed', 'active', 'open');
-      img.style.transform = '';
-      img.style.position = '';
-      img.style.zIndex = '';
-      img.style.maxWidth = '';
-      img.style.maxHeight = '';
-      img.style.cursor = '';
+  // Open modal when any image is clicked
+  document.querySelectorAll('.media-item').forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = 'block';
+      modalImg.src = img.src;
     });
-  }
-
-  // ESC key closes everything
-  document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-      closeEverything();
-    }
   });
 
-  // Close button also closes everything
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeEverything);
+  // Close modal
+  function closeModal() {
+    modal.style.display = 'none';
+    modalImg.src = '';
   }
 
-  // Clicking outside image closes everything
-  if (modal) {
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) {
-        closeEverything();
-      }
-    });
-  }
-});
+  // X button
+  closeModalBtn.addEventListener('click', closeModal);
+
+  // Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Click outside image
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
 </script>
+
 </html>
