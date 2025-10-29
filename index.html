@@ -856,8 +856,13 @@
           clear obstacles. The robot’s origami-inspired grippers support a total weight of 417 grams of extra payload to account 
           for the necessary leak detection sensors and equipment.
         </p>
-        <p>Also implemented on the robot is a lightweight multimodal machine learning architecture based on CNNs and deep forest 
-          classifiers for gas pipeline leak detection systems using thermal image and gas sensor data. 
+        <p>Also implemented on the robot is a  multimodal deep feature fusion with a deep forest ensemble learning model to 
+          improve SPIRo’s gas leak detection accuracy and redundancy. The model consists of the convolutional layers of three 
+          CNNs, the AlexNet, ResNet-50, and MobileNet, and a deep forest ensemble model with all three CNNs. Not only is the 
+          ensemble model more accurate, but it is also more reliable due to increased redundancy in analyzing both thermal 
+          images and gas sensor data. In addition, the proposed method is also memory efficient, making it suitable for real-time 
+          detection applications.
+
         </p>
         <p>I reached out to dozens of labs and professionals across the country to seek out advice for improving the robot 
           to make it more suitable for field use. After several rounds of questioning and intervies, I was awarded an opportunity 
