@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Evan Zhang - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Nunito:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <style>
+<style>
     html {
       font-size: 115%;
     }
@@ -632,7 +632,7 @@
     }
 
 
-    .image-modal {
+.image-modal {
   display: none;
   position: fixed;
   z-index: 20000;
@@ -1047,7 +1047,7 @@
         <h4>Recognition</h4>
         <ul>
           <li><strong>E. Zhang</strong> and A. Chortos, “3D-Printed HASEL Actuators With Integrated Fluidic Piezoresistive Pressure Sensor for Cardiac Assist Applications,” 2025 11th International Conference on Mechatronics Systems and Robots, Singapore, 2025 (In Press)</li>
-          <li>Z. Ma, ... <strong>E. Zhang</strong>, ... A. Chortos, "Thermally Elongated Thermoplastic Nozzles Unlock Micro-Scale Direct Ink Writing," Advanced Materials Technologies, 2025 (In-Press)</li>
+          <li>Z. Ma, ... <strong>E. Zhang</strong>, ... A. Chortos, "Thermally Elongated Thermoplastic Nozzles Unlock Micro-Scale Direct Ink Writing," Advanced Materials Technologies, 2025 (In Press)</li>
         </ul>
       </div>
     </div>
@@ -1158,7 +1158,7 @@
       <div class="project-details" style="display: block;">
         <p>Mobile robots are impactful for several different sectors, including search and rescue, environmental monitoring, and home service industry. Many mobile robots are designed to opperate in only one environment. As a result, their bodies are made up of dedicated mecahnisms for locomotion, such as paddles or wheels. 
           Their behaviors are optimized only for that niche. Biological systems, however, exhibit phenoplasticity in their anatomical structure, stiffness, and overall behavior. This allows them to adapt and navigate multiple environments. </p>
-        <p>This shape-morphing amphibious robotic turtle is designed for locomtion across both terrestrial and aquatic environments. The limbs are inspired by those of sea turtles and land tortoises. They can transform between hydrodynamic flippers which are optimized for swimming and load-bearing legs taht can allow for terrestrial mobility.
+        <p>This shape-morphing amphibious robotic turtle is designed for locomtion across both terrestrial and aquatic environments. The limbs are inspired by those of sea turtles and land tortoises. They can transform between hydrodynamic flippers which are optimized for swimming and load-bearing legs that can allow for terrestrial mobility.
           This is achieved through pressure-responsive laminar jamming. This enables rapid and efficient shape and stiffness change. 
         </p>
         <p>Finally, to achieve deep-water swimming capabilities, the motors and chasis are designed to withstand up to 30 PSI of pressure, equivalent to a depth 10 meters. Furthermore, bouyancy control pumps are integrated to allow the turtle to achive neutral 
@@ -2401,3 +2401,52 @@ function showPage(page) {
   }
 </script>
 
+
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.querySelector('.image-modal');
+  const modalImg = modal ? modal.querySelector('img') : null;
+  const closeBtn = document.querySelector('.close-modal');
+
+  function closeEverything() {
+    // Hide the modal overlay
+    if (modal) modal.style.display = 'none';
+    // Clear modal image source
+    if (modalImg) modalImg.src = '';
+
+    // Also unzoom any images that were enlarged directly
+    document.querySelectorAll('img').forEach(img => {
+      img.classList.remove('enlarged', 'zoomed', 'active', 'open');
+      img.style.transform = '';
+      img.style.position = '';
+      img.style.zIndex = '';
+      img.style.maxWidth = '';
+      img.style.maxHeight = '';
+      img.style.cursor = '';
+    });
+  }
+
+  // ESC key closes everything
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeEverything();
+    }
+  });
+
+  // Close button also closes everything
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeEverything);
+  }
+
+  // Clicking outside image closes everything
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        closeEverything();
+      }
+    });
+  }
+});
+</script>
+</html>
