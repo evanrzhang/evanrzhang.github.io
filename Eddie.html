@@ -1,0 +1,2532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Evan Zhang - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --bg: #0f172a;
+        --bg-radial: #020617;
+        --card: rgba(255,255,255,0.03);
+        --border: rgba(255,255,255,0.06);
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --accent: #38bdf8;
+        --accent-2: #22c55e;
+    }
+
+    :root {
+        --page-gutter: clamp(1.25rem, 4vw, 3rem);
+    }
+
+
+    
+    html {
+      font-size: 115%;
+    }
+    body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background: radial-gradient(circle at top, var(--bg-radial), var(--bg));
+        color: var(--text);
+        line-height: 1.6;
+        scroll-behavior: smooth;
+    }
+
+
+    h1, h2, h3, h4 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+    }
+
+
+    /* Animation keyframes */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Apply animation to sections */
+    section {
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(15px);
+      animation-delay: 0.1s;
+    }
+
+    section {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: var(--page-gutter);
+        padding-right: var(--page-gutter);
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        box-sizing: border-box;
+    }
+
+
+    /* Stagger animations for projects */
+    .project {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .project:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .project:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .project:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    .project:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    .project:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    .award-category {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .award-category:nth-child(1) {
+      animation-delay: 1.2s;
+    }
+    .award-category:nth-child(2) {
+      animation-delay: 1.4s;
+    }
+    .award-category:nth-child(3) {
+      animation-delay: 1.6s;
+    }
+    .award-category:nth-child(4) {
+      animation-delay: 1.8s;
+    }
+
+    #community-service, #publications {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 0.8s ease forwards;
+      animation-delay: 2s;
+    }
+
+    header {
+        background: transparent;
+        color: var(--text);
+        padding: 5rem 1rem 4rem;
+        text-align: center;
+        position: relative;
+    }
+
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+
+    nav a {
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+        color: var(--accent);
+    }
+
+    header {
+        position: static;
+    }
+
+
+    /* Dropdown container */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown button */
+    .dropbtn {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      font-family: 'Nunito', 'Segoe UI', sans-serif;
+      cursor: pointer;
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1000;
+      flex-direction: column;
+    }
+
+    /* Show the dropdown on hover */
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+
+    /* Style links inside dropdown */
+    .dropdown-content a {
+      color: #224488;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      display: block;
+      font-family: 'Nunito', 'Segoe UI', sans-serif;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f4ff;
+    }
+
+    #community-service {
+      padding: 2rem;
+      max-width: 100%;
+      margin: auto;
+      text-align: center;
+      color: #665500;
+      margin-bottom: 2rem;
+      background-color: #ffffff;
+    }
+
+  #community-service .tagline {
+      font-size: 1rem;
+      max-width: 1600px;
+      min-height: 4rem; 
+      margin: 0 auto;
+      text-align:left;
+    } 
+
+    #awards, #publications {
+      padding: 2rem;
+      text-align: center;
+      background-color: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    #awards {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .awards-grid {
+      display: grid;
+      grid-template-areas:
+        "research business"
+        "olympiads volunteering";
+      grid-template-columns: 2.2fr 2.2fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 1rem;
+      text-align: left;
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .award-category {
+      background-color: #f8faff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      font-family: 'Nunito', 'Segoe UI', sans-serif;
+    }
+
+    .award-category:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .award-category h3 {
+      color: #224488;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+      font-weight: 700;
+    }
+
+    .award-category ul {
+      list-style: none;
+      padding-left: 1rem;
+      font-family: 'Nunito', 'Segoe UI', sans-serif;
+    }
+
+    .award-category li {
+      font-family: 'Nunito', 'Segoe UI', sans-serif;
+      font-weight: 400;
+    }
+
+    .award-category li::before {
+      content: "• ";
+      color: #4488FF;
+    }
+
+    .publications-list {
+      list-style: none;
+      padding-left: 0;
+      max-width: 800px;
+      margin: 1rem auto 0 auto;
+      text-align: left;
+    }
+
+    .publications-list li::before {
+      content: "📄 ";
+      margin-right: 0.5rem;
+    }
+
+    .publications-list a {
+      color: #224488;
+      text-decoration: none;
+    }
+
+    .publications-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* section {
+      padding: 3rem 2rem;
+      max-width: 100%;
+      margin: auto;
+      margin-bottom: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      background-color: #ffffff;
+    } */
+
+    section {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 4rem 1rem;
+        background: transparent;
+        box-shadow: none;
+    }
+
+
+    #about {
+      margin-bottom: 2rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: var(--text);
+    }
+
+
+    .about-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+
+
+    .about-photo {
+      width: 275px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 20px; /* Rounded corners instead of circle */
+      border: 3px solid #FFAA00;
+    }
+    #projects {
+      padding: 0.2rem 2rem 2rem 2rem;
+    }
+
+    .project {
+        background: linear-gradient(
+            180deg,
+            rgba(255,255,255,0.04),
+            rgba(255,255,255,0.015)
+        );
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+        padding: 1.75rem;
+        margin-bottom: 2rem;
+        transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .project:hover {
+        transform: translateY(-6px);
+        border-color: rgba(56,189,248,0.6);
+    }
+
+    .project h3 {
+        color: var(--text);
+        margin-bottom: 0.75rem;
+    }
+
+    .project p,
+    .project-details {
+        color: var(--muted);
+    }
+
+
+    .particle {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 1;
+      animation: fadeOut 1s ease-out forwards;
+      z-index: 10000;
+      box-shadow: 0 0 10px white;
+    }
+
+    @keyframes fadeOut {
+      to {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    .project img.project-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #555;
+      margin-right: 3rem;
+    }
+
+    .expand-button {
+        background: rgba(56,189,248,0.15);
+        color: var(--accent);
+        border: 1px solid rgba(56,189,248,0.4);
+        border-radius: 999px;
+        font-size: 0.85rem;
+    }
+
+    .expand-button:hover {
+        background: rgba(56,189,248,0.25);
+    }
+
+
+    .project-details {
+      font-size: 0.95rem;
+      color: #444444;
+      line-height: 1.6;
+      margin-top: 0.5rem;
+      font-family: 'Open Sans', 'Segoe UI', sans-serif;
+      text-align: left;
+    }
+
+    .project-details p {
+      margin-bottom: 1rem;
+      font-family: 'Open Sans', 'Segoe UI', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .project-details ul,
+    .project-details li {
+      font-family: 'Open Sans', 'Segoe UI', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .project-details h4 {
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+      font-weight: 700;
+    }
+
+    /* Font assignments */
+    p, .project-details, .project-details p, .project-details ul, .project-details li {
+      font-family: 'Open Sans', 'Segoe UI', sans-serif;
+    }
+    .award-category, .award-category ul, .award-category li, nav a {
+      font-family: 'Nunito', 'Segoe UI', sans-serif;
+    }
+    h1, h2, h3, .award-category h3 {
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+    }
+
+
+    /* --- Media Gallery Styling Improvements --- */
+    .scroll-hint {
+      text-align: center;
+      font-size: 0.9rem;  /* larger text */
+      color: #de900a;
+      font-style: italic;
+      font-weight: 700;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      user-select: none;
+      transition: opacity 0.3s ease;
+    }
+    .scroll-hint:hover {
+      opacity: 0.8;
+    }
+    .media-gallery {
+        background: rgba(255,255,255,0.03);
+        border-radius: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    .media-item {
+        background: #000;
+        border-radius: 0.6rem;
+    }
+
+    /* Unified media-container rules for all galleries (horizontal scroll always visible) */
+    .media-container {
+      display: grid;
+      grid-template-rows: repeat(3, auto);
+      gap: 0.25rem;
+      overflow-x: scroll !important;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: auto;
+      padding-bottom: 0.5rem;
+    }
+    /* WebKit scrollbars for all galleries */
+    .media-container::-webkit-scrollbar {
+      height: 12px;
+      background-color: #f0f4ff;
+    }
+    .media-container::-webkit-scrollbar-thumb {
+      background-color: #000000;
+      border-radius: 6px;
+    }
+
+    /* Unified media-row for all galleries */
+    .media-row {
+      display: grid;
+      grid-auto-flow: column;
+      gap: 0.25rem;
+      transition: transform 0.4s ease;
+      will-change: transform;
+    }
+    /* Allow horizontal scrolling for flex-based galleries (for override cases) */
+    .media-items {
+      transition: transform 0.4s ease;
+      will-change: transform;
+    }
+
+    /* Unified media-wrapper */
+    .media-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .media-caption {
+      font-size: 0.85rem;
+      color: #333;
+      margin-top: 0.25rem;
+      text-align: center;
+      max-width: 100%;
+    }
+    .media-item {
+      flex: 0 0 auto;
+      max-height: 300px;
+      border-radius: 12px;
+      object-fit: contain;
+      margin: 0;
+      user-select: none;
+      transition: transform 0.3s ease;
+    }
+    .media-item:hover {
+      transform: scale(1.015);
+      cursor: pointer;
+    }
+    /* Tall aspect ratio items spanning both rows in gallery */
+    .media-container > .tall-item {
+      flex: 0 0 auto;
+      height: 600px;
+      object-fit: contain;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      border-radius: 12px;
+    }
+    /* Hide gallery navigation buttons */
+    .gallery-btn {
+      display: none !important;
+    }
+    /* Project container */
+    .project {
+      width: 100%;
+    }
+    .main-content {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .main-image {
+      width: auto;
+      max-height: 400px;
+      display: block;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+    .tagline {
+      max-width: 700px;
+      font-style: italic;
+      color: #333333;
+      margin-left: 3rem;
+      margin-bottom: 1rem;
+    }
+    /* Project details list */
+    .project-details li {
+      color: #555;
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+    /* --- Page-specific gallery overrides --- */
+    /* STEMWorkshops: two-row grid with tight spacing */
+/*     #STEMWorkshops .media-container {
+      display: grid !important;
+      grid-auto-flow: column;
+      grid-template-rows: repeat(2, auto);
+      overflow-x: scroll !important;
+      overflow-y: hidden;
+      gap: 0;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    #STEMWorkshops .media-row {
+      display: contents;
+    }
+    #STEMWorkshops .media-wrapper {
+      display: block;
+      margin-right: 0.05rem;
+      margin-bottom: 0.05rem;
+    }
+    #STEMWorkshops .media-item {
+      flex: 0 0 auto;
+      max-height: 300px;
+    } */
+    
+    .extra-images {
+      display: none;
+      margin-top: 0.5rem;
+      gap: 0.25rem;
+      display: grid;
+      grid-auto-flow: column;
+      overflow-x: scroll;
+      padding-bottom: 0.5rem;
+    }
+
+    .show-more-images-button {
+      background-color: #4488FF;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-weight: 700;
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+      font-size: 0.95rem;
+      border-radius: 6px;
+      margin-top: 0.5rem;
+    }
+
+    .show-more-images-button:hover {
+      background-color: #3366cc;
+    }
+
+
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 20000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.image-modal img {
+  margin: auto;
+  display: block;
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 10px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close-modal:hover {
+  color: #ccc;
+}
+
+.project {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto 2rem auto;
+  box-sizing: border-box;
+}
+
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6TBTN8XSM4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6TBTN8XSM4');
+</script>
+
+</head>
+
+<body>
+
+<header>
+    <div style="display: flex; align-items: center;">
+        <img src="logo.jpg" alt="Logo" style="height: 40px; margin-right: 10px;">
+        <h1>Evan Zhang</h1>
+    </div>
+    <nav>
+        <a href="#" onclick="showPage('home'); return false;">Home</a>
+        <div class="dropdown">
+          <a href="#" class="dropbtn" onclick="showPage('research'); return false;">Research</a>
+          <div class="dropdown-content">
+            <a href="#" onclick="showPage('research'); document.getElementById('SPIRo').scrollIntoView({behavior:'smooth'}); return false;">SPIRo</a>
+            <a href="#" onclick="showPage('research'); document.getElementById('HASEL').scrollIntoView({behavior:'smooth'}); return false;">HASEL Actuators</a>
+            <a href="#" onclick="showPage('research'); document.getElementById('AmphibiousTurtle').scrollIntoView({behavior:'smooth'}); return false;">Amphibious Robotic Turtle</a>
+            <a href="#" onclick="showPage('research'); document.getElementById('Microscope').scrollIntoView({behavior:'smooth'}); return false;">Microscopes</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropbtn" onclick="showPage('entrepreneurship'); return false;">Entrepreneurship</a>
+          <div class="dropdown-content">
+            <a href="#" onclick="showPage('entrepreneurship'); document.getElementById('EnviroAI').scrollIntoView({behavior:'smooth'}); return false;">Enviro-AI</a>
+            <a href="#" onclick="showPage('entrepreneurship'); document.getElementById('PulsarRobotics').scrollIntoView({behavior:'smooth'}); return false;">Pulsar Robotics</a>
+            <a href="#" onclick="showPage('entrepreneurship'); document.getElementById('3DSolutions').scrollIntoView({behavior:'smooth'}); return false;">3DSolutions.shop</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropbtn" onclick="showPage('stem-projects'); return false;">Leadership in STEM & Debate</a>
+          <div class="dropdown-content">
+            <a href="#" onclick="showPage('stem-projects'); document.getElementById('Rocketry').scrollIntoView({behavior:'smooth'}); return false;">Model Rocketry and RC Aircraft</a>
+            <a href="#" onclick="showPage('stem-projects'); document.getElementById('FTC').scrollIntoView({behavior:'smooth'}); return false;">FIRST Tech Challenge Robots</a>
+            <a href="#" onclick="showPage('stem-projects'); document.getElementById('VarsityDebateTeamCaptainCoach').scrollIntoView({behavior:'smooth'}); return false;">Debate</a>
+            <a href="#" onclick="showPage('stem-projects'); document.getElementById('HarvardVentures').scrollIntoView({behavior:'smooth'}); return false;">Harvard Ventures Tech Program</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropbtn" onclick="showPage('community'); return false;">Community Service</a>
+          <div class="dropdown-content">
+            <a href="#" onclick="showPage('community'); document.getElementById('STEMWorkshops').scrollIntoView({behavior:'smooth'}); return false;">STEM Workshops</a>
+            <a href="#" onclick="showPage('community'); document.getElementById('FTC_Coaching').scrollIntoView({behavior:'smooth'}); return false;">FTC Robotics Coaching</a>
+            <a href="#" onclick="showPage('community'); document.getElementById('RCPlanes').scrollIntoView({behavior:'smooth'}); return false;">Introduction to RC Airplanes</a>
+            <a href="#" onclick="showPage('community'); document.getElementById('TennisCoaching').scrollIntoView({behavior:'smooth'}); return false;">Tennis Coaching</a>
+            <a href="#" onclick="showPage('community'); document.getElementById('Hiller').scrollIntoView({behavior:'smooth'}); return false;">Hiller Aviation Museum Volunteer</a>
+            <a href="#" onclick="showPage('community'); document.getElementById('Enable').scrollIntoView({behavior:'smooth'}); return false;">Enabling the Future</a>
+          </div>
+        </div>
+        <!-- <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a> -->
+    </nav>
+</header> 
+
+<div id="page-home">
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-wrapper">
+      <div class="about-container">
+        <img src="headshot2.png" alt="Evan Zhang" class="about-photo">
+        <p>
+          Hi! I'm Evan, a high school senior passionate about all things mechanical engineering and entrepreneurship. 
+          I'm a maker and tinkerer at heart, and I love working on solutions for pressing issues, from medical challenges to environmental protection. 
+          Most likely, I was born with a roll of duct tape in my hands. Thank you for stopping by!
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="research">
+    <!-- ... projects content unchanged ... -->
+    <h2>Research Projects</h2>
+    <p style="text-align:center; font-size:1.3rem; margin-bottom:1rem;">
+      <a href="https://youtu.be/T7zwqyhp-2E" target="_blank" rel="noopener noreferrer" style="color:#cf9e15; font-weight:600;">
+        Click to Watch an Introduction to My Projects
+      </a>
+    </p>
+    <div class="project" id="SPIRo">
+      <h3>SPIRo (Soft Pipe Inspection Robot)</h3>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <div class="media-gallery">
+        <!-- <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button> -->
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="SPIRoRotate.gif" alt="SPIRo animation" class="media-item" />
+              <p class="media-caption">SPIRo rotation animation.</p>
+            </div>
+            <div class="media-wrapper">
+              <video src="SPIRoDemo.mov" controls class="media-item"></video>
+              <p class="media-caption">SPIRo crawling demonstration video. <a href="https://www.youtube.com/watch?v=Btl4Zmm5sTo" target="_blank" rel = "noopener noreferrer">Video Link</a></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Workshop2.png" alt="SPIRo main" class="media-item active" />
+              <p class="media-caption">Dining Room Lab</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Progression.png" alt="SPIRo second" class="media-item" />
+              <p class="media-caption">SPIRo Progression</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="SPIRoMain.jpg" alt="SPIRo main" class="media-item active" />
+              <p class="media-caption">SPIRo crawling on a horizontal pipe</p>
+            </div>
+          </div>
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="METEC 6.png" alt="SPIRo main" class="media-item active" />
+              <p class="media-caption">Working with METEC Staff</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="SPIRoField.jpg" alt="SPIRo second" class="media-item" />
+              <p class="media-caption">SPIRo in field testing at METEC</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="METEC4.png" alt="SPIRo main" class="media-item active" />
+              <p class="media-caption">Testing at METEC</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="METEC1.png" alt="SPIRo main" class="media-item active" />
+              <p class="media-caption">Preparations before a trial</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="HomeLab.png" alt="SPIRo main" class="media-item active" />
+              <p class="media-caption">At-Home Testing of SPIRo</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="METEC3.png" alt="SPIRo main" class="media-item active" />
+              <p class="media-caption">SPIRo at METEC</p>
+            </div>
+          </div>
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="SIRoPoster.png" alt="SPIRo second" class="media-item" />
+              <p class="media-caption">SPIRo Research Poster (<a href="Poster.pdf" target="_blank">View Enlarged PDF</a>)</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Robosoft 2.png" alt="SPIRo animation" class="media-item" />
+              <p class="media-caption">Long Form Presentation at Robosoft '25</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Patent.png" alt="SPIRo main" class="media-item active" />
+              <p class="media-caption">Patent, To-Be Published Jan. 2026</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Robosoft 1.png" alt="SPIRo animation" class="media-item" />
+              <p class="media-caption">Presentation at Robosoft '25</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="JSHS 1.png" alt="SPIRo main" class="media-item active" />
+              <p class="media-caption">Oral Presentation at NJSHS</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="SPIRo Conrad 1.jpg" alt="SPIRo main" class="media-item" />
+              <p class="media-caption">SPIRo at Conrad Challenge event.</p>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button> -->
+      
+      </div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <p class="tagline" style="text-align:center;">Soft Pneumatic Inspection Robot for Environmental Protection.</p>
+      <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
+      <div class="project-details" style="display: block;">
+
+        <p>In the winter of 2019, a thunderous bang shook my family’s hotel room in Lake Tahoe. Lights flickered out, and a crowd rushed along the street. 
+          A gas pipeline had exploded. It caused only minor injuries, fortunately. But with more explosions in the news, including fatal ones near my grandparents’ home, 
+          I started digging into the data. I was stunned: major incidents were occurring every 40 hours, releasing millions of tons of methane. 
+          The issue wasn’t a lack of awareness. It was, instead, weaknesses in existing technologies: slow and expensive, with systems incapable of detecting small 
+          leaks before they became catastrophic.</p>
+        <p>Current industrial methods for gas leak detection, including hydrostatic testing and camera inspection, 
+          fall short of meeting today’s needs. Pipeline leaks are both frequent and dangerous; in the U.S. alone, a significant leak occurs every 
+          40 hours, with smaller fugitive leaks often going undetected and unreported, leading to millions of tons of methane emissions. Inspection approaches are often 
+          inaccurate, expensive, and labor-intensive, requiring extensive human involvement. Consequently, many leaks remain 
+          unnoticed for extended periods of time, all the while causing severe damage to both the environment and populations. 
+          These leaks endanger nearby populations, cause millions of dollars in losses, and contribute to the release of 
+          nearly seven million tons of methane into the atmosphere each year. Methane is uniquely concerning because it is 
+          30 times more potent than carbon dioxide in terms of global warming potential, and it alone accounts for one-third 
+          of the world’s warming from greenhouse emissions. Therefore, early detection of gas infrastructure leaks has become 
+          an urgent and efficient way to reduce harmful emissions.</p>
+        <p>SPIRo (Soft Pipe Inspection Robot) is a pneumatically actuated soft pipe inspection robot for the accurate 
+          inspection of gas pipes in difficult-to-reach environments. It uses a compliant scissor linkage, McKibben artificial 
+          muscle actuators, and magnetic grippers. It achieves a speed of 15 mm/s when crawling on a horizontal surface and 9 mm/s 
+          when climbing up a vertical surface. It can also deform its body 60 degrees vertically and 40 degrees horizontally to 
+          clear obstacles. The robot’s origami-inspired grippers support a total weight of 417 grams of extra payload to account 
+          for the necessary leak detection sensors and equipment.
+        </p>
+        <p>Also implemented on the robot is a  multimodal deep feature fusion with a deep forest ensemble learning model to 
+          improve SPIRo’s gas leak detection accuracy and redundancy. The model consists of the convolutional layers of three 
+          CNNs, the AlexNet, ResNet-50, and MobileNet, and a deep forest ensemble model with all three CNNs. Not only is the 
+          ensemble model more accurate, but it is also more reliable due to increased redundancy in analyzing both thermal 
+          images and gas sensor data. In addition, the proposed method is also memory efficient, making it suitable for real-time 
+          detection applications.
+
+        </p>
+        <p>I reached out to dozens of labs and professionals across the country to seek out advice for improving the robot 
+          to make it more suitable for field use. After several rounds of questioning and intervies, I was awarded an opportunity 
+          to conduct real-field testing at the Methane Emissions Technology Evaluation Center (METEC), thoroughly evaluating SPIRo’s real-world capabilities and achieving an 
+          accuracy of 95% throughout these tests. I am eternally grateful for METEC's generosity, who seeing as we were highschoolers, were able to waive the costs traditionally associated with testing on their site. 
+          I also worked with the MIT Media Lab to implement FlowIO, a standalone air compressor system on the robot and the Southwest Research Institute for calibrating the robot in tests at home. 
+        </p>
+
+        <p>I have co-founded a start-up, Enviro-AI, to bring this product to market. 
+        </p>
+
+        <h4>Recognition</h4>
+        <ul>
+          <li><strong><a href="https://spacecenter.org/conrad-scholars-at-the-2025-conrad-challenge/" target="_blank" rel="noopener noreferrer">Conrad Challenge</a></strong> – Pete Conrad Scholar, received $10K to fund innovation (2025), 
+            <a href="https://youtu.be/G7OaLVJINos" target="_blank" rel="noopener noreferrer">(Presentation)</a>
+          </li>
+          <li><strong><a href="https://diamondchallenge.org/finalists/" target="_blank" rel="noopener noreferrer">Diamond Challenge</a> Finalists (2025)</strong></li>
+          <li><strong><a href="https://jshs.org/wp-content/uploads/2024/05/62nd-NJSHS-Abstract-Book.pdf" target="_blank" rel="noopener noreferrer">National Junior Science and Humanities Symposium</a></strong> – Oral Presentation (2024)</li>
+          <li><strong>Medici Grant</strong> – $1000 from 1517 Fund (2025)</li>
+          <li><strong><a href="https://www.sigmaxi.org/news/article/2025/04/15/winners-announced-for-2025-sigma-xi-student-research-showcase" target="_blank" rel="noopener noreferrer">Sigma Xi Honorific Research Society</a></strong> – Research Showcase First Place, $500 Prize (2025)</li>
+          <li><strong><a href="https://jshs.org/wp-content/uploads/2024/05/62nd-NJSHS-Abstract-Book.pdf" target="_blank" rel="noopener noreferrer">JSHS Northern California</a></strong> – 2nd Place, $1500 (2024)</li>
+          <li><strong>Synopsys Science Fair (2024)</strong> – 2nd Award, Physical Sciences (2024)</li>
+          <li><strong>Synopsys Science Fair (2024)</strong> – IEEE Special Award (2024)</li>
+
+        </ul>
+        <h4>Publications</h4>
+        <ul>
+          <li>
+            <strong>E. Zhang</strong> and E. Zhang, 
+            "<a href="https://ieeexplore.ieee.org/abstract/document/11020922" target="_blank" rel="noopener noreferrer">
+              Omnimobile and Load Capable Pneumatic Soft Robot for Gas Distribution Pipeline Inspection
+            </a>," 
+            2025 IEEE 8th International Conference on Soft Robotics (RoboSoft), Lausanne, Switzerland, 2025, pp. 1-6, 
+            doi: <a href="https://doi.org/10.1109/RoboSoft63089.2025.11020922" target="_blank" rel="noopener noreferrer">10.1109/RoboSoft63089.2025.11020922</a>.
+            (<a href="https://docs.google.com/presentation/d/1-sF1N4rO-7iCKxS-nM50NiEAu8bXiT3p/edit?usp=sharing&ouid=111561540897091449886&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Slides</a>, 
+            <a href="https://youtu.be/hdthXFKD-o8" target="_blank" rel="noopener noreferrer">Full-form 8-minute Talk</a>)
+          </li>
+          <li>
+            <strong>E. Zhang</strong> and E. Zhang, 
+            "<a href="https://ieeexplore.ieee.org/abstract/document/10587655" target="_blank" rel="noopener noreferrer">
+              SPIRo: An AI Based Origami Inspired Soft Robot with Multidimensional Locomotion and Multimodal Data Analysis for Infrastructure Assessments
+            </a>," 
+            2024 36th Chinese Control and Decision Conference (CCDC), Xi'an, China, 2024, pp. 3056-3061, 
+            doi: <a href="https://doi.org/10.1109/CCDC62350.2024.10587655" target="_blank" rel="noopener noreferrer">10.1109/CCDC62350.2024.10587655</a>.
+            (<a href="https://docs.google.com/presentation/d/1cLq0BMWZ9x4hjpzt3K-KKAxXx3ZzsX22-PQVRJxfpGc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Slides</a>)
+          </li>
+          <li>
+            E. Zhang and <strong>E. Zhang</strong>, 
+            "<a href="https://ieeexplore.ieee.org/abstract/document/10585716" target="_blank" rel="noopener noreferrer">
+              Development of A Multimodal Deep Feature Fusion with Ensemble Learning Architecture for Real-Time Gas Leak Detection
+            </a>," 
+            2024 IEEE 3rd International Conference on Computing and Machine Intelligence (ICMI), Mt Pleasant, MI, USA, 2024, pp. 1-6, 
+            doi: <a href="https://doi.org/10.1109/ICMI60790.2024.10585716" target="_blank" rel="noopener noreferrer">10.1109/ICMI60790.2024.10585716</a>.
+            (<a href="https://docs.google.com/presentation/d/1_KfaM6-ugVSldSBNru1gA3N591IqWTrmo03MowQ4adg/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Slides</a>), (Won Best Paper Award)
+          </li>
+          <li>
+            E. Zhang and <strong>E. Zhang</strong> (2025) 
+            "<a href="https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1569621/full" target="_blank" rel="noopener noreferrer">
+              Gas pipeline leakage detection based on multiple multimodal deep feature selections and optimized deep forest classifier
+            </a>." 
+            Frontiers in Environmental Science, 13:1569621. 
+            doi: <a href="https://doi.org/10.3389/fenvs.2025.1569621" target="_blank" rel="noopener noreferrer">10.3389/fenvs.2025.1569621</a>.
+          </li>
+          <li>Provisional Patent Granted, Full Patent to be published in January, 2026.</li>
+        </ul>
+      </div>
+    </div>
+   
+    <!-- Pulsar Robotics project moved to Entrepreneurship page -->
+    <div class="project" id="HASEL">
+      <h3>HASEL Actuators</h3>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <div class="media-gallery">
+        <!-- <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button> -->
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="HASEL Sized.png" alt="HASEL Sized" class="media-item active" />
+              <p class="media-caption">Size comparison of HASEL actuator.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="HASELMain.png" alt="HASEL main" class="media-item" />
+              <p class="media-caption">Main HASEL actuator prototype.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="HASEL1.png" alt="HASEL second" class="media-item" />
+              <p class="media-caption">3D-Printed Layers</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="HASEL2.png" alt="HASEL second" class="media-item" />
+              <p class="media-caption">Load-Bearing Experiments</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Purdue1.png" alt="HASEL second" class="media-item" />
+              <p class="media-caption">Lab Work at Purdue</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Purdue4.png" alt="HASEL second" class="media-item" />
+              <p class="media-caption">3D Printing Actuators</p>
+            </div>
+          </div>
+          <div class="media-row">
+            <div class="media-wrapper">
+              <video src="HASELDemo.mov" controls class="media-item"></video>
+              <p class="media-caption">HASEL actuator demonstration video. <a href="https://youtu.be/QlLlkvTnBO4" target="_blank" rel = "noopener noreferrer">Video Link</a></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="HASEL5.png" alt="HASEL second" class="media-item" />
+              <p class="media-caption">Sensor-Integrated Design</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Purdue3.png" alt="HASEL second" class="media-item" />
+              <p class="media-caption">Preparing Polymers</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="HASELSystem.png" alt="HASEL second" class="media-item" />
+              <p class="media-caption">HASEL system setup.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="icmsr.png" alt="HASEL second" class="media-item" />
+              <p class="media-caption">Best Presentation Award, ICMSR '25</p>
+            </div>
+          </div>
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="ISEFPoster.png" alt="HASEL second" class="media-item" />
+              <p class="media-caption">ISEF Poster (<a href="ISEFPoster.pdf" target="_blank">View Enlarged PDF</a>)</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="ISEF251.JPEG" alt="HASEL main" class="media-item" />
+              <p class="media-caption">Grand Award @ ISEF '25</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="ISEF2.png" alt="HASEL main" class="media-item" />
+              <p class="media-caption">ISEF Awards Ceremony</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="HASEL3.png" alt="HASEL second" class="media-item" />
+              <p class="media-caption">Deformation Experiments</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="HASEL4.png" alt="HASEL second" class="media-item" />
+              <p class="media-caption">Sensor Coupling Experiments</p>
+            </div>
+            
+          </div>
+        </div>
+        <!-- <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button> -->
+      </div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <p class="tagline" style="text-align:center; white-space: nowrap;">Hydraulically Amplified Self-Healing Electrostatic Actuators for Personalized Medical Care</p>
+      <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
+      <div class="project-details" style="display: block;">
+        <p>Cardiovascular diseases are the leading cause of death globally, claiming 17.9 million lives each year. 
+          Heart failure, one of the most serious variations of cardiovascular disease, is a chronic condition in 
+          which the heart is unable to pump enough blood to support the body’s needs. While simple lifestyle changes 
+          and medication can treat HF in its early stages, more serious cases, called class III or IV, often require 
+          more intensive treatment. For these scenarios, a heart transplant is the ideal treatment. However, the 
+          demand for donor hearts far exceeds their supply, leaving many individuals without access to it. Additionally, 
+          many individuals are deemed unfit for this process due to reasons such as age or other health conditions. 
+          These challenges underscore the urgent need for alternative solutions to address the growing issue of heart 
+          failure. </p>
+        <p>Soft robotics has emerged as a promising solution for the limitations of VADs. Unlike rigid robots, 
+          soft robots are composed of flexible, deformable materials that enable them to operate in complex, 
+          delicate, and unpredictable environments.I propose a cardiac assist system that integrates HASEL actuators 
+          with AI-based control to address the challenges of heart failure. The system demonstrates versatility, 
+          combining the flexible and safe characteristics of soft robotics with AI to advance VADs. The implementation 
+          of HASEL actuators with self-healing capabilities allows for increased reliability and performance. Using 
+          multi-material 3D printing ensures precise and reproducible geometries, which improves performance. The 
+          integration of machine learning for control allows the system to effectively address the nonlinear 
+          characteristics of HASEL actuators. Our algorithm achieves a R2 value of 0.91 in predicting stress. 
+          The device also achieves a maximum strain of 32.9% and a maximum energy output of 5.49 N•mm, exceeding 
+          requirements for cardiac assist applications. This work impacts medical care more broadly by making it 
+          more personal. with the use of DIW 3D printing and soft materials. </p>
+
+        <p>I am now founding a second start-up, Pulsar Robotics.</p>
+
+        <h4>Recognition</h4>
+        <ul>
+          <li>International Science and Engineering Fair (<a href="https://isef.net/project/enbm042-ai-driven-hasel-actuators-for-cardiac-assist" target="_blank" rel="noopener noreferrer">ISEF</a>) - 4th Place Grand Award in Biomedical Engineering (2025)</li>
+          <li>California Science and Engineering Fair (<a href="https://csef.usc.edu/Current/Awards/CategoryAwards2025.pdf" target="_blank" rel="noopener noreferrer">CSEF</a>) - 5th Place Award in Applied Mechanics and Structures (2025)</li>
+          <li>Synopsys Science and Technology Championship - <a href="https://science-fair.org/2025-winner-summary/" target="_blank" rel="noopener noreferrer">Grand Award</a>, Best of Championship in Physical Sciences (2025)</li>
+          <li>Junior Science and Hummanities Symposium (<a href="https://cob.sfsu.edu/initiatives-centers/jshs" target="_blank" rel="noopener noreferrer">JSHS</a>) - 2nd place, Chemistry (2025)</li>
+          <li>ASEI Award Honorable Mention (<a href="https://www.science-fair.org/database/project_awards.php?school_year=2425&all&special_order&_gl=1*lt1l14*_ga*MTA3OTMyODg3MC4xNzU1MDM0NzQw*_ga_ECJM45NJHR*czE3NTU2NTM4ODckbzMkZzEkdDE3NTU2NTQwNDAkajQ5JGwwJGgw" target="_blank" rel="noopener noreferrer">2025</a>)</li>
+          <li>Kindeva Innovator Award - $250 prize (<a href="https://csef.usc.edu/Current/Awards/SponsoredAwards2025.pdf" target="_blank" rel="noopener noreferrer">2025</a>)</li>
+          <li>Best Presentation Award - 2025 11th International Conference on Mechatronics Systems and Robots (ICMSR 2025)</li>
+        </ul>
+        <h4>Recognition</h4>
+        <ul>
+          <li><strong>E. Zhang</strong> and A. Chortos, “3D-Printed HASEL Actuators With Integrated Fluidic Piezoresistive Pressure Sensor for Cardiac Assist Applications,” 2025 11th International Conference on Mechatronics Systems and Robots, Singapore, 2025 (In Press)</li>
+          <li>Z. Ma, ... <strong>E. Zhang</strong>, ... A. Chortos, "Thermally Elongated Thermoplastic Nozzles Unlock Micro-Scale Direct Ink Writing," Advanced Materials Technologies, 2025 (In Press)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="project" id="AmphibiousTurtle">
+      <h3>Amphibious Robotic Turtle</h3>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <div class="media-gallery">
+        <!-- <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button> -->
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="turtle1.png" alt="Turtle1" class="media-item active" />
+              <p class="media-caption">Robotic turtle on land.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="turtle2.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Me and ART</p>
+            </div>
+            <div class="media-wrapper">
+              <video src="turtlecrop.mov" controls class="media-item"></video>
+              <p class="media-caption">Swimming demonstration video.<a href="https://youtu.be/t_zStXIYDOc" target="_blank" rel = "noopener noreferrer">Video Link</a></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="labphoto1.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Holding ART</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="labphoto2.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Robotic turtle in Lab.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="labphoto3.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Lab Photo</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="labphoto7.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">At Mason Laboratory</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="labphoto5.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Preparing motor cases</p>
+            </div>
+          </div>
+
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="turtle3.png" alt="turtle3" class="media-item" />
+              <p class="media-caption">Turtle at Yale's Tank</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="leavingwtr.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">ART leaving the water with new design</p>
+            </div>
+            <div class="media-wrapper">
+              <video src="walking.mp4" controls class="media-item"></video>
+              <p class="media-caption">Walking demonstration video. <a href="https://youtu.be/SomtNcDqTo0" target="_blank" rel = "noopener noreferrer">Video Link</a></p>
+            </div>
+            <div class="media-wrapper">
+              <video src="swimaway.mov" controls class="media-item"></video>
+              <p class="media-caption">Swimming demonstration video. <a href="https://youtu.be/N7G-ar8lnQE" target="_blank" rel = "noopener noreferrer">Video Link</a></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="labphoto4.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Preparing flippers</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="legmount.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">New flipper mounting system</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="labphoto6.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">ART with new flippers</p>
+            </div>
+          </div>
+
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="magmotor.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Magnetically Driven Motors Prototype</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="legtransition.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Transformation between states</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="legset.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Set of flippers</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="proposal.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Proposed deep water design</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="waterproofasm.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Waterproofed Motor Assembly</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="waterproofcase.png" alt="turtle2" class="media-item" />
+              <p class="media-caption">Encased high depth motor</p>
+            </div>
+          </div>
+        </div>
+        <!-- <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button> -->
+      </div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <p class="tagline" style="text-align:center;">Deep-Water Shape Morphing Amphibious Robotic Turtle at Yale's Faboratory</p>
+      <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
+      <div class="project-details" style="display: block;">
+        <p>Mobile robots are impactful for several different sectors, including search and rescue, environmental monitoring, and home service industry. Many mobile robots are designed to opperate in only one environment. As a result, their bodies are made up of dedicated mecahnisms for locomotion, such as paddles or wheels. 
+          Their behaviors are optimized only for that niche. Biological systems, however, exhibit phenoplasticity in their anatomical structure, stiffness, and overall behavior. This allows them to adapt and navigate multiple environments. </p>
+        <p>This shape-morphing amphibious robotic turtle is designed for locomtion across both terrestrial and aquatic environments. The limbs are inspired by those of sea turtles and land tortoises. They can transform between hydrodynamic flippers which are optimized for swimming and load-bearing legs that can allow for terrestrial mobility.
+          This is achieved through pressure-responsive laminar jamming. This enables rapid and efficient shape and stiffness change. 
+        </p>
+        <p>Finally, to achieve deep-water swimming capabilities, the motors and chasis are designed to withstand up to 30 PSI of pressure, equivalent to a depth 10 meters. Furthermore, bouyancy control pumps are integrated to allow the turtle to achive neutral 
+          buoyancy or vary it's buoyancy to reach depths or ascend.  </p>
+        <p>This project was conducted at Yale’s Faboratory, where I worked as a paid research assistant. I was invited to join the lab after presenting my work at RoboSoft 2025, which captured their interest.</p>
+      </div>
+    </div>
+
+    <div class="project" id="Microscope">
+      <h3>Mechanical Design work at the Schnitzer Lab, Stanford University</h3>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <div class="media-gallery">
+        <!-- <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button> -->
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="SideIllumination.jpeg" alt="Mount" class="media-item active" />
+              <p class="media-caption">Side illumination mount for microscope.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="BehavioralApparatus.JPG" alt="Apparatusn" class="media-item active" />
+              <p class="media-caption">Behavioral apparatus for mice.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Enclosure.jpeg" alt="enclosure" class="media-item active" />
+              <p class="media-caption">Microscope enclosure.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="beha2.png" alt="enclosure" class="media-item active" />
+              <p class="media-caption">Behavioral apparatus for mice.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="beha3.png" alt="enclosure" class="media-item active" />
+              <p class="media-caption">Behavioral apparatus for mice.</p>
+            </div>
+          </div> 
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="KicadModel.png" alt="pcbmodel" class="media-item active" />
+              <p class="media-caption">3D model of rotary encoder PCB.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="KicadSchematic.png" alt="pcbschematic" class="media-item active" />
+              <p class="media-caption">Schematic of rotary encoder PCB.</p>
+            </div>
+            <div class="media-wrapper">
+              <video src="rotaryencoder.mp4" controls class="media-item"></video>
+              <p class="media-caption">Rotary encoder working video. <a href="https://youtu.be/4YK4Z0ecns8" target="_blank" rel = "noopener noreferrer">Video Link</a></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="beha1.png" alt="enclosure" class="media-item active" />
+              <p class="media-caption">Behavioral apparatus circuitry.</p>
+            </div>
+
+          </div>
+        </div>
+        <!-- <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button> -->
+      </div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <p class="tagline" style="text-align:center;">Collimator Mount, PCBs, and Enclosure for Crystal Skull Microscope</p>
+      <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
+      <div class="project-details" style="display: block;">
+        <p>The Schnitzer Group at Stanford University works at the intersection of neuroscience, physics, engineering, and artificial intelligence to develop and apply advanced optical, robotic, and computational techniques for elucidating neural dynamics and information processing in behaving animals.
+           </p>
+        <p>My work centers around designing and fabricating behavioral apparatus used in experiments. I have developed various components for microscopes, from a full 1P microscope to an enclosure and side illumination method. I have also built behavioral apparatus for mice, including training wheels and experimental rigs to stimulate mouse behavior. I designed a PCB for rotary encoders used to track the movement of mice, and standarized commonly used hardware parts including this PCB, as well as behavioral rig and camera mount designs.</p>
+        <p>My role requires high levels of collaboration with the lab's biologists, as I work to develop and build behavioral rigs perfectly fit for their needs and requirements.</p>
+        
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<!-- Entrepreneurship Page -->
+<div id="page-entrepreneurship" style="display:none">
+  <section id="entrepreneurship-section">
+    <h2>Entrepreneurship</h2>
+    <div class="project" id="EnviroAI">
+      <h3><a href="https://www.enviro-ai.tech/" target="_blank" rel="noopener noreferrer">Enviro-AI</a> (SPIRo)</h3>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <div class="media-gallery">
+        <!-- <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button> -->
+        <div class="media-container">
+          
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="SPIRo Conrad 2.jpg" alt="Conrad 2" class="media-item" />
+              <p class="media-caption">SPIRo, Won Pete Conrad Scholar Award (Energy Cat.)</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="SPIRo Conrad 1.jpg" alt="Conrad 1" class="media-item" />
+              <p class="media-caption">SPIRo at Conrad Challenge event</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Equinor Pitch.png" alt="Equinor" class="media-item" />
+              <p class="media-caption">Pitching to Equinor Ventures Team</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="MIT1.png" alt="MIT" class="media-item" />
+              <p class="media-caption">On the Winning Prize Trip to MIT</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="MIT2.png" alt="MIT" class="media-item" />
+              <p class="media-caption">Invited to MIT's Aero Facility</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Conrad9.png" alt="Conrad 9" class="media-item" />
+              <p class="media-caption">Pitching at the Conrad Challenge Finals</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Conrad10.png" alt="Conrad 10" class="media-item" />
+              <p class="media-caption">Space Center Houston</p>
+            </div>
+            
+          </div>
+          
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="MIT4.png" alt="MIT" class="media-item" />
+              <p class="media-caption">Presenting to MIT Professors</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Diamond1.png" alt="MIT" class="media-item" />
+              <p class="media-caption">Pitching at the Diamond Challenge Finals</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Diamond3.png" alt="MIT" class="media-item" />
+              <p class="media-caption">Diamond Challenge Limitless Summit</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Diamond2.png" alt="MIT" class="media-item" />
+              <p class="media-caption">Pitching at the Diamond Challenge Summit</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Conrad 70.png" alt="Conrad 8" class="media-item" />
+              <p class="media-caption">Invited to MIT with Ms. Conrad</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="MIT3.png" alt="MIT" class="media-item" />
+              <p class="media-caption">With Ms. Conrad on the Trip</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Conrad5.png" alt="Conrad 5" class="media-item" />
+              <p class="media-caption">Conrad Challenge Expo</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Conrad8.png" alt="Conrad 8" class="media-item" />
+              <p class="media-caption">Conrad Challenge Interview</p>
+            </div>
+          </div>
+          
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="conrad67.png" alt="Equinor" class="media-item" />
+              <p class="media-caption">Pitch Day with Ms. Nancy Conrad</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="DiamondAw.png" alt="MIT" class="media-item" />
+              <p class="media-caption">Diamond Challenge Award</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="ConradAw.png" alt="MIT" class="media-item" />
+              <p class="media-caption">Conrad Challenge Award</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Patent.png" alt="Patent" class="media-item" />
+              <p class="media-caption">Patent, To-Be Published Jan. 2026</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="INC.png" alt="INC" class="media-item" />
+              <p class="media-caption">Incorporation</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Conrad1.png" alt="Conrad 1" class="media-item" />
+              <p class="media-caption">Conrad Challenge Video Interview</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Conrad3.png" alt="Conrad 3" class="media-item" />
+              <p class="media-caption">Conrad Challenge Expo</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Conrad4.png" alt="Conrad 4" class="media-item" />
+              <p class="media-caption">Conrad Challenge Photoshoot</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Conrad68.png" alt="Conrad 4" class="media-item" />
+              <p class="media-caption">Conrad Challenge Photoshoot</p>
+            </div>
+
+          </div>
+        </div>
+        <!-- <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button> -->
+      </div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <p class="tagline" style="text-align:center; font-style:italic; color:#333;">Turning SPIRo’s soft robotics innovation into real-world environmental solutions.</p>
+      <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
+      <div class="project-details" style="display: block;">
+        <p>Enviro-AI is the startup I co-founded to commercialize SPIRo, translating our lab-based soft robotic sensing platform into deployable solutions for environmental monitoring. While SPIRo demonstrated the technical potential of adaptive soft robots with integrated AI for gas leak detection and environmental sensing, Enviro-AI focuses on building a viable business around this innovation.</p>
+        <p>Through Enviro-AI, I led prototype development, technical refinement, and strategic business efforts. We validated the concept through multiple high-impact pitches and competitions, presenting SPIRo to the MIT Media Lab, the 1517 Fund (securing $1,000 in early angel funding), Equinor Ventures, the Conrad Challenge, and the Diamond Challenge. These engagements helped shape our product roadmap, attract early support, and refine our market strategy for environmental applications.</p>
+        <p>Our mission is to bring accessible, actionable environmental intelligence to communities, turning cutting-edge soft robotic technology into practical tools for real-world impact.</p>
+        <h4>Recognition</h4>
+        <ul>
+          <li><strong><a href="https://spacecenter.org/conrad-scholars-at-the-2025-conrad-challenge/" target="_blank" rel="noopener noreferrer">Conrad Challenge</a></strong> – Pete Conrad Scholar, received $1K to fund innovation (2025), 
+            <a href="https://youtu.be/CBESifTSLgg" target="_blank" rel="noopener noreferrer">(Presentation)</a>
+          </li>
+          <li><strong><a href="https://diamondchallenge.org/finalists/" target="_blank" rel="noopener noreferrer">Diamond Challenge</a> Finalists (2025)</strong></li>
+          <li><strong>Medici Grant</strong> – $1000 from 1517 Fund (2025)</li>
+          <li><strong><a href="https://www.sigmaxi.org/news/article/2025/04/15/winners-announced-for-2025-sigma-xi-student-research-showcase" target="_blank" rel="noopener noreferrer">Sigma Xi Honorific Research Society</a></strong> – Research Showcase First Place, $500 Prize (2025)</li>
+          <li><strong><a href="https://jshs.org/wp-content/uploads/2024/05/62nd-NJSHS-Abstract-Book.pdf" target="_blank" rel="noopener noreferrer">JSHS Northern California</a></strong> – 2nd Place, $1500 Seed Funding (2024)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project" id="PulsarRobotics">
+      <h3>Pulsar Robotics (In Progress)</h3>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <div class="media-gallery">
+        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+        <div class="media-container">
+          <div class="media-row">
+            
+            <div class="media-wrapper">
+              <img src="Pulsar.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption">Upcoming Start-up, Pulsar Robotics</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="HASEL Sized.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption">Early Prototype</p>
+            </div>
+
+          </div>
+        </div>
+        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+      </div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <p class="tagline" style="text-align:center; white-space: nowrap;">Hydraulically Amplified Self-Healing Electrostatic Actuators for Personalized Medical Care</p>
+      <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
+      <div class="project-details" style="display: block;">
+        <p>Pulsar Robotics is a startup focused on commercializing HASEL actuator-based soft robotic devices for cardiac assist. 
+  The goal is to create adaptive, safe, and personalized wearable devices to help patients with heart failure and other cardiovascular conditions.</p>
+      </div>
+    </div>
+    
+    <div class="project" id="3DSolutions">
+      <h3><a href="https://3dsolutions.shop/" target="_blank" rel="noopener noreferrer">3DSolutions.shop</a></h3>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <div class="media-gallery">
+        <!-- <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button> -->
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="3D1.png" alt="3D printed part - order example 1" class="media-item active" />
+              <p class="media-caption">Award Design for a Summer Camp</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D2.png" alt="3D printed part - order example 2" class="media-item" />
+              <p class="media-caption">3D Printed Toy</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D18.png" alt="3D printed part - order example 18" class="media-item" />
+              <p class="media-caption">Filtration Bottle</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D3.png" alt="3D printed part - order example 3" class="media-item" />
+              <p class="media-caption">3D printed Toy</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D4.png" alt="3D printed part - order example 4" class="media-item" />
+              <p class="media-caption">3D printed Toy</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D6.png" alt="3D printed part - order example 6" class="media-item" />
+              <p class="media-caption">3D printed Figure</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D10.png" alt="3D printed part - order example 10" class="media-item" />
+              <p class="media-caption">3D printed Toy</p>
+            </div>
+          </div>
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="3D11.png" alt="3D printed part - order example 11" class="media-item" />
+              <p class="media-caption">Commissioned Keychains</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D14.png" alt="3D printed part - order example 14" class="media-item" />
+              <p class="media-caption">3D printed Toy</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D15.png" alt="3D printed part - order example 15" class="media-item" />
+              <p class="media-caption">3D printed Toy</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D16.png" alt="3D printed part - order example 16" class="media-item" />
+              <p class="media-caption">3D printed Toy</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D17.png" alt="3D printed part - order example 17" class="media-item" />
+              <p class="media-caption">Wind Tunnel Design</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D19.png" alt="3D printed part - order example 19" class="media-item" />
+              <p class="media-caption">Keychain design</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D8.png" alt="3D printed part - order example 8" class="media-item" />
+              <p class="media-caption">3D printed part</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D9.png" alt="3D printed part - order example 9" class="media-item" />
+              <p class="media-caption">3D printed part</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="3D5.png" alt="3D printed part - order example 5" class="media-item" />
+              <p class="media-caption">3D printed Toy</p>
+            </div>
+          </div>
+        </div>
+        <!-- <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button> -->
+      </div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <p class="tagline" style="text-align:center;">Rapid prototyping and custom 3D printed solutions for students, makers, and researchers.</p>
+      <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
+      <div class="project-details" style="display: block;">
+        <p>
+          3DSolutions.shop is an online platform and business I founded to provide affordable, fast-turnaround 3D printing and design services for students, makers, and research groups across the United States. Born out of my own need for rapid prototyping and the high cost/delays of commercial services, I built a distributed "printer farm" and streamlined workflow to deliver custom parts, assemblies, and design help.
+        </p>
+        <ul>
+          <li>Launched in 2024; over $1k in revenue; over 100 orders fulfilled to date for individuals, university labs, and school clubs.</li>
+          <li>Built a web-based order system with instant quoting, file upload, and live status tracking.</li>
+          <li>Developed optimized print profiles and part review pipeline for reliability and cost efficiency.</li>
+          <li>Expanded to offer design-for-manufacturing consultation, multi-material prints, and batch production.</li>
+          <li>Offered custom-design and fabrication services to revise products with customers prior to shipment.</li>
+          <li>Collaborated with local schools to provide subsidized parts for student STEM projects and engineering classes.</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<!-- STEM Projects Page -->
+<div id="page-stem-projects" style="display:none">
+  <section id="stem-projects-section">
+    <h2>Leadership in STEM & Debate</h2>
+    <div class="project" id="Rocketry">
+      <h3>Model Rocketry and Remote Control Aircraft</h3>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <div class="media-gallery">
+        <!-- <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button> -->
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="Rocket1.png" alt="Rocket1" class="media-item active" />
+              <p class="media-caption">Model rocket at launch site.</p>
+            </div>
+            <div class="media-wrapper">
+              <video src="Rocket2.mov" controls class="media-item"></video>
+              <p class="media-caption">A successful launch.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="rocket2.png" alt="Rocket1" class="media-item active" />
+              <p class="media-caption">Launch!</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="rocket8.png" alt="Rocket1" class="media-item active" />
+              <p class="media-caption">we crashed on a test flight</p>
+            </div>
+            
+            <div class="media-wrapper">
+              <img src="rocket7.png" alt="Rocket1" class="media-item active" />
+              <p class="media-caption">Rocket on the pad.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="rocket3.png" alt="Rocket1" class="media-item active" />
+              <p class="media-caption">The completed rocket.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="rocket4.png" alt="Rocket1" class="media-item active" />
+              <p class="media-caption">At launch site.</p>
+            </div>
+          </div>
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="myplane1.png" alt="Rocket1" class="media-item active" />
+              <p class="media-caption">RC plane</p>
+            </div>
+            <div class="media-wrapper">
+              <video src="RCPlane.mp4" controls class="media-item"></video>
+              <p class="media-caption">RC airplane flight video.</p>
+            </div>
+            <div class="media-wrapper">
+              <video src="testing.mp4" controls class="media-item"></video>
+              <p class="media-caption">The flight testing process.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="rocket5.png" alt="Rocket1" class="media-item active" />
+              <p class="media-caption">Final Preparations</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="rocket6.png" alt="Rocket1" class="media-item active" />
+              <p class="media-caption">Loading the rocket.</p>
+            </div>
+
+          </div>
+        </div>
+        <!-- <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button> -->
+      </div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <p class="tagline" style="text-align:center;">Rockets I built as co-president of Aerospace club and RC Airplanes I designed.</p>
+      <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
+      <div class="project-details" style="display: block;">
+        <p>After joining as a member of the Aerospace Club my freshman year, I was promoted to Co-President in 11th grade. I founded 2 rocketry teams to compete in the American Rocketry Challenge. I led the fundraising $2.5K from school administration through formal proposals and pitching. We designed a rocket, 
+          aiming to reach a height of 790 feet and return safely within the time limit, while carrying a payload of two raw eggs. We had a total of three launches, with two successful attempts. The remote control plane was custom built from foam board. It features gyro stabilization for smooth flight.
+        </p>
+        <p> With little experience in rocketry, I recruited teammates to join my cause by providing a sense of direction, eventually forming two teams of 10. Over five months, I led the team through our first build process - doing reserach, proposing ideas, and eliciting feedback at each step. We competed our rocket days before our first launch, 
+          still not fully knowing precisely what to expect. On our first launch, our rocket miraculously flew straight as expected - a successful first launch. When we read over the altimeter data, we noticed our altitude had fallen slightly short of our goal, so we removed some weight. This, however, destabilized it for the second launch, causing it to careen 
+          across the field and shred itself to pieces. We left the launch site defeated but knowing we still had another launch day. 
+        </p>
+        <p>But that launch day would be next week, leaving us with 5 days to patch everything back together in time. I first called a meeting to assess what went wrong, and how we should bounce back. We quickly identified the problem: when we removed the weights, the center of gravity had shifted, throwing our rocket off balance. We pieced our rocket back together, using spare components and 
+          pieces we brought back. We brought it back to the field the next weekend, conducting two successful launches. On our third go, the rocket landed in a field of tall grass. When we were given the clear to recover it 10 minutes later, we couldn't locate it. That rocket probably won't turn up again, but its end, after everything we've been through, is oddly fitting. Our entire season has been about testing, 
+          rebuilding, and rising higher. We're now heading into our second year with far more experience and renewed determination.</p>
+      </div>
+    </div>
+    <div class="project" id="FTC">
+      <h3>FIRST Tech Challenge (FTC) Robots</h3>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <div class="media-gallery">
+        <!-- <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button> -->
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="IntoTheDeep.png" alt="IntoTheDeep" class="media-item active" />
+              <p class="media-caption">FTC robot: Into the Deep season.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="FTC Team 2.png" alt="Frenzy" class="media-item active" />
+              <p class="media-caption">Freight Frenzy Team</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Power Play Robot.png" alt="PPP" class="media-item active" />
+              <p class="media-caption">Power Play robot.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Power Play Robot CAD.png" alt="PPP" class="media-item active" />
+              <p class="media-caption">Power Play robot CAD model.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="FTC Team 1.png" alt="IntoTheDeep" class="media-item active" />
+              <p class="media-caption">PowerPlay team</p>
+            </div>
+            </div>
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="Freight Frenzy Robot.png" alt="Frenzy" class="media-item active" />
+              <p class="media-caption">Freight Frenzy robot build.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Team 3.png" alt="PPP" class="media-item active" />
+              <p class="media-caption">Tournament Winning Alliance</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Team 5.png" alt="PPP" class="media-item active" />
+              <p class="media-caption">League Champions</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Team 6.png" alt="PPP" class="media-item active" />
+              <p class="media-caption">Match Preparation</p>
+            </div>
+          </div>
+        </div>
+        <!-- <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button> -->
+      </div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <p class="tagline" style="text-align:center;">FTC Robots designed from 2020 to 2023</p>
+      <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
+      <div class="project-details" style="display: block;">
+        <p>I led the design and fabrication of three FIRST Tech Challenge robots from 2020 to 2024 (Freight Frenz, Power Play, Centerstage). 
+        All three are built around specific sets of rules, and they feature different approaches to manipulating game pieces to complete certain tasks, such as placing them on levels of shelves 
+        or stacking them on poles. 
+        </p>
+        <p> At the previous meet, our team had placed second out of 40 competitors, so confidence and morale were sky high. That is, until the chain for our robot’s virtual four-bar snapped 
+          mid-competition two weeks later, and its gripper—along with my confidence—cracked in half upon impacting the floor. Later, upon analyzing the defeat, we discovered several flaws 
+          that had not been effectively communicated. I interpreted our robot’s failure as an extension of my leadership—and resolved to pick up the pieces, literally and figuratively. 
+
+        <p>I implemented a better communication system that allowed team members to report issues so that we could track which problems still needed addressing.
+          This would improve collaboration between members, as those coming in to work on the robot after others had left would know exactly where to pick up as opposed to merely 
+          repeating the same work over and over, allowing us to track issues and solve them far more efficiently.</p>
+        </p>
+        <h4>Awards</h4>
+      <ul>
+        <li>2024 San Jose Qualifying Tournament Winners, Think Award Winners</li>
+        <li>2024 Norcal Regional Qualifiers</li>
+        <li>2023 Norcal Regional Gold Division Finalists</li>
+        <li>2023 Metro League Winning Alliance, Control Award 3rd Place</li>
+        <li>2022 San Jose Qualifying Tournament Design Award</li>
+        <li>2022 Sunnyvale Qualifying Tournament Design Award</li>
+        <li>2022 Sunnyvale Qualifying Tournament Winners</li>
+      </ul>
+      </div>
+    </div>
+    
+    <div class="project" id="VarsityDebateTeamCaptainCoach">
+      <h3>Varsity Debate Team Captain and Coach</h3>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <div class="media-gallery">
+        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="debate2.png" alt="pcbmodel" class="media-item active" />
+              <p class="media-caption">Berkeley Debate Tripples</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="debate3.JPG" alt="pcbmodel" class="media-item active" />
+              <p class="media-caption">At a Tournament</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="debate1.png" alt="pcbmodel" class="media-item active" />
+              <p class="media-caption">Degree of Distinction</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="debate4.png" alt="pcbmodel" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+          </div>
+        </div>
+        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+      </div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <p class="tagline" style="text-align:center; white-space: nowrap;">Nationally Ranked Public Forum Debater</p>
+      <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
+      <div class="project-details" style="display: block;">
+        <p>I'm a captain on my school's debate team, and I compete in Public Forum debate and have been ranked as high as in the top 80 debaters nationally, while also qualifying to the Tournament of Champions. I also serve as an assistant coach at the Harker Middle School, mentoring new debaters, organizing drills, and providing feedback on speeches and practice rounds.</p>
+        <p>To support teammates and middle school mentees, I held practice rounds after school, hosted extra sessions, and reassured them before their first tournaments. At middle school practice, when Natalie froze mid-round, I guided her through generating responses, gathering material to deliver a rebuttal with confidence. We tackled things together, culminating in six members, including myself, qualifying for the Tournament of Champions. The middle schoolers participated in their own first tournament, returning to share stories of victories and new arguments. </p>
+      </div>
+    </div>
+    
+    <div class="project" id="HarvardVentures">
+      <h3>Harvard Ventures Tech Program</h3>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <div class="media-gallery">
+        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="harvard1.png" alt="pcbmodel" class="media-item active" />
+              <p class="media-caption">Team project at Harvard Ventures Tech Program.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="harvard2.png" alt="pcbschematic" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="harvard3.png" alt="pcbmodel" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="harvard4.png" alt="pcbschematic" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="harvard5.png" alt="pcbmodel" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="harvard6.png" alt="pcbschematic" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="harvard7.png" alt="pcbmodel" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="harvard8.png" alt="pcbschematic" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+          </div>
+        </div>
+        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+      </div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <p class="tagline" style="text-align:center; white-space: nowrap;">Participation in an intensive technology entrepreneurship program at Harvard University.</p>
+      <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
+      <div class="project-details" style="display: block;">
+        <p>Selected to join the Harvard Ventures Tech Program, an intensive program designed to teach participants how to turn technical ideas into viable startups. I worked on team projects focused on product development, market research, and pitching to investors.</p>
+        <p>I led our team in developing a software prototype. We also did market research to identify gaps with other technologies and integrated solutions to them. Finally, we pitched our progress to the CEO of the start up, presenting our ideas and receiving feedback.</p>
+      </div>
+    </div>
+    
+    <section id="awards">
+      <h2>Awards</h2>
+      <div class="awards-grid">
+        <div class="award-category" style="grid-area: research;">
+          <h3>Research</h3>
+          <ul>
+            <li>4th ISEF Grand Award, Biomedical Engineering, 2025</li>
+            <li>Junior Science and Humanities Symposium, National Oral Presenter, 2024</li>
+            <li>Best Paper Award, 3rd Place, IEEE 3rd International Conference on Machine Intelligence, 2024</li>
+            <li>California Science & Engineering Fair 5th Place, Kindeva Innovator Award ($250), 2025</li>
+            <li>Synopsys Championship Grand Award, Best of Championship, 2025 </li>
+            <li>Synopsys Championship First Place, Biomedical Engineering, 2025</li>
+            <li>Sigma Xi Student Research Compeition Grand Prize, 2025</li>
+            <li>Junior Science and Humanities Symposium, Northern California 2nd Place in Chem, 2025</li>
+            <li>Synopsys Championship 2nd Place in Electrical Engineering, 2024</li>
+            <li>American Society for Engineers of Indian Origin Award, Honorable Mention, 2025</li>
+          </ul>
+        </div>
+        <div class="award-category" style="grid-area: business;">
+          <h3>Entrepreneurship</h3>
+          <ul>
+            <li>Pete Conrad Scholar, Energy & Environment Category, Conrad Challenge, 2025</li>
+            <li>Diamond Challenge Finalist, 2025</li>
+            <li>1517 Fund Medici Grant of $1k</li>
+            <li>Conrad Challenge Innovator Team (2025)</li>
+          </ul>
+        </div>
+        <div class="award-category" style="grid-area: olympiads;">
+          <h3>Olympiads & Competitions</h3>
+          <ul>
+            <li>2x AIME Qualifier (2023 & 2024), 1x w/ Distinction (2023)</li>
+            <li>USACO Silver (2023)</li>
+            <li>FRC Worlds Qualifier 2023, Impact Award</li>
+            <li>FTC NorCal Regional Finalist, Control Award 2nd Place, Inspire Award 2nd</li>
+            <li>Tournament of Champions Qualifier, Public Forum Debate, 2025</li>
+            <li>NSDA Degree of Distinction, 2025</li>
+            <li>Technology Student Association, Tests of Engineering Aptitude, Math, and Science Nationals Qualifying Team, 2023 & 2025 </li>
+            <li>Scholastic Art and Writing Silver Key, 2022 & 2023</li>
+            <li>AP Scholar w/ Distinction (2024, 2025)</li> 
+          </ul>
+        </div>
+        <div class="award-category" style="grid-area: volunteering;">
+          <h3>Volunteering / Misc.</h3>
+          <ul>
+            <li>Coca-Cola Scholars Semifinalist, 2025</li>
+            <li>President's Volunteer Service Award Gold, 2024</li>
+            <li>President's Volunteer Service Award Bronze, 2023</li>
+            <li>Section Runner Up, Varsity Tennis, 2025</li>
+            <li>All-League 3rd Team, Top 30 Player, 2024</li>
+            <li>Section Semi-finalist, League Runner Up, 2024 </li>
+            <li>Bay Area Tennis Classic, Runner Up, 2025</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+
+<div id="page-community" style="display:none">
+  <section id="community-service">
+    <h2>Community Service</h2>
+    <h3 style="text-align:center; color:#4488FF; margin-bottom:1rem;">Under my 501(c) 3 Non-Profit: <a href="https://www.creamofthecropeducation.org/" target="_blank" rel="noopener noreferrer">Cream of the Crop</a></h3>
+    
+    <div class="project" id="STEMWorkshops">
+      <h3>STEM Workshops</h3>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <div class="media-gallery">
+        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="StemWK1.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="StemWK2.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <video src="IMG_4440 copy.MOV" controls class="media-item"></video>
+              <p class="media-caption">Workshop video.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="StemWK4.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="StemWK5.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+          </div>
+          <div class="media-row">
+            <div class="media-wrapper">
+              <img src="StemWK6.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="StemWK7.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="StemWK8.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="StemWK9.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="StemWK3.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+          </div>
+        </div>
+        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+      </div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <p class="tagline">Led hands-on STEM sessions at local Title 1 elementary schools using LEGO robotics and coding games.</p>
+      <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
+      <div class="project-details" style="display: block;">
+        <p>When I was conducting robotics demos, I was approached by a teacher at Henry Ford Elementary who was interested in furthering the depth of robotics in her STEM program. 
+          She asked how to get students excited and shared her struggles. Listening, I realized that her problem was systemic: the curriculum was fixated on worksheets rather than wonder.</p>
+
+        <p>We began proposing changes. I introduced a hands-on Robotics curriculum and founded a district-wide FIRST LEGO League competition for eight teams. 
+          Rather than prescribing instructions, we encouraged testing unique ideas, and excitement overtook boredom as over 60 students huddled over sensors, cheered the robot on, and laughed at code going wrong.</p>
+
+        <p>We've now continued our program into the school year, having raised $4.5K to provide kits and materials for our classes and creating an after school enrichment program and 
+          LEGO robotics league for Henry Ford's students.</p>  
+      </div>
+    </div>
+
+    <div class="project" id="FTC_Coaching">
+      <h3>FTC Robotics Coaching</h3>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <div class="media-gallery">
+        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+        <div class="media-container">
+          <div class="media-row">
+            <div class="media-wrapper">
+            <img src="coaching1.png" alt="coaching" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="coaching2.png" alt="coaching" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="coaching3.png" alt="coaching" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="coaching4.png" alt="coaching" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          <div class="media-wrapper">
+            <img src="ftc.png" alt="coaching" class="media-item active" />
+            <p class="media-caption"></p>
+          </div>
+          </div>
+        </div>
+        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+      </div>
+      <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+      <p class="tagline">Coached FLL and FTC Teams to regional and state accolades.</p>
+      <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
+      <div class="project-details" style="display: block;">
+        <p>I organized several robotics related summer programs as well. I mentored three FIRST LEGO League and FIRST Tech Challenge teams, teaching both the basics of the competition as well as more advanced skills. I also hosted 
+          a series of one and two week long summer camps, totalling 50 students across them. 
+        </p>
+
+        <p>I recruited peers as teaching aides, and expanded our portfolio of workshops to include introductions to all aspects of the compitition and cover a breadth of technical skills from CAD and Computer Vision to 
+          Scratch Programming and 3D printing. All of these teams experienced heighted success, advancing to regional and state rounds. One even won the mentor award at a FIRST LEGO League tournament. Still, the strongest affirmation
+          came at the start of the next season, as I watched our students prepare for their upcoming challenges with new fervor and enthusiasm.
+        </p>
+      </div>
+    </div>
+
+    <div id="extra-community" style="display: block;">
+
+      <div class="project" id="RCPlanes">
+        <h3>Introduction to Remote Control Airplanes</h3>
+        <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+
+        <div class="media-gallery">
+        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+        <div class="media-container">
+          <div class="media-row">
+            
+            <div class="media-wrapper">
+              <img src="plane1.png" alt="Plane Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="plane2.png" alt="Plane Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="plane3.png" alt="Plane Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="plane4.png" alt="Plane Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="plane5.png" alt="Plane Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="plane6.png" alt="Plane Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="plane7.png" alt="Plane Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+
+          </div>
+        </div>
+        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+      </div>
+
+        <div class="scroll-hint">↔ Scroll sideways, drag the bar at the bottom, or use arrow keys to navigate galleries</div>
+        <p class="tagline">Led hands-on sessions building remote-control airplanes.</p>
+        <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
+        <div class="project-details" style="display: block;">
+          <p>I led a remote-control airplane workshop at a local library, with 8 middle school students participating. I taught the class to build RC airplanes from scratch using foamboard. We then took a fieldtrip to a local flying park to test them together.
+            But after hours of cutting and gluing, many of the class's planes came crashing down after wobbling just a few feet. I gathered the students around to try and identify problems, patching the battered airframes and wings while making adjustments based off of each test flight.
+            Soon, my students began offering suggestions, changing the geometry of the wings on their own or shifting the center of gravity around, trying to identify the ideal setup. Our on-the-spot fixes weren't exactly pretty, but our planes flew beautifully through the air. 
+          </p>
+        </div>
+      </div>
+
+      <div class="project" id="TennisCoaching">
+        <h3>Tennis Coaching</h3>
+        <div class="media-gallery">
+        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+        <div class="media-container">
+          <div class="media-row">
+            
+            <div class="media-wrapper">
+              <img src="tennis1.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="tennis2.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="tennis3.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="tennis4.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="tennis5.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="tennis6.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+
+          </div>
+        </div>
+        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+      </div>
+        <p class="tagline">Providing one-on-one tennis coaching and group lessons for young athletes.</p>
+        <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
+        <div class="project-details" style="display: block;">
+          <p>I coached beginner and intermediate students in tennis in both clinics and private lessons. 
+          I focused on a variety of key issues, including technique, strategy, and physical conditioning, footwork, and agility. 
+          To emphasize each of these areas, I developed new drills and personalized lesson plans to focus on what each player needed to work on. I also brought in peers to coach alongside me and offer even more individualized feedback.</p>
+        </div>
+      </div>
+      <h3 style="text-align:center; color:#4488FF; margin-bottom:1rem;">Other Volunteering Activities</h3>
+      <div class="project" id="Hiller">
+      <h3>Hiller Aviation Museum Volunteer</h3>
+        <div class="media-gallery">
+        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+        <div class="media-container">
+          <div class="media-row">
+            
+            <div class="media-wrapper">
+              <img src="Hiller1.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption">Hiller Aviation Museum Volunteering.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Hiller2.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Hiller3.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption">Hiller Aviation Museum Volunteering.</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Hiller4.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption"></p>
+            </div>
+
+          </div>
+        </div>
+        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+      </div>
+        <p class="tagline">Exhibit Guide Volunteer at Hiller Aviation Museum</p>
+        <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
+        <div class="project-details" style="display: block;">
+          <p>I shared my aviation knowledge while serving as a volunteer at the Hiller Aviation Museum. I ran a variety of exhibits, from a 747 fuselage to flight simulators and a drone-ples. 
+            I often answered questions from visitors and guided tours of the exhibits I was in charge of. I also created engaging exercises and interactive labs at the Innovation Lab, such as demonstrations of how 
+          airplane engines function, or how wings and propellors produce lift and thrust.</p>
+        </div>
+      </div>
+
+      <div class="project" id="Enable">
+        <h3>Enabling the Future Chapter Leader</h3>
+        <div class="media-gallery">
+        <button class="gallery-btn prev-btn" onclick="changeMedia(this, -1)">&#10094;</button>
+        <div class="media-container">
+          <div class="media-row">
+            
+            <div class="media-wrapper">
+              <img src="Enable1.png" alt="STEM Workshops" class="media-item active" />
+              <p class="media-caption">Enable the Future - prosthetic arm design.</p>
+            </div>
+            <div class="media-wrapper">
+              <video src="Enable2.mov" controls class="media-item"></video>
+              <p class="media-caption">Hand Demo</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Enable3.JPG" alt="Conrad 8" class="media-item" />
+              <p class="media-caption">Group Meeting</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Enable4.JPG" alt="Conrad 8" class="media-item" />
+              <p class="media-caption">Group Meeting</p>
+            </div>
+            <div class="media-wrapper">
+              <img src="Enable5.JPG" alt="Conrad 8" class="media-item" />
+              <p class="media-caption">Group Meeting</p>
+            </div>
+          </div>
+        </div>
+        <button class="gallery-btn next-btn" onclick="changeMedia(this, 1)">&#10095;</button>
+      </div>
+        <p class="tagline">Designing and printing accessible prosthetics for patients around the globe.</p>
+        <button class="expand-button" onclick="toggleDetails(this)">Show Less</button>
+        <div class="project-details" style="display: block;">
+          <p>I founded a community chapter and established a team with 4 members, designing new accessible prosthetic devices. We designed and fabricated 4 accessible prosthetic limbs using CAD and 3D printing. 
+            I also trained members to customize prosthetic limbs, fabricate components of arms, and assemble complete devices.</p>
+        </div>
+      </div>
+
+    </div>
+</section>
+</div>
+
+
+<!--   <script>
+    (function() {
+      const correctPassword = "1"; // Change this to your password
+
+      function promptPassword() {
+        const entered = prompt("Enter password to access this site:");
+        if (entered === correctPassword) {
+          return;
+        } else {
+          alert("Incorrect password. Please try again.");
+          promptPassword();
+        }
+      }
+
+      promptPassword();
+    })();
+  </script> -->
+
+<!-- particles -->
+<!-- <script>
+  document.addEventListener("mousemove", function(e) {
+    const particle = document.createElement("div");
+    particle.classList.add("particle");
+    particle.style.left = e.pageX + "px";
+    particle.style.top = e.pageY + "px";
+
+    const colors = ['#FFAA00', '#FF4444', '#4488FF'];
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    particle.style.background = color;
+    particle.style.boxShadow = `0 0 10px ${color}`;
+
+    const angle = Math.random() * 2 * Math.PI;
+    const distance = 5 + Math.random() * 10;
+    const dx = Math.cos(angle) * distance;
+    const dy = Math.sin(angle) * distance;
+    particle.style.transform = `translate(${dx}px, ${dy}px) scale(1)`;
+
+    document.body.appendChild(particle);
+
+    setTimeout(() => {
+      particle.remove();
+    }, 1000);
+  });
+</script> -->
+
+
+
+<script>
+  // Update gallery navigation button states - now does nothing (arrows always enabled)
+  function updateGalleryButtons(gallery) {
+    // No disabling or graying out; arrows always active.
+  }
+
+  function changeMedia(button, direction) {
+    const gallery = button.parentElement;
+    const isTwoRow = !!gallery.querySelector('.media-container');
+    let container, mediaItems;
+
+    if (isTwoRow) {
+      container = gallery.querySelector('.media-container');
+      // .media-wrapper items in both rows (carousel is all items in both rows, in order)
+      mediaItems = Array.from(container.querySelectorAll('.media-row .media-wrapper'));
+    } else {
+      container = gallery.querySelector('.media-items');
+      mediaItems = Array.from(container.querySelectorAll('.media-wrapper'));
+    }
+    // Fallback to .media-item if .media-wrapper missing
+    if (mediaItems.length === 0) {
+      if (isTwoRow) {
+        mediaItems = Array.from(container.querySelectorAll('.media-row .media-item'));
+      } else {
+        mediaItems = Array.from(container.querySelectorAll('.media-item'));
+      }
+    }
+
+    // Number of items visible per row (estimate by fitting in gallery width)
+    const galleryWidth = gallery.getBoundingClientRect().width;
+    const itemWidth = mediaItems[0].getBoundingClientRect().width + parseFloat(getComputedStyle(mediaItems[0]).marginRight || 0);
+    const visibleCount = Math.max(1, Math.floor(galleryWidth / itemWidth));
+    const totalItems = mediaItems.length;
+
+    // Track current index on gallery element
+    if (typeof gallery.currentIndex !== 'number') gallery.currentIndex = 0;
+    // Advance index (loop infinitely)
+    gallery.currentIndex += direction;
+    if (gallery.currentIndex < 0) gallery.currentIndex = totalItems - visibleCount;
+    if (gallery.currentIndex > totalItems - visibleCount) gallery.currentIndex = 0;
+
+    let offset = gallery.currentIndex * itemWidth;
+    // Set transform for each row (for two-row), or container (for one-row)
+    if (isTwoRow) {
+      const rows = gallery.querySelectorAll('.media-row');
+      rows.forEach(row => {
+        row.style.transform = `translateX(${-offset}px)`;
+      });
+    } else {
+      container.style.transform = `translateX(${-offset}px)`;
+    }
+  }
+
+  // Initialize gallery button states on page load (no longer needed, but function is a no-op)
+  window.addEventListener('DOMContentLoaded', () => {
+    const galleries = document.querySelectorAll('.media-gallery');
+    galleries.forEach(gallery => updateGalleryButtons(gallery));
+  });
+</script>
+
+</script>
+
+
+  <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:9999; flex-direction:column;">
+    <span id="lightbox-close" style="position:absolute; top:20px; right:30px; color:white; font-size:2rem; cursor:pointer;">&times;</span>
+    <img id="lightbox-img" src="" alt="" style="max-width:90%; max-height:80%; border-radius:10px; margin-bottom:1rem; object-fit:contain;">
+    <video id="lightbox-video" controls style="max-width:90%; max-height:80%; border-radius:10px; margin-bottom:1rem; display:none;"></video>
+    <p id="lightbox-caption" style="color:white; font-size:1rem; max-width:80%; text-align:center;"></p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.media-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const lightbox = document.getElementById('lightbox');
+        const img = document.getElementById('lightbox-img');
+        const video = document.getElementById('lightbox-video');
+        const caption = document.getElementById('lightbox-caption');
+        const capText = item.parentElement.querySelector('.media-caption')?.innerText || '';
+
+        if (item.tagName.toLowerCase() === 'video') {
+          video.src = item.src;
+          video.style.display = 'block';
+          img.style.display = 'none';
+        } else {
+          img.src = item.src;
+          img.style.display = 'block';
+          video.style.display = 'none';
+        }
+        caption.textContent = capText;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    document.getElementById('lightbox-close').addEventListener('click', () => {
+      const lightbox = document.getElementById('lightbox');
+      const video = document.getElementById('lightbox-video');
+      video.pause();
+      lightbox.style.display = 'none';
+    });
+
+    document.getElementById('lightbox').addEventListener('click', (e) => {
+      if (e.target.id === 'lightbox') {
+        const video = document.getElementById('lightbox-video');
+        video.pause();
+        e.currentTarget.style.display = 'none';
+      }
+    });
+  </script>
+
+  <script>
+  function toggleExtraImages(button) {
+    const extraContainer = button.previousElementSibling;
+    if (extraContainer.style.display === "none" || extraContainer.style.display === "") {
+      extraContainer.style.display = "grid";
+      button.textContent = "Show Less Images";
+    } else {
+      extraContainer.style.display = "none";
+      button.textContent = "Show More Images";
+    }
+  }
+  </script>
+
+  <script>
+  let hoveredGallery = null;
+
+  // Track which gallery is being hovered
+  document.querySelectorAll('.media-gallery').forEach(gallery => {
+    gallery.addEventListener('mouseenter', () => {
+      hoveredGallery = gallery.querySelector('.media-container');
+    });
+    gallery.addEventListener('mouseleave', () => {
+      hoveredGallery = null;
+    });
+  });
+
+  // Listen for left/right arrow key presses
+  document.addEventListener('keydown', (e) => {
+    if (!hoveredGallery) return;
+    const scrollAmount = 100; // pixels per key press
+    if (e.key === 'ArrowRight') {
+      hoveredGallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+      hoveredGallery.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      e.preventDefault();
+    }
+  });
+  </script>
+
+
+  <!-- Image Modal -->
+<div id="imageModal" class="image-modal">
+  <span class="close-modal">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+
+<script>
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  const closeBtn = document.querySelector('.close-modal');
+  let currentGallery = [];
+  let currentIndex = 0;
+
+  // Open modal when image clicked
+  document.querySelectorAll('.media-item').forEach(item => {
+    if (item.tagName.toLowerCase() === 'img') {
+      item.addEventListener('click', e => {
+        const gallery = Array.from(e.target.closest('.media-container')
+          .querySelectorAll('.media-item'))
+          .filter(el => el.tagName.toLowerCase() === 'img');
+        currentGallery = gallery;
+        currentIndex = gallery.indexOf(e.target);
+
+        modal.style.display = 'block';
+        modalImg.src = e.target.src;
+      });
+    }
+  });
+
+  // Close modal on X or background click
+  closeBtn.onclick = () => { modal.style.display = 'none'; };
+  modal.onclick = e => { if (e.target === modal) modal.style.display = 'none'; };
+
+  // Keyboard controls
+  document.addEventListener('keydown', e => {
+    if (modal.style.display === 'block') {
+      if (e.key === 'Escape') modal.style.display = 'none';
+      else if (e.key === 'ArrowRight') showNextImage();
+      else if (e.key === 'ArrowLeft') showPrevImage();
+    }
+  });
+
+  function showNextImage() {
+    if (currentGallery.length === 0) return;
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    modalImg.src = currentGallery[currentIndex].src;
+  }
+
+  function showPrevImage() {
+    if (currentGallery.length === 0) return;
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    modalImg.src = currentGallery[currentIndex].src;
+  }
+</script>
+
+</body>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('section, .project, .award-category, #community-service, #publications');
+    animatedElements.forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    });
+  });
+</script>
+</html>
+<script>
+function showPage(page) {
+  const home = document.getElementById('page-home');
+  const community = document.getElementById('page-community');
+  const stem = document.getElementById('page-stem-projects');
+  const entrepreneurship = document.getElementById('page-entrepreneurship');
+
+  if (page === 'community') {
+    home.style.display = 'none';
+    community.style.display = 'block';
+    if (stem) stem.style.display = 'none';
+    if (entrepreneurship) entrepreneurship.style.display = 'none';
+    window.location.hash = '#community-service';
+  } else if (page === 'stem-projects') {
+    home.style.display = 'none';
+    community.style.display = 'none';
+    if (stem) stem.style.display = 'block';
+    if (entrepreneurship) entrepreneurship.style.display = 'none';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else if (page === 'entrepreneurship') {
+    home.style.display = 'none';
+    community.style.display = 'none';
+    if (stem) stem.style.display = 'none';
+    if (entrepreneurship) entrepreneurship.style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else if (page === 'research') {
+    // Show home, scroll to research section
+    home.style.display = 'block';
+    community.style.display = 'none';
+    if (stem) stem.style.display = 'none';
+    if (entrepreneurship) entrepreneurship.style.display = 'none';
+    document.getElementById('research').scrollIntoView({ behavior: 'smooth' });
+  } else {
+    // Always show home page first
+    home.style.display = 'block';
+    community.style.display = 'none';
+    if (stem) stem.style.display = 'none';
+    if (entrepreneurship) entrepreneurship.style.display = 'none';
+
+    // Scroll to section if applicable
+    if (page === 'projects') {
+      document.getElementById('research').scrollIntoView({ behavior: 'smooth' });
+    } else if (page === 'awards') {
+      document.getElementById('awards').scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+}
+</script>
+<script>
+  function toggleDetails(button) {
+    const details = button.nextElementSibling;
+    if (details.style.display === "none") {
+      details.style.display = "block";
+      button.textContent = "Show Less";
+    } else {
+      details.style.display = "none";
+      button.textContent = "Learn More";
+    }
+  }
+</script>
+
+
+</body>
+
+<script>
+  const modal = document.getElementById('imageModal');
+  // const modalImg = document.getElementById('modalImg');
+  const closeModalBtn = document.getElementById('closeModal');
+
+  // Open modal when any image is clicked
+  document.querySelectorAll('.media-item').forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = 'block';
+      modalImg.src = img.src;
+    });
+  });
+
+  // Close modal
+  function closeModal() {
+    modal.style.display = 'none';
+    modalImg.src = '';
+  }
+
+  // X button
+  closeModalBtn.addEventListener('click', closeModal);
+
+  // Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Click outside image
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+</script>
+
+</html>
