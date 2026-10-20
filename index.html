@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evan Zhang - Portfolio</title>
-  <meta name="description" content="Evan Zhang: soft robotics research, startups, and STEM outreach.">
+  <title>Evan Zhang - Engineering Portfolio</title>
+  <meta name="description" content="Engineering portfolio of Evan Zhang: soft robotics, actuators, embedded hardware, and machine learning for sensing.">
+  <meta property="og:title" content="Evan Zhang - Engineering Portfolio">
+  <meta property="og:description" content="Soft robotics, actuators, embedded hardware, and machine learning for sensing.">
+  <meta property="og:image" content="SPIRoMain.jpg">
   <link rel="icon" href="logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,7 +127,7 @@
     .menu-toggle[aria-expanded="true"] .menu-icon::before { transform: translateY(6px) rotate(45deg); }
     .menu-toggle[aria-expanded="true"] .menu-icon::after { transform: translateY(-6px) rotate(-45deg); }
 
-    @media (max-width: 1150px) {
+    @media (max-width: 1250px) {
       .site-header { padding: 0.75rem 1rem; }
       .brand h1 { font-size: 1.5rem; }
       .brand img { height: 34px; }
@@ -447,6 +450,313 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { transition: none !important; animation: none !important; }
     }
+    /* ===== Portfolio additions (same palette and fonts as the original) ===== */
+    .nav-resume {
+      border: 2px solid #FFAA00; border-radius: 6px;
+      padding: 0.25rem 0.8rem; margin-left: 1.5rem;
+    }
+    .nav-resume:hover { background: #FFAA00; color: #000; text-decoration: none; }
+    @media (max-width: 1250px) {
+      .nav-resume { display: inline-block; margin: 0.5rem 0 0; }
+    }
+
+    .about-role {
+      font-family: 'Montserrat', 'Segoe UI', sans-serif; font-weight: 700;
+      color: #224488; font-size: 1.1rem;
+    }
+    .hero-buttons, .site-footer ul { list-style: none; margin: 0; padding: 0; }
+    .hero-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 0.5rem; }
+    .hero-btn {
+      display: inline-block; padding: 0.55rem 1.1rem; border-radius: 6px;
+      border: 2px solid #4488FF; color: #224488; background: #fff;
+      font-family: 'Montserrat', 'Segoe UI', sans-serif; font-weight: 700; font-size: 0.95rem;
+      text-decoration: none; transition: background-color 0.2s, color 0.2s;
+    }
+    .hero-btn:hover { background: #f0f4ff; }
+    .hero-btn-primary { background: #4488FF; color: #fff; }
+    .hero-btn-primary:hover { background: #3366cc; border-color: #3366cc; }
+
+
+    /* Featured projects */
+    .feature-grid {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem; max-width: 1200px; margin: 1rem auto 0;
+    }
+    .feature-card {
+      display: flex; flex-direction: column;
+      background: #f8faff; border-left: 4px solid #4488FF; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08); color: inherit; text-decoration: none;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .feature-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.12); transform: translateY(-3px); }
+    .feature-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; background: #e3e9f7; }
+    .feature-text { display: flex; flex-direction: column; gap: 0.35rem; padding: 1rem 1.1rem 1.2rem; }
+    .feature-title { font-family: 'Montserrat', 'Segoe UI', sans-serif; font-weight: 700; color: #224488; font-size: 1.1rem; }
+    .feature-desc { color: #444; font-size: 0.92rem; line-height: 1.5; }
+
+    /* Skills reuse the award-card look */
+    .skill-group li::before { content: "\2022  "; }
+
+    /* Publications */
+    .pub-wrap { max-width: 62rem; margin: 0 auto; text-align: left; }
+    .pub-heading { color: #224488; font-size: 1.15rem; margin: 1.75rem 0 0.5rem; }
+    .pub-heading:first-child { margin-top: 0.5rem; }
+    .publications-list { list-style: none; padding: 0; margin: 0; }
+    .publications-list li {
+      position: relative; padding: 0.75rem 0 0.75rem 2rem;
+      border-bottom: 1px solid #e6ebf5; line-height: 1.55; font-size: 0.95rem; color: #444;
+      overflow-wrap: anywhere;
+    }
+    .publications-list li::before { content: "\1F4C4"; position: absolute; left: 0; top: 0.75rem; }
+    .publications-list a { color: #224488; }
+
+    /* Project cards: summary, spec sheet, key numbers */
+    .project-summary { margin: 0 0 1rem; max-width: 62rem; line-height: 1.6; color: #333; }
+    .spec-list {
+      display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.45rem 1.25rem;
+      margin: 0 0 1rem; max-width: 62rem; font-size: 0.95rem;
+    }
+    .spec-list > div { display: contents; }
+    .spec-list dt { font-family: 'Montserrat', 'Segoe UI', sans-serif; font-weight: 700; color: #224488; }
+    .spec-list dd { margin: 0; color: #444; line-height: 1.5; }
+    .spec-list a, .project-summary a { color: #224488; }
+    .metrics {
+      list-style: none; padding: 0; margin: 0 0 0.5rem;
+      display: flex; flex-wrap: wrap; gap: 0.75rem;
+    }
+    .metrics li {
+      background: #fff; border: 1px solid #dbe4f7; border-top: 3px solid #FFAA00; border-radius: 10px;
+      padding: 0.6rem 0.9rem; min-width: 8.5rem;
+      display: flex; flex-direction: column; gap: 0.1rem;
+    }
+    .metrics strong { font-family: 'Montserrat', 'Segoe UI', sans-serif; color: #224488; font-size: 1.25rem; }
+    .metrics span { font-size: 0.82rem; color: #555; line-height: 1.3; }
+    .project .expand-button { margin-top: 0.75rem; }
+    .project-details h4 { color: #224488; margin: 1.25rem 0 0.4rem; }
+    .project-details h4:first-child { margin-top: 0.5rem; }
+
+    /* Outreach entries are shorter */
+    .project-compact .media-gallery { --item-h: clamp(120px, 14vw, 190px); }
+    .project-compact h3 { font-size: 1.2rem; }
+
+    /* Footer matches the header */
+    .site-footer {
+      background: #000; color: #fff; padding: 1.5rem 2rem;
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;
+      font-family: 'Nunito', 'Segoe UI', sans-serif;
+    }
+    .site-footer p { margin: 0; font-weight: 700; }
+    .site-footer ul { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+    .site-footer a { color: #fff; text-decoration: none; font-weight: 700; }
+    .site-footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 1000px) { .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 600px) { .feature-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 800px) {
+      .spec-list { grid-template-columns: 1fr; gap: 0.1rem; }
+      .spec-list dd { margin-bottom: 0.5rem; }
+      .metrics li { min-width: calc(50% - 0.4rem); flex: 1 1 calc(50% - 0.4rem); }
+      .site-footer { padding: 1.25rem 1rem; }
+    }
+    /* Tighter menu spacing on mid-size screens so the longer tab names fit on one line */
+    @media (min-width: 1251px) and (max-width: 1420px) {
+      .site-header { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .brand h1 { font-size: 1.7rem; }
+      .nav-link { margin-left: 1rem; font-size: 1rem; }
+      .nav-resume { margin-left: 1rem; }
+      .dropdown-content { left: 1rem; }
+    }
+
+    /* ===== Modern refresh (same palette: black, #FF4444, #224488, #4488FF, #FFAA00, #f4f4f4, #f8faff, #f0f4ff) ===== */
+    html { font-size: 106.25%; }
+    body { line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+    /* Header: frosted black bar, animated orange underline */
+    .site-header {
+      background: rgba(0, 0, 0, 0.88);
+      -webkit-backdrop-filter: saturate(160%) blur(12px);
+      backdrop-filter: saturate(160%) blur(12px);
+      padding: 0.7rem clamp(1rem, 3vw, 2.5rem);
+    }
+    .brand img { height: 34px; border-radius: 8px; }
+    .brand h1 { font-size: 1.5rem; letter-spacing: -0.01em; }
+    .nav-link {
+      position: relative; margin-left: 1.4rem; padding: 0.4rem 0;
+      font-size: 0.98rem; border-bottom: 0;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; border-radius: 2px;
+      background: #FFAA00; transform: scaleX(0); transform-origin: left; transition: transform 0.2s ease;
+    }
+    .nav-link:hover { text-decoration: none; }
+    .nav-link:hover::after, .nav-link[aria-current="page"]::after { transform: scaleX(1); }
+    .nav-resume { border-radius: 999px; padding: 0.35rem 1rem; border-width: 1.5px; }
+    .nav-resume::after { display: none; }
+    .dropdown-content {
+      top: calc(100% + 4px); left: 0.6rem; border-radius: 12px; padding: 0.4rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18); border: 1px solid #e3e9f7;
+    }
+    .dropdown::after { content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 8px; } /* hover bridge */
+    .dropdown-content { min-width: 250px; }
+    .dropdown-content a { border-radius: 8px; font-size: 0.95rem; white-space: nowrap; }
+    @media (min-width: 1251px) and (max-width: 1420px) {
+      .brand h1 { font-size: 1.4rem; }
+      .nav-link { margin-left: 1.05rem; font-size: 0.95rem; }
+      .nav-resume { margin-left: 1.05rem; }
+    }
+    @media (max-width: 1250px) {
+      .brand h1 { font-size: 1.35rem; }
+      .nav-link { margin-left: 0; font-size: 1.1rem; }
+      .nav-link::after { display: none; }
+      .dropdown-content { border: 0; padding: 0 0 0.4rem 1rem; box-shadow: none; min-width: 0; }
+      .dropdown-content a { white-space: normal; }
+      .dropdown::after { display: none; }
+    }
+
+    /* Page width and section cards */
+    main { max-width: 1240px; margin: 0 auto; padding: clamp(1rem, 3vw, 2rem) clamp(0.75rem, 3vw, 2rem) 0.5rem; }
+    #about, #featured, #skills, #publications, #research, #entrepreneurship-section,
+    #stem-projects-section, #outreach, #awards {
+      margin: 0 0 1.5rem;
+      padding: clamp(1.75rem, 4vw, 3rem) clamp(1.1rem, 4vw, 3rem);
+      border-radius: 22px;
+      border: 1px solid #eceef3;
+      box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 10px 30px rgba(16, 24, 40, 0.05);
+      text-align: left;
+    }
+    h2 {
+      text-align: left; margin: 0 0 1.5rem;
+      font-size: clamp(1.55rem, 2.6vw, 2.05rem); letter-spacing: -0.015em; line-height: 1.2;
+    }
+
+    /* About: photo beside the intro on wider screens */
+    .about-photo { border-radius: 22px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); }
+    /* Headshot framing: the second number picks which part of the photo shows.
+       50% is centered; lower numbers show more of the top and crop more of the bottom. */
+    .about-photo { object-position: 50% 15%; }
+    .about-role { margin: 0 0 0.25rem; }
+    .about-container > p { color: #444; }
+    .hero-btn { border-radius: 999px; padding: 0.6rem 1.3rem; border-width: 1.5px; font-size: 0.92rem; }
+    .hero-btn:hover { transform: translateY(-1px); }
+    @media (min-width: 801px) {
+      #about {
+        display: grid; grid-template-columns: 260px minmax(0, 1fr);
+        grid-template-rows: auto auto auto auto 1fr; column-gap: clamp(2rem, 5vw, 4rem); align-items: start;
+      }
+      #about > h2 { grid-column: 2; margin-bottom: 0.6rem; }
+      #about .about-container { display: contents; }
+      #about .about-photo { grid-column: 1; grid-row: 1 / span 5; width: 100%; height: auto; aspect-ratio: 275 / 300; }
+      #about .about-container > p, #about .hero-buttons { grid-column: 2; text-align: left; max-width: 44rem; }
+      #about .about-container > p:not(.about-role) { margin: 0.5rem 0 1.25rem; font-size: 1.02rem; line-height: 1.75; }
+      #about .hero-buttons { justify-content: flex-start; margin: 0; }
+    }
+
+    /* Featured project cards */
+    .feature-grid { max-width: none; gap: 1.25rem; }
+    .feature-card {
+      border-left: 0; border: 1px solid #e3e9f7; border-radius: 18px; background: #fff;
+      box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(34, 68, 136, 0.12); border-color: #c9d7f5; }
+    .feature-card img { transition: transform 0.5s ease; }
+    .feature-card:hover img { transform: scale(1.04); }
+    .feature-text { padding: 1rem 1.15rem 1.25rem; }
+    .feature-title { font-size: 1.05rem; }
+    .feature-desc { font-size: 0.9rem; color: #555; }
+
+    /* Skills as chips */
+    .award-category { border: 1px solid #e3e9f7; border-radius: 18px; box-shadow: none; padding: 1.4rem 1.5rem; }
+    .award-category h3 { font-size: 1.02rem; margin-bottom: 0.75rem; }
+    .awards-grid { gap: 1.25rem; max-width: none; }
+    .skill-group ul { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; }
+    .skill-group li {
+      padding: 0.35rem 0.8rem; text-indent: 0; font-size: 0.86rem; line-height: 1.3;
+      background: #fff; border: 1px solid #dbe4f7; border-radius: 999px; color: #224488;
+    }
+    .skill-group li::before { content: none; }
+    .award-category:not(.skill-group) li { font-size: 0.93rem; padding: 0.3rem 0 0.3rem 1rem; }
+
+    /* Publications: clean list, year-style dividers */
+    .pub-wrap { max-width: 64rem; margin: 0; }
+    .pub-heading { font-size: 1rem; color: #224488; }
+    .publications-list li { padding: 0.85rem 0 0.85rem 1.1rem; border-bottom: 1px solid #eef1f7; }
+    .publications-list li::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%; background: #4488FF; top: 1.45rem;
+    }
+    .publications-list a { text-decoration-color: rgba(34, 68, 136, 0.35); text-underline-offset: 2px; }
+    .publications-list a:hover { text-decoration-color: currentColor; }
+
+    /* Project cards */
+    .project {
+      max-width: 100%; margin: 0 0 1.5rem; padding: clamp(1.2rem, 3vw, 2rem);
+      background: #f8faff; border: 1px solid #e3e9f7; border-left: 1px solid #e3e9f7; border-radius: 20px;
+      box-shadow: none;
+    }
+    .project:last-child { margin-bottom: 0; }
+    .project:hover { box-shadow: 0 12px 32px rgba(34, 68, 136, 0.08); }
+    .project h3 { font-size: clamp(1.25rem, 2.2vw, 1.6rem); letter-spacing: -0.01em; margin-bottom: 0.6rem; }
+    .project-compact h3 { font-size: 1.15rem; }
+    .project-summary { font-size: 1rem; color: #444; }
+    .spec-list { font-size: 0.93rem; gap: 0.5rem 1.5rem; padding: 1rem 1.15rem; background: #fff; border: 1px solid #e3e9f7; border-radius: 14px; }
+    .spec-list dt { font-size: 0.85rem; padding-top: 0.1rem; }
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.6rem; margin-bottom: 0.25rem; }
+    .metrics li { min-width: 0; }
+    .metrics li { border: 1px solid #e3e9f7; border-radius: 14px; padding: 0.7rem 1rem; }
+    .metrics strong { font-size: 1.3rem; letter-spacing: -0.01em; }
+    .metrics strong::after {
+      content: ''; display: block; width: 18px; height: 3px; border-radius: 2px; background: #FFAA00; margin: 0.3rem 0 0.15rem;
+    }
+    .video-intro { text-align: left; font-size: 1rem; margin: -0.75rem 0 1.5rem; }
+    .video-intro a { text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .video-intro a::before {
+      content: ''; width: 0; height: 0; border-style: solid; border-width: 6px 0 6px 10px;
+      border-color: transparent transparent transparent currentColor;
+    }
+    .video-intro a:hover { text-decoration: underline; }
+
+    /* Show more / show less as a pill */
+    .expand-button {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: #224488; border: 1.5px solid #4488FF; border-radius: 999px;
+      padding: 0.5rem 1.15rem; font-size: 0.88rem; margin-top: 1rem;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    .expand-button::after {
+      content: ''; width: 0.45rem; height: 0.45rem; margin-top: -0.2rem;
+      border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg);
+      transition: transform 0.2s ease;
+    }
+    .expand-button[aria-expanded="true"]::after { transform: rotate(-135deg); margin-top: 0.2rem; }
+    .expand-button:hover { background: #4488FF; color: #fff; }
+    .project-details { font-size: 0.97rem; margin-top: 1rem; }
+
+    /* Carousels */
+    .media-gallery { border-radius: 16px; padding: 0.6rem; margin-top: 1.25rem; }
+    .media-container { scrollbar-width: thin; scrollbar-color: #224488 #dde6fb; }
+    .media-container::-webkit-scrollbar { height: 8px; background-color: #dde6fb; border-radius: 8px; }
+    .media-container::-webkit-scrollbar-thumb { background-color: #224488; border-radius: 8px; }
+    .media-caption { font-size: 0.8rem; color: #555; }
+    .gallery-btn {
+      width: 42px; height: 42px; color: #224488;
+      background: rgba(255, 255, 255, 0.9);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    }
+    .scroll-hint { font-style: normal; font-weight: 600; font-size: 0.78rem; margin: 0.6rem 0 0; }
+
+    /* Footer */
+    .site-footer { padding: 1.5rem clamp(1rem, 3vw, 2.5rem); margin-top: 1.5rem; font-size: 0.95rem; }
+
+    @media (max-width: 800px) {
+      main { padding-left: 0.6rem; padding-right: 0.6rem; }
+      #about, #featured, #skills, #publications, #research, #entrepreneurship-section,
+      #stem-projects-section, #outreach, #awards { border-radius: 18px; }
+      #about > h2 { text-align: center; }
+      .project { border-radius: 16px; }
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .metrics li { min-width: 0; flex: none; }
+    }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TBTN8XSM4"></script>
@@ -472,16 +782,16 @@
     <ul class="nav-list">
         <li><a class="nav-link" href="#home" data-page-link="home">Home</a></li>
         <li class="dropdown">
-          <a class="nav-link dropbtn" href="#research">Research</a>
+          <a class="nav-link dropbtn" href="#research" data-page-link="projects">Projects</a>
           <ul class="dropdown-content">
-            <li><a href="#SPIRo">SPIRo</a></li>
-            <li><a href="#HASEL">HASEL Actuators</a></li>
+            <li><a href="#SPIRo">SPIRo Pipe Inspection Robot</a></li>
+            <li><a href="#HASEL">HASEL Cardiac Actuators</a></li>
             <li><a href="#AmphibiousTurtle">Amphibious Robotic Turtle</a></li>
-            <li><a href="#Microscope">Microscopes</a></li>
+            <li><a href="#Microscope">Stanford Microscope Hardware</a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a class="nav-link dropbtn" href="#entrepreneurship" data-page-link="entrepreneurship">Entrepreneurship</a>
+          <a class="nav-link dropbtn" href="#ventures" data-page-link="ventures">Ventures</a>
           <ul class="dropdown-content">
             <li><a href="#EnviroAI">Enviro-AI</a></li>
             <li><a href="#PulsarRobotics">Pulsar Robotics</a></li>
@@ -489,26 +799,17 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a class="nav-link dropbtn" href="#stem-projects" data-page-link="stem-projects">Leadership in STEM &amp; Debate</a>
+          <a class="nav-link dropbtn" href="#builds" data-page-link="builds">Builds, Outreach &amp; Leadership</a>
           <ul class="dropdown-content">
-            <li><a href="#Rocketry">Model Rocketry and RC Aircraft</a></li>
-            <li><a href="#FTC">FIRST Tech Challenge Robots</a></li>
-            <li><a href="#VarsityDebateTeamCaptainCoach">Debate</a></li>
-            <li><a href="#HarvardVentures">Harvard Ventures Tech Program</a></li>
-            <li><a href="#awards">Awards</a></li>
+            <li><a href="#Rocketry">Model Rockets and RC Aircraft</a></li>
+            <li><a href="#FTC">FTC Robots</a></li>
+            <li><a href="#Enable">3D-Printed Prosthetics</a></li>
+            <li><a href="#outreach">Teaching and Outreach</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-          <a class="nav-link dropbtn" href="#community" data-page-link="community">Community Service</a>
-          <ul class="dropdown-content">
-            <li><a href="#STEMWorkshops">STEM Workshops</a></li>
-            <li><a href="#FTC_Coaching">FTC Robotics Coaching</a></li>
-            <li><a href="#RCPlanes">Introduction to RC Airplanes</a></li>
-            <li><a href="#TennisCoaching">Tennis Coaching</a></li>
-            <li><a href="#Hiller">Hiller Aviation Museum Volunteer</a></li>
-            <li><a href="#Enable">Enabling the Future</a></li>
-          </ul>
-        </li>
+        <li><a class="nav-link" href="#publications">Publications</a></li>
+        <li><a class="nav-link" href="#awards" data-page-link="honors">Honors</a></li>
+        <li><a class="nav-link nav-resume" href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
     </ul>
   </nav>
 </header>
@@ -519,26 +820,162 @@
   <section id="about">
     <h2>About Me</h2>
     <div class="about-container">
-      <img src="headshot2.png" alt="Evan Zhang" class="about-photo" width="275" height="300">
-      <p>Hi! I'm Evan, a freshman in the M&T program at the University of Pennsylvania passionate about all things mechanical and electrical engineering and entrepreneurship. I'm a maker and tinkerer at heart, and I love working on solutions for pressing issues, from medical challenges to environmental protection. Most likely, I was born with a roll of duct tape in my hands. Thank you for stopping by!</p>
-      <p class="about-links">
-        <a href="https://scholar.google.com/citations?user=SviwYmkAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-        <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-      </p>
+      <img src="headshot2.jpeg" alt="Evan Zhang" class="about-photo" width="275" height="300">
+      <p class="about-role">Electrical Engineering and Wharton finance, University of Pennsylvania (M&amp;T)</p>
+      <p>I'm Evan Zhang, a Management &amp; Technology dual-degree student at the University of Pennsylvania, studying Electrical Engineering at Penn Engineering and finance at Wharton. I design soft robots and the hardware around them: pneumatic and electrostatic actuators, sensing and machine-learning pipelines, PCBs, and lab apparatus. My work has been published at IEEE RoboSoft and other venues, tested in the field, and spun out into startups. I'm a maker at heart, most likely born with a roll of duct tape in my hands.</p>
+      <ul class="hero-buttons">
+        <li><a class="hero-btn hero-btn-primary" href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a class="hero-btn" href="https://scholar.google.com/citations?user=SviwYmkAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+        <li><a class="hero-btn" href="https://github.com/evanrzhang" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a class="hero-btn" href="https://www.youtube.com/watch?v=T7zwqyhp-2E" target="_blank" rel="noopener noreferrer">Video Overview</a></li>
+      </ul>
     </div>
   </section>
 
+  <section id="featured">
+    <h2>Featured Projects</h2>
+    <div class="feature-grid">
+      <a class="feature-card" href="#SPIRo">
+        <img src="SPIRoMain.jpg" alt="" loading="lazy" decoding="async">
+        <span class="feature-text">
+          <span class="feature-title">SPIRo</span>
+          <span class="feature-desc">Soft robot that crawls and climbs gas pipelines and detects leaks with 95% field accuracy.</span>
+        </span>
+      </a>
+      <a class="feature-card" href="#HASEL">
+        <img src="HASELMain.png" alt="" loading="lazy" decoding="async">
+        <span class="feature-text">
+          <span class="feature-title">HASEL Cardiac Actuators</span>
+          <span class="feature-desc">3D-printed electrostatic actuators with ML control for cardiac assist. ISEF Grand Award.</span>
+        </span>
+      </a>
+      <a class="feature-card" href="#AmphibiousTurtle">
+        <img src="turtle1.png" alt="" loading="lazy" decoding="async">
+        <span class="feature-text">
+          <span class="feature-title">Amphibious Robotic Turtle</span>
+          <span class="feature-desc">Limbs that morph between flippers and legs; rated to 10 m depth. Yale Faboratory.</span>
+        </span>
+      </a>
+      <a class="feature-card" href="#Microscope">
+        <img src="SideIllumination.jpeg" alt="" loading="lazy" decoding="async">
+        <span class="feature-text">
+          <span class="feature-title">Stanford Microscope Hardware</span>
+          <span class="feature-desc">Microscope components, PCBs, and behavioral rigs for the Schnitzer Group at Stanford.</span>
+        </span>
+      </a>
+      <a class="feature-card" href="#3DSolutions">
+        <img src="3D1.png" alt="" loading="lazy" decoding="async">
+        <span class="feature-text">
+          <span class="feature-title">3DSolutions.shop</span>
+          <span class="feature-desc">Distributed printer farm and instant-quote order system; 100+ orders fulfilled.</span>
+        </span>
+      </a>
+      <a class="feature-card" href="#FTC">
+        <img src="Power%20Play%20Robot.png" alt="" loading="lazy" decoding="async">
+        <span class="feature-text">
+          <span class="feature-title">FTC Robots</span>
+          <span class="feature-desc">Three competition robots designed and built; two Design Awards.</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="awards-grid skills-grid">
+      <div class="award-category skill-group">
+        <h3>Mechanical Design &amp; Fabrication</h3>
+        <ul>
+          <li>CAD</li>
+          <li>FDM and multi-material 3D printing</li>
+          <li>Direct ink writing (DIW)</li>
+          <li>Compliant mechanisms and laminar jamming</li>
+          <li>Pressure-rated enclosures</li>
+          <li>Rapid prototyping at production volume</li>
+        </ul>
+      </div>
+      <div class="award-category skill-group">
+        <h3>Soft Robotics &amp; Actuation</h3>
+        <ul>
+          <li>McKibben pneumatic artificial muscles</li>
+          <li>HASEL electrostatic actuators</li>
+          <li>Standalone pneumatic control (FlowIO)</li>
+          <li>Origami-inspired magnetic grippers</li>
+          <li>Buoyancy control</li>
+        </ul>
+      </div>
+      <div class="award-category skill-group">
+        <h3>Electronics &amp; Sensing</h3>
+        <ul>
+          <li>PCB design (rotary encoder boards)</li>
+          <li>Gas and thermal-imaging sensing</li>
+          <li>Fluidic piezoresistive pressure sensors</li>
+          <li>Microscope illumination and optics mounts</li>
+        </ul>
+      </div>
+      <div class="award-category skill-group">
+        <h3>Software &amp; Machine Learning</h3>
+        <ul>
+          <li>CNN feature fusion (AlexNet, ResNet-50, MobileNet)</li>
+          <li>Deep forest ensemble classifiers</li>
+          <li>ML-based control of nonlinear actuators</li>
+          <li>Web order system with instant quoting</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications &amp; Patents</h2>
+    <div class="pub-wrap">
+      <h3 class="pub-heading">Patents</h3>
+      <ul class="publications-list">
+        <li>E. Zhang and <strong>E. Zhang</strong> (2026) "<a href="https://patents.google.com/patent/US20260008176A1/en" rel="noopener noreferrer" target="_blank">SPIRo: An AI Based Origami Inspired Pneumatic Soft Robot with Multidimensional Locomotion and Multimodal Deep Feature Selection and Fusion with an Improved Deep Forest Classifier Architecture for Real-Time Gas Pipeline Leak Detection</a>." US Patent App. 19/274,609 (published as US 2026/0008176 A1)</li>
+        <li>Second patent application filed, December 2025</li>
+      </ul>
+      <h3 class="pub-heading">Journal Articles</h3>
+      <ul class="publications-list">
+        <li>Z. Ma, ... <strong>E. Zhang</strong>, ... A. Chortos, "Thermally Elongated Thermoplastic Nozzles Unlock Micro-Scale Direct Ink Writing," Advanced Materials Technologies, 2025 (In Press)</li>
+        <li>E. Zhang and <strong>E. Zhang</strong> (2025) "<a href="https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1569621/full" rel="noopener noreferrer" target="_blank">Gas pipeline leakage detection based on multiple multimodal deep feature selections and optimized deep forest classifier</a>." Frontiers in Environmental Science, 13:1569621. doi: <a href="https://doi.org/10.3389/fenvs.2025.1569621" rel="noopener noreferrer" target="_blank">10.3389/fenvs.2025.1569621</a>.</li>
+      </ul>
+      <h3 class="pub-heading">Conference Papers</h3>
+      <ul class="publications-list">
+        <li><strong>E. Zhang</strong> and A. Chortos, “3D-Printed HASEL Actuators With Integrated Fluidic Piezoresistive Pressure Sensor for Cardiac Assist Applications,” 2025 11th International Conference on Mechatronics Systems and Robots, Singapore, 2025 (In Press) <em>(Best Presentation Award)</em></li>
+        <li><strong>E. Zhang</strong> and E. Zhang, "<a href="https://ieeexplore.ieee.org/abstract/document/11020922" rel="noopener noreferrer" target="_blank">Omnimobile and Load Capable Pneumatic Soft Robot for Gas Distribution Pipeline Inspection</a>," 2025 IEEE 8th International Conference on Soft Robotics (RoboSoft), Lausanne, Switzerland, 2025, pp. 1-6, doi: <a href="https://doi.org/10.1109/RoboSoft63089.2025.11020922" rel="noopener noreferrer" target="_blank">10.1109/RoboSoft63089.2025.11020922</a>. (<a href="https://www.youtube.com/watch?v=hdthXFKD-o8" rel="noopener noreferrer" target="_blank">Full-form 8-minute Talk</a>)</li>
+        <li>E. Zhang and <strong>E. Zhang</strong>, "<a href="https://ieeexplore.ieee.org/abstract/document/10585716" rel="noopener noreferrer" target="_blank">Development of A Multimodal Deep Feature Fusion with Ensemble Learning Architecture for Real-Time Gas Leak Detection</a>," 2024 IEEE 3rd International Conference on Computing and Machine Intelligence (ICMI), Mt Pleasant, MI, USA, 2024, pp. 1-6, doi: <a href="https://doi.org/10.1109/ICMI60790.2024.10585716" rel="noopener noreferrer" target="_blank">10.1109/ICMI60790.2024.10585716</a>. <em>(Best Paper Award)</em></li>
+        <li><strong>E. Zhang</strong> and E. Zhang, "<a href="https://ieeexplore.ieee.org/abstract/document/10587655" rel="noopener noreferrer" target="_blank">SPIRo: An AI Based Origami Inspired Soft Robot with Multidimensional Locomotion and Multimodal Data Analysis for Infrastructure Assessments</a>," 2024 36th Chinese Control and Decision Conference (CCDC), Xi'an, China, 2024, pp. 3056-3061, doi: <a href="https://doi.org/10.1109/CCDC62350.2024.10587655" rel="noopener noreferrer" target="_blank">10.1109/CCDC62350.2024.10587655</a>.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<div class="page" id="projects" data-page data-title="Projects" hidden>
   <section id="research">
     <h2>Research Projects</h2>
     <p class="video-intro">
-      <a href="https://www.youtube.com/watch?v=T7zwqyhp-2E" target="_blank" rel="noopener noreferrer">Click to Watch a Video Introduction to My Projects</a>
+      <a href="https://www.youtube.com/watch?v=T7zwqyhp-2E" target="_blank" rel="noopener noreferrer">Watch a video overview of my projects</a>
     </p>
 
     <div class="project" id="SPIRo">
-      <h3>SPIRo (Soft Pipe Inspection Robot)</h3>
+      <h3>SPIRo: Soft Pipe Inspection Robot</h3>
+      <p class="project-summary">A pneumatically actuated soft robot that crawls along and climbs gas pipelines to find leaks in hard-to-reach places. It combines a compliant scissor linkage, McKibben artificial muscles, and origami-inspired magnetic grippers with a multimodal machine-learning model that fuses thermal images and gas-sensor data.</p>
+      <dl class="spec-list">
+        <div><dt>Focus</dt><dd>Soft robotics, pneumatic actuation, machine learning for leak detection</dd></div>
+        <div><dt>Hardware</dt><dd>Compliant scissor linkage, McKibben actuators, origami-inspired magnetic grippers, FlowIO standalone pneumatics (with the MIT Media Lab)</dd></div>
+        <div><dt>Software</dt><dd>Deep feature fusion of three CNNs (AlexNet, ResNet-50, MobileNet) with a deep forest ensemble classifier</dd></div>
+        <div><dt>Testing</dt><dd>Field trials at the Methane Emissions Technology Evaluation Center (METEC); calibration with the Southwest Research Institute</dd></div>
+        <div><dt>Output</dt><dd>4 papers including IEEE RoboSoft 2025, a published US patent application, and the startup <a href="#EnviroAI">Enviro-AI</a></dd></div>
+      </dl>
+      <ul class="metrics">
+        <li><strong>15 mm/s</strong><span>horizontal crawling speed</span></li>
+        <li><strong>9 mm/s</strong><span>vertical climbing speed</span></li>
+        <li><strong>60° / 40°</strong><span>vertical / horizontal body bending</span></li>
+        <li><strong>417 g</strong><span>extra payload capacity</span></li>
+        <li><strong>95%</strong><span>leak-detection accuracy in field tests</span></li>
+      </ul>
       <div class="media-gallery">
-        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll SPIRo (Soft Pipe Inspection Robot) photos left">&#10094;</button>
-        <div class="media-container" tabindex="0" aria-label="SPIRo (Soft Pipe Inspection Robot) photos and videos, 17 items">
+        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll SPIRo: Soft Pipe Inspection Robot photos left">&#10094;</button>
+        <div class="media-container" tabindex="0" aria-label="SPIRo: Soft Pipe Inspection Robot photos and videos, 17 items">
             <div class="media-row">
               <div class="media-wrapper">
                 <div class="media-frame">
@@ -625,9 +1062,9 @@
               </div>
               <div class="media-wrapper">
                 <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Patent, To-Be Published Jan. 2026"><img class="media-item" src="Patent.png" alt="Patent, To-Be Published Jan. 2026" loading="lazy" decoding="async" draggable="false"></button>
+                  <button type="button" class="media-open" aria-label="Enlarge photo: Published patent application, US 2026/0008176 A1"><img class="media-item" src="Patent.png" alt="Published patent application, US 2026/0008176 A1" loading="lazy" decoding="async" draggable="false"></button>
                 </div>
-                <p class="media-caption">Patent, To-Be Published Jan. 2026</p>
+                <p class="media-caption">Published patent application, US 2026/0008176 A1</p>
               </div>
               <div class="media-wrapper">
                 <div class="media-frame">
@@ -649,18 +1086,20 @@
               </div>
             </div>
         </div>
-        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll SPIRo (Soft Pipe Inspection Robot) photos right">&#10095;</button>
+        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll SPIRo: Soft Pipe Inspection Robot photos right">&#10095;</button>
       </div>
       <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
-      <p class="tagline">Soft Pneumatic Inspection Robot for Environmental Protection.</p>
-      <button type="button" class="expand-button" aria-expanded="true" aria-controls="SPIRo-details">Show Less</button>
-      <div class="project-details" id="SPIRo-details">
-        <p>In the winter of 2019, a thunderous bang shook my family’s hotel room in Lake Tahoe. Lights flickered out, and a crowd rushed along the street. A gas pipeline had exploded. It caused only minor injuries, fortunately. But with more explosions in the news, including fatal ones near my grandparents’ home, I started digging into the data. I was stunned: major incidents were occurring every 40 hours, releasing millions of tons of methane. The issue wasn’t a lack of awareness. It was, instead, weaknesses in existing technologies: slow and expensive, with systems incapable of detecting small leaks before they became catastrophic.</p>
-        <p>Current industrial methods for gas leak detection, including hydrostatic testing and camera inspection, fall short of meeting today’s needs. Pipeline leaks are both frequent and dangerous; in the U.S. alone, a significant leak occurs every 40 hours, with smaller fugitive leaks often going undetected and unreported, leading to millions of tons of methane emissions. Inspection approaches are often inaccurate, expensive, and labor-intensive, requiring extensive human involvement. Consequently, many leaks remain unnoticed for extended periods of time, all the while causing severe damage to both the environment and populations. These leaks endanger nearby populations, cause millions of dollars in losses, and contribute to the release of nearly seven million tons of methane into the atmosphere each year. Methane is uniquely concerning because it is 30 times more potent than carbon dioxide in terms of global warming potential, and it alone accounts for one-third of the world’s warming from greenhouse emissions. Therefore, early detection of gas infrastructure leaks has become an urgent and efficient way to reduce harmful emissions.</p>
-        <p>SPIRo (Soft Pipe Inspection Robot) is a pneumatically actuated soft pipe inspection robot for the accurate inspection of gas pipes in difficult-to-reach environments. It uses a compliant scissor linkage, McKibben artificial muscle actuators, and magnetic grippers. It achieves a speed of 15 mm/s when crawling on a horizontal surface and 9 mm/s when climbing up a vertical surface. It can also deform its body 60 degrees vertically and 40 degrees horizontally to clear obstacles. The robot’s origami-inspired grippers support a total weight of 417 grams of extra payload to account for the necessary leak detection sensors and equipment.</p>
-        <p>Also implemented on the robot is a multimodal deep feature fusion with a deep forest ensemble learning model to improve SPIRo’s gas leak detection accuracy and redundancy. The model consists of the convolutional layers of three CNNs, the AlexNet, ResNet-50, and MobileNet, and a deep forest ensemble model with all three CNNs. Not only is the ensemble model more accurate, but it is also more reliable due to increased redundancy in analyzing both thermal images and gas sensor data. In addition, the proposed method is also memory efficient, making it suitable for real-time detection applications.</p>
-        <p>I reached out to dozens of labs and professionals across the country to seek out advice for improving the robot to make it more suitable for field use. After several rounds of questioning and interviews, I was awarded an opportunity to conduct real-field testing at the Methane Emissions Technology Evaluation Center (METEC), thoroughly evaluating SPIRo’s real-world capabilities and achieving an accuracy of 95% throughout these tests. I am eternally grateful for METEC's generosity, who seeing as we were high schoolers, were able to waive the costs traditionally associated with testing on their site. I also worked with the MIT Media Lab to implement FlowIO, a standalone air compressor system on the robot and the Southwest Research Institute for calibrating the robot in tests at home.</p>
-        <p>I have co-founded a start-up, Enviro-AI, to bring this product to market.</p>
+      <button type="button" class="expand-button" aria-expanded="false" aria-controls="SPIRo-details" data-closed="Read the full write-up" data-open="Hide">Read the full write-up</button>
+      <div class="project-details" id="SPIRo-details" hidden>
+        <h4>Problem</h4>
+        <p>Industrial gas leak detection methods such as hydrostatic testing and camera inspection are slow, expensive, and labor-intensive. In the U.S. alone, a significant pipeline leak occurs every 40 hours, and smaller fugitive leaks often go undetected, contributing to nearly seven million tons of methane released each year. Methane is about 30 times more potent than carbon dioxide in global warming potential, so catching leaks early is one of the most efficient ways to cut emissions.</p>
+        <h4>Robot design</h4>
+        <p>SPIRo uses a compliant scissor linkage, McKibben artificial muscle actuators, and magnetic grippers. It crawls at 15 mm/s on a horizontal surface and climbs at 9 mm/s on a vertical one, and it can bend its body 60 degrees vertically and 40 degrees horizontally to clear obstacles. The origami-inspired grippers support 417 grams of extra payload for leak detection sensors and equipment.</p>
+        <h4>Leak detection model</h4>
+        <p>The robot runs a multimodal deep feature fusion model with a deep forest ensemble. It combines the convolutional layers of three CNNs (AlexNet, ResNet-50, and MobileNet) and analyzes both thermal images and gas sensor data, which makes it more accurate and more reliable through redundancy. The model is also memory efficient, so it suits real-time detection.</p>
+        <h4>Field testing</h4>
+        <p>To get SPIRo ready for field use, I consulted labs and industry professionals across the country and earned a chance to test at the Methane Emissions Technology Evaluation Center (METEC), which waived its usual testing costs. SPIRo detected leaks with 95% accuracy across those trials. I also worked with the MIT Media Lab to integrate FlowIO, a standalone air compressor system, and with the Southwest Research Institute to calibrate the robot for tests at home.</p>
+        <p>Papers and patents from this project are listed under <a href="#publications">Publications &amp; Patents</a>. I co-founded <a href="#EnviroAI">Enviro-AI</a> to bring SPIRo to market.</p>
         <h4>Recognition</h4>
         <ul>
           <li><strong><a href="https://spacecenter.org/conrad-scholars-at-the-2025-conrad-challenge/" rel="noopener noreferrer" target="_blank">Conrad Challenge</a></strong> – Pete Conrad Scholar, received $10K to fund innovation (2025), <a href="https://www.youtube.com/watch?v=G7OaLVJINos" rel="noopener noreferrer" target="_blank">(Presentation)</a></li>
@@ -672,23 +1111,25 @@
           <li><strong>Synopsys Science Fair (2024)</strong> – 2nd Award, Physical Sciences (2024)</li>
           <li><strong>Synopsys Science Fair (2024)</strong> – IEEE Special Award (2024)</li>
         </ul>
-        <h4>Publications</h4>
-        <ul>
-          <li><strong>E. Zhang</strong> and E. Zhang, "<a href="https://ieeexplore.ieee.org/abstract/document/11020922" rel="noopener noreferrer" target="_blank"> Omnimobile and Load Capable Pneumatic Soft Robot for Gas Distribution Pipeline Inspection </a>," 2025 IEEE 8th International Conference on Soft Robotics (RoboSoft), Lausanne, Switzerland, 2025, pp. 1-6, doi: <a href="https://doi.org/10.1109/RoboSoft63089.2025.11020922" rel="noopener noreferrer" target="_blank">10.1109/RoboSoft63089.2025.11020922</a>. ( <a href="https://www.youtube.com/watch?v=hdthXFKD-o8" rel="noopener noreferrer" target="_blank">Full-form 8-minute Talk</a>)</li>
-          <li><strong>E. Zhang</strong> and E. Zhang, "<a href="https://ieeexplore.ieee.org/abstract/document/10587655" rel="noopener noreferrer" target="_blank"> SPIRo: An AI Based Origami Inspired Soft Robot with Multidimensional Locomotion and Multimodal Data Analysis for Infrastructure Assessments </a>," 2024 36th Chinese Control and Decision Conference (CCDC), Xi'an, China, 2024, pp. 3056-3061, doi: <a href="https://doi.org/10.1109/CCDC62350.2024.10587655" rel="noopener noreferrer" target="_blank">10.1109/CCDC62350.2024.10587655</a>.</li>
-          <li>E. Zhang and <strong>E. Zhang</strong>, "<a href="https://ieeexplore.ieee.org/abstract/document/10585716" rel="noopener noreferrer" target="_blank"> Development of A Multimodal Deep Feature Fusion with Ensemble Learning Architecture for Real-Time Gas Leak Detection </a>," 2024 IEEE 3rd International Conference on Computing and Machine Intelligence (ICMI), Mt Pleasant, MI, USA, 2024, pp. 1-6, doi: <a href="https://doi.org/10.1109/ICMI60790.2024.10585716" rel="noopener noreferrer" target="_blank">10.1109/ICMI60790.2024.10585716</a>. (Won Best Paper Award)</li>
-          <li>E. Zhang and <strong>E. Zhang</strong> (2025) "<a href="https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2025.1569621/full" rel="noopener noreferrer" target="_blank"> Gas pipeline leakage detection based on multiple multimodal deep feature selections and optimized deep forest classifier </a>." Frontiers in Environmental Science, 13:1569621. doi: <a href="https://doi.org/10.3389/fenvs.2025.1569621" rel="noopener noreferrer" target="_blank">10.3389/fenvs.2025.1569621</a>.</li>
-          <li>E. Zhang and <strong>E. Zhang</strong> (2026) "<a href="https://patents.google.com/patent/US20260008176A1/en" rel="noopener noreferrer" target="_blank"> SPIRo: An AI Based Origami Inspired Pneumatic Soft Robot with Multidimensional Locomotion and Multimodal Deep Feature Selection and Fusion with an Improved Deep Forest Classifier Architecture for Real-Time Gas Pipeline Leak Detection </a>." US Patent App. 19/274,609</li>
-          <li>Second Patent Filed as of December 2025</li>
-        </ul>
       </div>
     </div>
 
     <div class="project" id="HASEL">
-      <h3>HASEL Actuators</h3>
+      <h3>HASEL Actuators for Cardiac Assist</h3>
+      <p class="project-summary">3D-printed hydraulically amplified self-healing electrostatic (HASEL) actuators with an integrated fluidic piezoresistive pressure sensor and machine-learning control, designed as a soft-robotic approach to ventricular assist for heart failure.</p>
+      <dl class="spec-list">
+        <div><dt>Focus</dt><dd>Soft electrostatic actuators, multi-material and direct ink writing (DIW) 3D printing, ML-based control</dd></div>
+        <div><dt>Where</dt><dd>Purdue University, with A. Chortos</dd></div>
+        <div><dt>Output</dt><dd>2 papers (ICMSR 2025 Best Presentation Award; <em>Advanced Materials Technologies</em>), ISEF 4th Place Grand Award, and the startup <a href="#PulsarRobotics">Pulsar Robotics</a></dd></div>
+      </dl>
+      <ul class="metrics">
+        <li><strong>32.9%</strong><span>maximum strain</span></li>
+        <li><strong>5.49 N·mm</strong><span>maximum energy output</span></li>
+        <li><strong>R² = 0.91</strong><span>ML stress prediction</span></li>
+      </ul>
       <div class="media-gallery">
-        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll HASEL Actuators photos left">&#10094;</button>
-        <div class="media-container" tabindex="0" aria-label="HASEL Actuators photos and videos, 16 items">
+        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll HASEL Actuators for Cardiac Assist photos left">&#10094;</button>
+        <div class="media-container" tabindex="0" aria-label="HASEL Actuators for Cardiac Assist photos and videos, 16 items">
             <div class="media-row">
               <div class="media-wrapper">
                 <div class="media-frame">
@@ -793,15 +1234,16 @@
               </div>
             </div>
         </div>
-        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll HASEL Actuators photos right">&#10095;</button>
+        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll HASEL Actuators for Cardiac Assist photos right">&#10095;</button>
       </div>
       <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
-      <p class="tagline">Hydraulically Amplified Self-Healing Electrostatic Actuators for Personalized Medical Care</p>
-      <button type="button" class="expand-button" aria-expanded="true" aria-controls="HASEL-details">Show Less</button>
-      <div class="project-details" id="HASEL-details">
-        <p>Cardiovascular diseases are the leading cause of death globally, claiming 17.9 million lives each year. Heart failure, one of the most serious variations of cardiovascular disease, is a chronic condition in which the heart is unable to pump enough blood to support the body’s needs. While simple lifestyle changes and medication can treat HF in its early stages, more serious cases, called class III or IV, often require more intensive treatment. For these scenarios, a heart transplant is the ideal treatment. However, the demand for donor hearts far exceeds their supply, leaving many individuals without access to it. Additionally, many individuals are deemed unfit for this process due to reasons such as age or other health conditions. These challenges underscore the urgent need for alternative solutions to address the growing issue of heart failure.</p>
-        <p>Soft robotics has emerged as a promising solution for the limitations of VADs. Unlike rigid robots, soft robots are composed of flexible, deformable materials that enable them to operate in complex, delicate, and unpredictable environments. I propose a cardiac assist system that integrates HASEL actuators with AI-based control to address the challenges of heart failure. The system demonstrates versatility, combining the flexible and safe characteristics of soft robotics with AI to advance VADs. The implementation of HASEL actuators with self-healing capabilities allows for increased reliability and performance. Using multi-material 3D printing ensures precise and reproducible geometries, which improves performance. The integration of machine learning for control allows the system to effectively address the nonlinear characteristics of HASEL actuators. Our algorithm achieves a R2 value of 0.91 in predicting stress. The device also achieves a maximum strain of 32.9% and a maximum energy output of 5.49 N•mm, exceeding requirements for cardiac assist applications. This work impacts medical care more broadly by making it more personal with the use of DIW 3D printing and soft materials.</p>
-        <p>I am now founding a second start-up, Pulsar Robotics.</p>
+      <button type="button" class="expand-button" aria-expanded="false" aria-controls="HASEL-details" data-closed="Read the full write-up" data-open="Hide">Read the full write-up</button>
+      <div class="project-details" id="HASEL-details" hidden>
+        <h4>Problem</h4>
+        <p>Heart failure is a chronic condition in which the heart can't pump enough blood to meet the body's needs. Severe (class III or IV) cases often call for a heart transplant, but donor hearts are far scarcer than the demand, and many patients aren't eligible because of age or other conditions. That leaves a real need for better ventricular assist devices (VADs).</p>
+        <h4>Approach</h4>
+        <p>Unlike rigid robots, soft robots are made of flexible, deformable materials that can work safely in delicate environments. This cardiac assist system pairs HASEL actuators, which can self-heal for better reliability, with AI-based control. Multi-material 3D printing gives precise, reproducible geometries, and a machine-learning controller handles the actuators' nonlinear behavior, predicting stress with an R² of 0.91. The device reaches a maximum strain of 32.9% and a maximum energy output of 5.49 N·mm, which exceeds the requirements for cardiac assist. Using DIW 3D printing and soft materials also makes the devices easier to personalize.</p>
+        <p>Papers from this project are listed under <a href="#publications">Publications &amp; Patents</a>. I'm now founding <a href="#PulsarRobotics">Pulsar Robotics</a> to develop it further.</p>
         <h4>Recognition</h4>
         <ul>
           <li>International Science and Engineering Fair (<a href="https://isef.net/project/enbm042-ai-driven-hasel-actuators-for-cardiac-assist" rel="noopener noreferrer" target="_blank">ISEF</a>) - 4th Place Grand Award in Biomedical Engineering (2025)</li>
@@ -814,19 +1256,24 @@
           <li>Best Presentation Award - 2025 11th International Conference on Mechatronics Systems and Robots (ICMSR 2025)</li>
           <li>Featured in Purdue MechE News (<a href="https://engineering.purdue.edu/ME/News/2026/high-school-student-visits-purdue-to-create-heartpumping-soft-robot" rel="noopener noreferrer" target="_blank">2026</a>)</li>
         </ul>
-        <h4>Publications</h4>
-        <ul>
-          <li><strong>E. Zhang</strong> and A. Chortos, “3D-Printed HASEL Actuators With Integrated Fluidic Piezoresistive Pressure Sensor for Cardiac Assist Applications,” 2025 11th International Conference on Mechatronics Systems and Robots, Singapore, 2025 (In Press)</li>
-          <li>Z. Ma, ... <strong>E. Zhang</strong>, ... A. Chortos, "Thermally Elongated Thermoplastic Nozzles Unlock Micro-Scale Direct Ink Writing," Advanced Materials Technologies, 2025 (In Press)</li>
-        </ul>
       </div>
     </div>
 
     <div class="project" id="AmphibiousTurtle">
-      <h3>Amphibious Robotic Turtle</h3>
+      <h3>Amphibious Shape-Morphing Robotic Turtle</h3>
+      <p class="project-summary">A turtle-inspired robot whose limbs switch between hydrodynamic flippers for swimming and load-bearing legs for walking, using pressure-responsive laminar jamming to change shape and stiffness. Built for deep water, with a pressure-rated chassis and active buoyancy control.</p>
+      <dl class="spec-list">
+        <div><dt>Where</dt><dd>Yale Faboratory, paid research assistant (invited after presenting at RoboSoft 2025)</dd></div>
+        <div><dt>Focus</dt><dd>Shape-morphing limbs, laminar jamming, pressure-rated mechanical design, buoyancy control</dd></div>
+      </dl>
+      <ul class="metrics">
+        <li><strong>30 psi</strong><span>pressure rating of motors and chassis</span></li>
+        <li><strong>10 m</strong><span>equivalent water depth</span></li>
+        <li><strong>2</strong><span>locomotion modes: swim and walk</span></li>
+      </ul>
       <div class="media-gallery">
-        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Amphibious Robotic Turtle photos left">&#10094;</button>
-        <div class="media-container" tabindex="0" aria-label="Amphibious Robotic Turtle photos and videos, 21 items">
+        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Amphibious Shape-Morphing Robotic Turtle photos left">&#10094;</button>
+        <div class="media-container" tabindex="0" aria-label="Amphibious Shape-Morphing Robotic Turtle photos and videos, 21 items">
             <div class="media-row">
               <div class="media-wrapper">
                 <div class="media-frame">
@@ -963,24 +1410,29 @@
               </div>
             </div>
         </div>
-        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Amphibious Robotic Turtle photos right">&#10095;</button>
+        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Amphibious Shape-Morphing Robotic Turtle photos right">&#10095;</button>
       </div>
       <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
-      <p class="tagline">Deep-Water Shape Morphing Amphibious Robotic Turtle at Yale's Faboratory</p>
-      <button type="button" class="expand-button" aria-expanded="true" aria-controls="AmphibiousTurtle-details">Show Less</button>
-      <div class="project-details" id="AmphibiousTurtle-details">
-        <p>Mobile robots are impactful for several different sectors, including search and rescue, environmental monitoring, and home service industry. Many mobile robots are designed to operate in only one environment. As a result, their bodies are made up of dedicated mechanisms for locomotion, such as paddles or wheels. Their behaviors are optimized only for that niche. Biological systems, however, exhibit phenoplasticity in their anatomical structure, stiffness, and overall behavior. This allows them to adapt and navigate multiple environments.</p>
-        <p>This shape-morphing amphibious robotic turtle is designed for locomotion across both terrestrial and aquatic environments. The limbs are inspired by those of sea turtles and land tortoises. They can transform between hydrodynamic flippers which are optimized for swimming and load-bearing legs that can allow for terrestrial mobility. This is achieved through pressure-responsive laminar jamming. This enables rapid and efficient shape and stiffness change.</p>
-        <p>Finally, to achieve deep-water swimming capabilities, the motors and chassis are designed to withstand up to 30 PSI of pressure, equivalent to a depth 10 meters. Furthermore, buoyancy control pumps are integrated to allow the turtle to achieve neutral buoyancy or vary its buoyancy to reach depths or ascend.</p>
-        <p>This project was conducted at Yale’s Faboratory, where I worked as a paid research assistant. I was invited to join the lab after presenting my work at RoboSoft 2025, which captured their interest.</p>
+      <button type="button" class="expand-button" aria-expanded="false" aria-controls="AmphibiousTurtle-details" data-closed="Read the full write-up" data-open="Hide">Read the full write-up</button>
+      <div class="project-details" id="AmphibiousTurtle-details" hidden>
+        <p>Mobile robots matter for search and rescue, environmental monitoring, and home service, but most are built for a single environment, with dedicated mechanisms such as paddles or wheels. Animals instead adapt their anatomy, stiffness, and behavior to move through many environments.</p>
+        <p>This robot's limbs are inspired by sea turtles and land tortoises. Pressure-responsive laminar jamming lets them change quickly and efficiently between hydrodynamic flippers optimized for swimming and load-bearing legs for walking on land.</p>
+        <p>For deep-water swimming, the motors and chassis are designed to withstand 30 PSI, equivalent to a depth of 10 meters. Integrated buoyancy control pumps let the turtle hold neutral buoyancy or vary it to dive and ascend.</p>
       </div>
     </div>
 
     <div class="project" id="Microscope">
-      <h3>Mechanical Design work at the Schnitzer Lab, Stanford University</h3>
+      <h3>Microscope and Behavioral Rig Hardware, Stanford</h3>
+      <p class="project-summary">Mechanical and electrical hardware for neuroscience experiments in the Schnitzer Group at Stanford University, including a collimator mount, PCBs, and an enclosure for the Crystal Skull microscope.</p>
+      <dl class="spec-list">
+        <div><dt>Where</dt><dd>Schnitzer Group, Stanford University</dd></div>
+        <div><dt>Built</dt><dd>A full one-photon (1P) microscope, a microscope enclosure and side-illumination method, mouse training wheels, and behavioral rigs</dd></div>
+        <div><dt>Electronics</dt><dd>PCB for the rotary encoders that track mouse movement</dd></div>
+        <div><dt>Process</dt><dd>Standardized the lab's common hardware, including the encoder PCB, behavioral rig, and camera mount designs</dd></div>
+      </dl>
       <div class="media-gallery">
-        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Mechanical Design work at the Schnitzer Lab, Stanford University photos left">&#10094;</button>
-        <div class="media-container" tabindex="0" aria-label="Mechanical Design work at the Schnitzer Lab, Stanford University photos and videos, 7 items">
+        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Microscope and Behavioral Rig Hardware, Stanford photos left">&#10094;</button>
+        <div class="media-container" tabindex="0" aria-label="Microscope and Behavioral Rig Hardware, Stanford photos and videos, 7 items">
             <div class="media-row">
               <div class="media-wrapper">
                 <div class="media-frame">
@@ -1029,29 +1481,33 @@
               </div>
             </div>
         </div>
-        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Mechanical Design work at the Schnitzer Lab, Stanford University photos right">&#10095;</button>
+        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Microscope and Behavioral Rig Hardware, Stanford photos right">&#10095;</button>
       </div>
       <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
-      <p class="tagline">Collimator Mount, PCBs, and Enclosure for Crystal Skull Microscope</p>
-      <button type="button" class="expand-button" aria-expanded="true" aria-controls="Microscope-details">Show Less</button>
-      <div class="project-details" id="Microscope-details">
-        <p>The Schnitzer Group at Stanford University works at the intersection of neuroscience, physics, engineering, and artificial intelligence to develop and apply advanced optical, robotic, and computational techniques for elucidating neural dynamics and information processing in behaving animals.</p>
-        <p>My work centers around designing and fabricating behavioral apparatus used in experiments. I have developed various components for microscopes, from a full 1P microscope to an enclosure and side illumination method. I have also built behavioral apparatus for mice, including training wheels and experimental rigs to stimulate mouse behavior. I designed a PCB for rotary encoders used to track the movement of mice, and standardized commonly used hardware parts including this PCB, as well as behavioral rig and camera mount designs.</p>
-        <p>My role requires high levels of collaboration with the lab's biologists, as I work to develop and build behavioral rigs perfectly fit for their needs and requirements.</p>
+      <button type="button" class="expand-button" aria-expanded="false" aria-controls="Microscope-details" data-closed="Read the full write-up" data-open="Hide">Read the full write-up</button>
+      <div class="project-details" id="Microscope-details" hidden>
+        <p>The Schnitzer Group works at the intersection of neuroscience, physics, engineering, and artificial intelligence, developing optical, robotic, and computational techniques to study neural dynamics in behaving animals.</p>
+        <p>I design and fabricate the apparatus used in their experiments, from microscope components to rigs that stimulate and track mouse behavior. The work is highly collaborative: I build each rig around the needs and requirements of the lab's biologists.</p>
       </div>
     </div>
   </section>
 </div>
 
-<div class="page" id="entrepreneurship" data-page data-title="Entrepreneurship" hidden>
+<div class="page" id="ventures" data-page data-title="Ventures" hidden>
   <section id="entrepreneurship-section">
-    <h2>Entrepreneurship</h2>
+    <h2>Ventures</h2>
 
     <div class="project" id="EnviroAI">
-      <h3>Enviro-AI (SPIRo)</h3>
+      <h3>Enviro-AI</h3>
+      <p class="project-summary">The startup I co-founded to commercialize SPIRo, turning a lab-built soft robotic sensing platform into a deployable tool for pipeline inspection and environmental monitoring.</p>
+      <dl class="spec-list">
+        <div><dt>Role</dt><dd>Co-founder; led prototype development, technical refinement, and business strategy</dd></div>
+        <div><dt>Pitched to</dt><dd>MIT Media Lab, 1517 Fund, Equinor Ventures, Conrad Challenge, Diamond Challenge</dd></div>
+        <div><dt>Funding</dt><dd>$1,000 Medici Grant from the 1517 Fund</dd></div>
+      </dl>
       <div class="media-gallery">
-        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Enviro-AI (SPIRo) photos left">&#10094;</button>
-        <div class="media-container" tabindex="0" aria-label="Enviro-AI (SPIRo) photos and videos, 24 items">
+        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Enviro-AI photos left">&#10094;</button>
+        <div class="media-container" tabindex="0" aria-label="Enviro-AI photos and videos, 24 items">
             <div class="media-row">
               <div class="media-wrapper">
                 <div class="media-frame">
@@ -1167,9 +1623,9 @@
               </div>
               <div class="media-wrapper">
                 <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Patent, To-Be Published Jan. 2026"><img class="media-item" src="Patent.png" alt="Patent, To-Be Published Jan. 2026" loading="lazy" decoding="async" draggable="false"></button>
+                  <button type="button" class="media-open" aria-label="Enlarge photo: Published patent application, US 2026/0008176 A1"><img class="media-item" src="Patent.png" alt="Published patent application, US 2026/0008176 A1" loading="lazy" decoding="async" draggable="false"></button>
                 </div>
-                <p class="media-caption">Patent, To-Be Published Jan. 2026</p>
+                <p class="media-caption">Published patent application, US 2026/0008176 A1</p>
               </div>
               <div class="media-wrapper">
                 <div class="media-frame">
@@ -1203,15 +1659,12 @@
               </div>
             </div>
         </div>
-        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Enviro-AI (SPIRo) photos right">&#10095;</button>
+        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Enviro-AI photos right">&#10095;</button>
       </div>
       <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
-      <p class="tagline">Turning SPIRo’s soft robotics innovation into real-world environmental solutions.</p>
-      <button type="button" class="expand-button" aria-expanded="true" aria-controls="EnviroAI-details">Show Less</button>
-      <div class="project-details" id="EnviroAI-details">
-        <p>Enviro-AI is the startup I co-founded to commercialize SPIRo, translating our lab-based soft robotic sensing platform into deployable solutions for environmental monitoring. While SPIRo demonstrated the technical potential of adaptive soft robots with integrated AI for gas leak detection and environmental sensing, Enviro-AI focuses on building a viable business around this innovation.</p>
-        <p>Through Enviro-AI, I led prototype development, technical refinement, and strategic business efforts. We validated the concept through multiple high-impact pitches and competitions, presenting SPIRo to the MIT Media Lab, the 1517 Fund (securing $1,000 in early angel funding), Equinor Ventures, the Conrad Challenge, and the Diamond Challenge. These engagements helped shape our product roadmap, attract early support, and refine our market strategy for environmental applications.</p>
-        <p>Our mission is to bring accessible, actionable environmental intelligence to communities, turning cutting-edge soft robotic technology into practical tools for real-world impact.</p>
+      <button type="button" class="expand-button" aria-expanded="false" aria-controls="EnviroAI-details" data-closed="Read the full write-up" data-open="Hide">Read the full write-up</button>
+      <div class="project-details" id="EnviroAI-details" hidden>
+        <p>SPIRo showed what adaptive soft robots with integrated AI can do for gas leak detection. Enviro-AI focuses on building a viable business around it. Pitches and competitions helped shape our product roadmap, attract early support, and refine our market strategy for environmental applications.</p>
         <h4>Recognition</h4>
         <ul>
           <li><strong><a href="https://spacecenter.org/conrad-scholars-at-the-2025-conrad-challenge/" rel="noopener noreferrer" target="_blank">Conrad Challenge</a></strong> – Pete Conrad Scholar, received $1K to fund innovation (2025), <a href="https://www.youtube.com/watch?v=CBESifTSLgg" rel="noopener noreferrer" target="_blank">(Presentation)</a></li>
@@ -1224,10 +1677,15 @@
     </div>
 
     <div class="project" id="PulsarRobotics">
-      <h3>Pulsar Robotics (In Progress)</h3>
+      <h3>Pulsar Robotics (in progress)</h3>
+      <p class="project-summary">A startup commercializing HASEL actuator-based soft robotic devices for cardiac assist: adaptive, safe, and personalized wearable devices for patients with heart failure and other cardiovascular conditions.</p>
+      <dl class="spec-list">
+        <div><dt>Role</dt><dd>Founder</dd></div>
+        <div><dt>Built on</dt><dd><a href="#HASEL">HASEL actuator research</a></dd></div>
+      </dl>
       <div class="media-gallery">
-        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Pulsar Robotics (In Progress) photos left">&#10094;</button>
-        <div class="media-container" tabindex="0" aria-label="Pulsar Robotics (In Progress) photos and videos, 2 items">
+        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Pulsar Robotics (in progress) photos left">&#10094;</button>
+        <div class="media-container" tabindex="0" aria-label="Pulsar Robotics (in progress) photos and videos, 2 items">
             <div class="media-row">
               <div class="media-wrapper">
                 <div class="media-frame">
@@ -1243,18 +1701,23 @@
               </div>
             </div>
         </div>
-        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Pulsar Robotics (In Progress) photos right">&#10095;</button>
+        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Pulsar Robotics (in progress) photos right">&#10095;</button>
       </div>
       <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
-      <p class="tagline">Hydraulically Amplified Self-Healing Electrostatic Actuators for Personalized Medical Care</p>
-      <button type="button" class="expand-button" aria-expanded="true" aria-controls="PulsarRobotics-details">Show Less</button>
-      <div class="project-details" id="PulsarRobotics-details">
-        <p>Pulsar Robotics is a startup focused on commercializing HASEL actuator-based soft robotic devices for cardiac assist. The goal is to create adaptive, safe, and personalized wearable devices to help patients with heart failure and other cardiovascular conditions.</p>
-      </div>
     </div>
 
     <div class="project" id="3DSolutions">
       <h3>3DSolutions.shop</h3>
+      <p class="project-summary">An online 3D printing and design service for students, makers, and research labs across the U.S., running on a distributed printer farm I built after running into the cost and delays of commercial services for my own prototyping.</p>
+      <dl class="spec-list">
+        <div><dt>Role</dt><dd>Founder, launched 2024</dd></div>
+        <div><dt>Built</dt><dd>Web order system with instant quoting, file upload, and live status tracking; optimized print profiles and a part-review pipeline</dd></div>
+        <div><dt>Services</dt><dd>Custom design and fabrication, design-for-manufacturing consultation, multi-material prints, and batch production</dd></div>
+      </dl>
+      <ul class="metrics">
+        <li><strong>100+</strong><span>orders fulfilled</span></li>
+        <li><strong>$1K+</strong><span>revenue</span></li>
+      </ul>
       <div class="media-gallery">
         <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll 3DSolutions.shop photos left">&#10094;</button>
         <div class="media-container" tabindex="0" aria-label="3DSolutions.shop photos and videos, 16 items">
@@ -1362,32 +1825,33 @@
         <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll 3DSolutions.shop photos right">&#10095;</button>
       </div>
       <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
-      <p class="tagline">Rapid prototyping and custom 3D printed solutions for students, makers, and researchers.</p>
-      <button type="button" class="expand-button" aria-expanded="true" aria-controls="3DSolutions-details">Show Less</button>
-      <div class="project-details" id="3DSolutions-details">
-        <p>3DSolutions.shop is an online platform and business I founded to provide affordable, fast-turnaround 3D printing and design services for students, makers, and research groups across the United States. Born out of my own need for rapid prototyping and the high cost/delays of commercial services, I built a distributed "printer farm" and streamlined workflow to deliver custom parts, assemblies, and design help.</p>
-        <ul>
-          <li>Launched in 2024; over $1k in revenue; over 100 orders fulfilled to date for individuals, university labs, and school clubs.</li>
-          <li>Built a web-based order system with instant quoting, file upload, and live status tracking.</li>
-          <li>Developed optimized print profiles and part review pipeline for reliability and cost efficiency.</li>
-          <li>Expanded to offer design-for-manufacturing consultation, multi-material prints, and batch production.</li>
-          <li>Offered custom-design and fabrication services to revise products with customers prior to shipment.</li>
-          <li>Collaborated with local schools to provide subsidized parts for student STEM projects and engineering classes.</li>
-        </ul>
+      <button type="button" class="expand-button" aria-expanded="false" aria-controls="3DSolutions-details" data-closed="Read the full write-up" data-open="Hide">Read the full write-up</button>
+      <div class="project-details" id="3DSolutions-details" hidden>
+        <p>Customers include individuals, university labs, and school clubs. I review designs with customers before printing, and we work with local schools to provide subsidized parts for student STEM projects and engineering classes.</p>
       </div>
     </div>
   </section>
 </div>
 
-<div class="page" id="stem-projects" data-page data-title="Leadership in STEM &amp; Debate" hidden>
+<div class="page" id="builds" data-page data-title="Builds, Outreach &amp; Leadership" hidden>
   <section id="stem-projects-section">
-    <h2>Leadership in STEM &amp; Debate</h2>
+    <h2>Team Builds</h2>
 
     <div class="project" id="Rocketry">
-      <h3>Model Rocketry and Remote Control Aircraft</h3>
+      <h3>Model Rockets and RC Aircraft</h3>
+      <p class="project-summary">Competition rockets for the American Rocketry Challenge and a custom foam-board RC airplane with gyro stabilization, built as co-president of my school's Aerospace Club.</p>
+      <dl class="spec-list">
+        <div><dt>Role</dt><dd>Aerospace Club co-president; founded and led two 10-person rocketry teams; raised $2.5K for the program</dd></div>
+        <div><dt>Mission</dt><dd>Reach 790 ft and return safely within the time limit while carrying two raw eggs</dd></div>
+      </dl>
+      <ul class="metrics">
+        <li><strong>790 ft</strong><span>target altitude</span></li>
+        <li><strong>2</strong><span>raw-egg payload</span></li>
+        <li><strong>5 days</strong><span>full rebuild after a failure</span></li>
+      </ul>
       <div class="media-gallery">
-        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Model Rocketry and Remote Control Aircraft photos left">&#10094;</button>
-        <div class="media-container" tabindex="0" aria-label="Model Rocketry and Remote Control Aircraft photos and videos, 12 items">
+        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Model Rockets and RC Aircraft photos left">&#10094;</button>
+        <div class="media-container" tabindex="0" aria-label="Model Rockets and RC Aircraft photos and videos, 12 items">
             <div class="media-row">
               <div class="media-wrapper">
                 <div class="media-frame">
@@ -1468,23 +1932,32 @@
               </div>
             </div>
         </div>
-        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Model Rocketry and Remote Control Aircraft photos right">&#10095;</button>
+        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Model Rockets and RC Aircraft photos right">&#10095;</button>
       </div>
       <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
-      <p class="tagline">Rockets I built as co-president of Aerospace club and RC Airplanes I designed.</p>
-      <button type="button" class="expand-button" aria-expanded="true" aria-controls="Rocketry-details">Show Less</button>
-      <div class="project-details" id="Rocketry-details">
-        <p>After joining as a member of the Aerospace Club my freshman year, I was promoted to Co-President in 11th grade. I founded 2 rocketry teams to compete in the American Rocketry Challenge. I led the fundraising $2.5K from school administration through formal proposals and pitching. We designed a rocket, aiming to reach a height of 790 feet and return safely within the time limit, while carrying a payload of two raw eggs. We had a total of three launches, with two successful attempts. The remote control plane was custom built from foam board. It features gyro stabilization for smooth flight.</p>
-        <p>With little experience in rocketry, I recruited teammates to join my cause by providing a sense of direction, eventually forming two teams of 10. Over five months, I led the team through our first build process - doing research, proposing ideas, and eliciting feedback at each step. We completed our rocket days before our first launch, still not fully knowing precisely what to expect. On our first launch, our rocket miraculously flew straight as expected - a successful first launch. When we read over the altimeter data, we noticed our altitude had fallen slightly short of our goal, so we removed some weight. This, however, destabilized it for the second launch, causing it to careen across the field and shred itself to pieces. We left the launch site defeated but knowing we still had another launch day.</p>
-        <p>But that launch day would be next week, leaving us with 5 days to patch everything back together in time. I first called a meeting to assess what went wrong, and how we should bounce back. We quickly identified the problem: when we removed the weights, the center of gravity had shifted, throwing our rocket off balance. We pieced our rocket back together, using spare components and pieces we brought back. We brought it back to the field the next weekend, conducting two successful launches. On our third go, the rocket landed in a field of tall grass. When we were given the clear to recover it 10 minutes later, we couldn't locate it. That rocket probably won't turn up again, but its end, after everything we've been through, is oddly fitting. Our entire season has been about testing, rebuilding, and rising higher. We're now heading into our second year with far more experience and renewed determination.</p>
+      <button type="button" class="expand-button" aria-expanded="false" aria-controls="Rocketry-details" data-closed="Read the full write-up" data-open="Hide">Read the full write-up</button>
+      <div class="project-details" id="Rocketry-details" hidden>
+        <p>Over five months I led our first build: researching, proposing designs, and getting feedback at each step. The first launch flew straight, but altimeter data showed we'd fallen slightly short of our target altitude, so we removed weight. That shifted the center of gravity and destabilized the rocket, which careened across the field and broke apart on the next launch.</p>
+        <p>We traced the failure to the center-of-gravity shift, rebuilt the rocket from spare components in the five days before our next launch window, and flew two successful launches the following weekend.</p>
+        <p>The RC airplane is custom built from foam board and uses gyro stabilization for smooth flight.</p>
       </div>
     </div>
 
     <div class="project" id="FTC">
-      <h3>FIRST Tech Challenge (FTC) Robots</h3>
+      <h3>FIRST Tech Challenge Robots</h3>
+      <p class="project-summary">Led the design and fabrication of three competition robots (Freight Frenzy, Power Play, and Centerstage), each with its own approach to manipulating game pieces, from placing them on tiered shelves to stacking them on poles.</p>
+      <dl class="spec-list">
+        <div><dt>Role</dt><dd>Lead designer and builder, 2020 to 2024</dd></div>
+        <div><dt>Mechanisms</dt><dd>Chain-driven virtual four-bar arm, grippers, and game-specific manipulators</dd></div>
+        <div><dt>Process</dt><dd>Set up team-wide issue tracking after a mid-competition mechanical failure</dd></div>
+      </dl>
+      <ul class="metrics">
+        <li><strong>3</strong><span>robots designed and built</span></li>
+        <li><strong>2×</strong><span>Design Award</span></li>
+      </ul>
       <div class="media-gallery">
-        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll FIRST Tech Challenge (FTC) Robots photos left">&#10094;</button>
-        <div class="media-container" tabindex="0" aria-label="FIRST Tech Challenge (FTC) Robots photos and videos, 9 items">
+        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll FIRST Tech Challenge Robots photos left">&#10094;</button>
+        <div class="media-container" tabindex="0" aria-label="FIRST Tech Challenge Robots photos and videos, 9 items">
             <div class="media-row">
               <div class="media-wrapper">
                 <div class="media-frame">
@@ -1544,15 +2017,13 @@
               </div>
             </div>
         </div>
-        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll FIRST Tech Challenge (FTC) Robots photos right">&#10095;</button>
+        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll FIRST Tech Challenge Robots photos right">&#10095;</button>
       </div>
       <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
-      <p class="tagline">FTC Robots designed from 2020 to 2023</p>
-      <button type="button" class="expand-button" aria-expanded="true" aria-controls="FTC-details">Show Less</button>
-      <div class="project-details" id="FTC-details">
-        <p>I led the design and fabrication of three FIRST Tech Challenge robots from 2020 to 2024 (Freight Frenzy, Power Play, Centerstage). All three are built around specific sets of rules, and they feature different approaches to manipulating game pieces to complete certain tasks, such as placing them on levels of shelves or stacking them on poles.</p>
-        <p>At the previous meet, our team had placed second out of 40 competitors, so confidence and morale were sky high. That is, until the chain for our robot’s virtual four-bar snapped mid-competition two weeks later, and its gripper—along with my confidence—cracked in half upon impacting the floor. Later, upon analyzing the defeat, we discovered several flaws that had not been effectively communicated. I interpreted our robot’s failure as an extension of my leadership—and resolved to pick up the pieces, literally and figuratively.  <p>I implemented a better communication system that allowed team members to report issues so that we could track which problems still needed addressing. This would improve collaboration between members, as those coming in to work on the robot after others had left would know exactly where to pick up as opposed to merely repeating the same work over and over, allowing us to track issues and solve them far more efficiently.</p></p>
-        <h4>Awards</h4>
+      <button type="button" class="expand-button" aria-expanded="false" aria-controls="FTC-details" data-closed="Read the full write-up" data-open="Hide">Read the full write-up</button>
+      <div class="project-details" id="FTC-details" hidden>
+        <p>Two weeks after a second-place finish out of 40 teams, the chain driving our robot's virtual four-bar snapped mid-match and the gripper cracked when it hit the floor. Reviewing the failure showed several known flaws that had never been communicated across the team. I set up an issue-tracking system so members could log problems and fixes, which let anyone arriving to work on the robot pick up where others left off instead of repeating work.</p>
+        <h4>Recognition</h4>
         <ul>
           <li>2024 San Jose Qualifying Tournament Winners, Think Award Winners</li>
           <li>2024 Norcal Regional Qualifiers</li>
@@ -1565,438 +2036,19 @@
       </div>
     </div>
 
-    <div class="project" id="VarsityDebateTeamCaptainCoach">
-      <h3>Varsity Debate Team Captain and Coach</h3>
-      <div class="media-gallery">
-        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Varsity Debate Team Captain and Coach photos left">&#10094;</button>
-        <div class="media-container" tabindex="0" aria-label="Varsity Debate Team Captain and Coach photos and videos, 4 items">
-            <div class="media-row">
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Berkeley Debate Triples"><img class="media-item" src="debate2.png" alt="Berkeley Debate Triples" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-                <p class="media-caption">Berkeley Debate Triples</p>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: At a Tournament"><img class="media-item" src="debate3.JPG" alt="At a Tournament" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-                <p class="media-caption">At a Tournament</p>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Degree of Distinction"><img class="media-item" src="debate1.png" alt="Degree of Distinction" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-                <p class="media-caption">Degree of Distinction</p>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Varsity Debate Team Captain and Coach, photo 4"><img class="media-item" src="debate4.png" alt="Varsity Debate Team Captain and Coach, photo 4" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-            </div>
-        </div>
-        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Varsity Debate Team Captain and Coach photos right">&#10095;</button>
-      </div>
-      <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
-      <p class="tagline">Nationally Ranked Public Forum Debater</p>
-      <button type="button" class="expand-button" aria-expanded="true" aria-controls="VarsityDebateTeamCaptainCoach-details">Show Less</button>
-      <div class="project-details" id="VarsityDebateTeamCaptainCoach-details">
-        <p>I'm a captain on my school's debate team, and I compete in Public Forum debate and have been ranked as high as in the top 80 debaters nationally, while also qualifying to the Tournament of Champions. I also serve as an assistant coach at the Harker Middle School, mentoring new debaters, organizing drills, and providing feedback on speeches and practice rounds.</p>
-        <p>To support teammates and middle school mentees, I held practice rounds after school, hosted extra sessions, and reassured them before their first tournaments. At middle school practice, when Natalie froze mid-round, I guided her through generating responses, gathering material to deliver a rebuttal with confidence. We tackled things together, culminating in six members, including myself, qualifying for the Tournament of Champions. The middle schoolers participated in their own first tournament, returning to share stories of victories and new arguments.</p>
-      </div>
-    </div>
-
-    <div class="project" id="HarvardVentures">
-      <h3>Harvard Ventures Tech Program</h3>
-      <div class="media-gallery">
-        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Harvard Ventures Tech Program photos left">&#10094;</button>
-        <div class="media-container" tabindex="0" aria-label="Harvard Ventures Tech Program photos and videos, 8 items">
-            <div class="media-row">
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Team project at Harvard Ventures Tech Program"><img class="media-item" src="harvard1.png" alt="Team project at Harvard Ventures Tech Program" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-                <p class="media-caption">Team project at Harvard Ventures Tech Program.</p>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Harvard Ventures Tech Program, photo 2"><img class="media-item" src="harvard2.png" alt="Harvard Ventures Tech Program, photo 2" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Harvard Ventures Tech Program, photo 3"><img class="media-item" src="harvard3.png" alt="Harvard Ventures Tech Program, photo 3" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Harvard Ventures Tech Program, photo 4"><img class="media-item" src="harvard4.png" alt="Harvard Ventures Tech Program, photo 4" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Harvard Ventures Tech Program, photo 5"><img class="media-item" src="harvard5.png" alt="Harvard Ventures Tech Program, photo 5" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Harvard Ventures Tech Program, photo 6"><img class="media-item" src="harvard6.png" alt="Harvard Ventures Tech Program, photo 6" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Harvard Ventures Tech Program, photo 7"><img class="media-item" src="harvard7.png" alt="Harvard Ventures Tech Program, photo 7" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Harvard Ventures Tech Program, photo 8"><img class="media-item" src="harvard8.png" alt="Harvard Ventures Tech Program, photo 8" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-            </div>
-        </div>
-        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Harvard Ventures Tech Program photos right">&#10095;</button>
-      </div>
-      <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
-      <p class="tagline">Participation in an intensive technology entrepreneurship program at Harvard University.</p>
-      <button type="button" class="expand-button" aria-expanded="true" aria-controls="HarvardVentures-details">Show Less</button>
-      <div class="project-details" id="HarvardVentures-details">
-        <p>Selected to join the Harvard Ventures Tech Program, an intensive program designed to teach participants how to turn technical ideas into viable startups. I worked on team projects focused on product development, market research, and pitching to investors.</p>
-        <p>I led our team in developing a software prototype. We also did market research to identify gaps with other technologies and integrated solutions to them. Finally, we pitched our progress to the CEO of the start up, presenting our ideas and receiving feedback.</p>
-      </div>
-    </div>
-
-    <section id="awards">
-      <h2>Awards</h2>
-      <div class="awards-grid">
-        <div class="award-category">
-          <h3>Research</h3>
-          <ul>
-            <li>4th ISEF Grand Award, Biomedical Engineering, 2025</li>
-            <li>Junior Science and Humanities Symposium, National Oral Presenter, 2024</li>
-            <li>Best Paper Award, 3rd Place, IEEE 3rd International Conference on Machine Intelligence, 2024</li>
-            <li>California Science &amp; Engineering Fair 5th Place, Kindeva Innovator Award ($250), 2025</li>
-            <li>Synopsys Championship Grand Award, Best of Championship, 2025</li>
-            <li>Synopsys Championship First Place, Biomedical Engineering, 2025</li>
-            <li>Sigma Xi Student Research Competition Grand Prize, 2025</li>
-            <li>Junior Science and Humanities Symposium, Northern California 2nd Place in Chem, 2025</li>
-            <li>Synopsys Championship 2nd Place in Electrical Engineering, 2024</li>
-            <li>American Society for Engineers of Indian Origin Award, Honorable Mention, 2025</li>
-          </ul>
-        </div>
-        <div class="award-category">
-          <h3>Entrepreneurship</h3>
-          <ul>
-            <li>Pete Conrad Scholar, Energy &amp; Environment Category, Conrad Challenge, 2025</li>
-            <li>Diamond Challenge Finalist, 2025</li>
-            <li>1517 Fund Medici Grant of $1k</li>
-            <li>Conrad Challenge Innovator Team (2025)</li>
-          </ul>
-        </div>
-        <div class="award-category">
-          <h3>Olympiads &amp; Competitions</h3>
-          <ul>
-            <li>2x AIME Qualifier (2023 &amp; 2024), 1x w/ Distinction (2023)</li>
-            <li>USACO Silver (2023)</li>
-            <li>FRC Worlds Qualifier 2023, Impact Award</li>
-            <li>FTC NorCal Regional Finalist, Control Award 2nd Place, Inspire Award 2nd</li>
-            <li>Tournament of Champions Qualifier, Public Forum Debate, 2025</li>
-            <li>NSDA Degree of Distinction, 2025</li>
-            <li>Technology Student Association, Tests of Engineering Aptitude, Math, and Science Nationals Qualifying Team, 2023 &amp; 2025</li>
-            <li>Scholastic Art and Writing Silver Key, 2022 &amp; 2023</li>
-            <li>Scholastic Art and Writing Honorable Mention, 2026</li>
-            <li>AP Scholar w/ Distinction (2024, 2025)</li>
-          </ul>
-        </div>
-        <div class="award-category">
-          <h3>Volunteering / Misc.</h3>
-          <ul>
-            <li>Coca-Cola Scholars Semifinalist, 2025</li>
-            <li>President's Volunteer Service Award Gold, 2024</li>
-            <li>President's Volunteer Service Award Bronze, 2023</li>
-            <li>Section Runner Up, Varsity Tennis, 2025</li>
-            <li>All-League 3rd Team, Top 30 Player, 2024</li>
-            <li>Section Semi-finalist, League Runner Up, 2024</li>
-            <li>Bay Area Tennis Classic, Runner Up, 2025</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </section>
-</div>
-
-<div class="page" id="community" data-page data-title="Community Service" hidden>
-  <section id="community-service">
-    <h2>Community Service</h2>
-    <h3 class="subheading">Under my 501(c)(3) Non-Profit: Cream of the Crop</h3>
-
-    <div class="project" id="STEMWorkshops">
-      <h3>STEM Workshops</h3>
-      <div class="media-gallery">
-        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll STEM Workshops photos left">&#10094;</button>
-        <div class="media-container" tabindex="0" aria-label="STEM Workshops photos and videos, 10 items">
-            <div class="media-row">
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: STEM Workshops, photo 1"><img class="media-item" src="StemWK1.png" alt="STEM Workshops, photo 1" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: STEM Workshops, photo 2"><img class="media-item" src="StemWK2.png" alt="STEM Workshops, photo 2" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <video class="media-item" src="IMG_4440%20copy.MOV" controls playsinline preload="metadata" aria-label="Workshop video"></video>
-                  <button type="button" class="media-expand" aria-label="Open video full screen: Workshop video" title="Open larger"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
-                </div>
-                <p class="media-caption">Workshop video.</p>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: STEM Workshops, photo 4"><img class="media-item" src="StemWK4.png" alt="STEM Workshops, photo 4" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: STEM Workshops, photo 5"><img class="media-item" src="StemWK5.png" alt="STEM Workshops, photo 5" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-            </div>
-            <div class="media-row">
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: STEM Workshops, photo 6"><img class="media-item" src="StemWK6.png" alt="STEM Workshops, photo 6" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: STEM Workshops, photo 7"><img class="media-item" src="StemWK7.png" alt="STEM Workshops, photo 7" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: STEM Workshops, photo 8"><img class="media-item" src="StemWK8.png" alt="STEM Workshops, photo 8" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: STEM Workshops, photo 9"><img class="media-item" src="StemWK9.png" alt="STEM Workshops, photo 9" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: STEM Workshops, photo 10"><img class="media-item" src="StemWK3.png" alt="STEM Workshops, photo 10" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-            </div>
-        </div>
-        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll STEM Workshops photos right">&#10095;</button>
-      </div>
-      <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
-      <p class="tagline">Led hands-on STEM sessions at local Title 1 elementary schools using LEGO robotics and coding games.</p>
-      <button type="button" class="expand-button" aria-expanded="true" aria-controls="STEMWorkshops-details">Show Less</button>
-      <div class="project-details" id="STEMWorkshops-details">
-        <p>When I was conducting robotics demos, I was approached by a teacher at Henry Ford Elementary who was interested in furthering the depth of robotics in her STEM program. She asked how to get students excited and shared her struggles. Listening, I realized that her problem was systemic: the curriculum was fixated on worksheets rather than wonder.</p>
-        <p>We began proposing changes. I introduced a hands-on Robotics curriculum and founded a district-wide FIRST LEGO League competition for eight teams. Rather than prescribing instructions, we encouraged testing unique ideas, and excitement overtook boredom as over 60 students huddled over sensors, cheered the robot on, and laughed at code going wrong.</p>
-        <p>We've now continued our program into the school year, having raised $4.5K to provide kits and materials for our classes and creating an after school enrichment program and LEGO robotics league for Henry Ford's students.</p>
-      </div>
-    </div>
-
-    <div class="project" id="FTC_Coaching">
-      <h3>FTC Robotics Coaching</h3>
-      <div class="media-gallery">
-        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll FTC Robotics Coaching photos left">&#10094;</button>
-        <div class="media-container" tabindex="0" aria-label="FTC Robotics Coaching photos and videos, 5 items">
-            <div class="media-row">
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: FTC Robotics Coaching, photo 1"><img class="media-item" src="coaching1.png" alt="FTC Robotics Coaching, photo 1" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: FTC Robotics Coaching, photo 2"><img class="media-item" src="coaching2.png" alt="FTC Robotics Coaching, photo 2" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: FTC Robotics Coaching, photo 3"><img class="media-item" src="coaching3.png" alt="FTC Robotics Coaching, photo 3" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: FTC Robotics Coaching, photo 4"><img class="media-item" src="coaching4.png" alt="FTC Robotics Coaching, photo 4" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: FTC Robotics Coaching, photo 5"><img class="media-item" src="ftc.png" alt="FTC Robotics Coaching, photo 5" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-            </div>
-        </div>
-        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll FTC Robotics Coaching photos right">&#10095;</button>
-      </div>
-      <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
-      <p class="tagline">Coached FLL and FTC Teams to regional and state accolades.</p>
-      <button type="button" class="expand-button" aria-expanded="true" aria-controls="FTC_Coaching-details">Show Less</button>
-      <div class="project-details" id="FTC_Coaching-details">
-        <p>I organized several robotics related summer programs as well. I mentored three FIRST LEGO League and FIRST Tech Challenge teams, teaching both the basics of the competition as well as more advanced skills. I also hosted a series of one and two week long summer camps, totalling 50 students across them.</p>
-        <p>I recruited peers as teaching aides, and expanded our portfolio of workshops to include introductions to all aspects of the competition and cover a breadth of technical skills from CAD and Computer Vision to Scratch Programming and 3D printing. All of these teams experienced heightened success, advancing to regional and state rounds. One even won the mentor award at a FIRST LEGO League tournament. Still, the strongest affirmation came at the start of the next season, as I watched our students prepare for their upcoming challenges with new fervor and enthusiasm.</p>
-      </div>
-    </div>
-
-    <div class="project" id="RCPlanes">
-      <h3>Introduction to Remote Control Airplanes</h3>
-      <div class="media-gallery">
-        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Introduction to Remote Control Airplanes photos left">&#10094;</button>
-        <div class="media-container" tabindex="0" aria-label="Introduction to Remote Control Airplanes photos and videos, 7 items">
-            <div class="media-row">
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Introduction to Remote Control Airplanes, photo 1"><img class="media-item" src="plane1.png" alt="Introduction to Remote Control Airplanes, photo 1" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Introduction to Remote Control Airplanes, photo 2"><img class="media-item" src="plane2.png" alt="Introduction to Remote Control Airplanes, photo 2" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Introduction to Remote Control Airplanes, photo 3"><img class="media-item" src="plane3.png" alt="Introduction to Remote Control Airplanes, photo 3" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Introduction to Remote Control Airplanes, photo 4"><img class="media-item" src="plane4.png" alt="Introduction to Remote Control Airplanes, photo 4" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Introduction to Remote Control Airplanes, photo 5"><img class="media-item" src="plane5.png" alt="Introduction to Remote Control Airplanes, photo 5" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Introduction to Remote Control Airplanes, photo 6"><img class="media-item" src="plane6.png" alt="Introduction to Remote Control Airplanes, photo 6" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Introduction to Remote Control Airplanes, photo 7"><img class="media-item" src="plane7.png" alt="Introduction to Remote Control Airplanes, photo 7" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-            </div>
-        </div>
-        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Introduction to Remote Control Airplanes photos right">&#10095;</button>
-      </div>
-      <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
-      <p class="tagline">Led hands-on sessions building remote-control airplanes.</p>
-      <button type="button" class="expand-button" aria-expanded="true" aria-controls="RCPlanes-details">Show Less</button>
-      <div class="project-details" id="RCPlanes-details">
-        <p>I led a remote-control airplane workshop at a local library, with 8 middle school students participating. I taught the class to build RC airplanes from scratch using foamboard. We then took a fieldtrip to a local flying park to test them together. But after hours of cutting and gluing, many of the class's planes came crashing down after wobbling just a few feet. I gathered the students around to try and identify problems, patching the battered airframes and wings while making adjustments based off of each test flight. Soon, my students began offering suggestions, changing the geometry of the wings on their own or shifting the center of gravity around, trying to identify the ideal setup. Our on-the-spot fixes weren't exactly pretty, but our planes flew beautifully through the air.</p>
-      </div>
-    </div>
-
-    <div class="project" id="TennisCoaching">
-      <h3>Tennis Coaching</h3>
-      <div class="media-gallery">
-        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Tennis Coaching photos left">&#10094;</button>
-        <div class="media-container" tabindex="0" aria-label="Tennis Coaching photos and videos, 6 items">
-            <div class="media-row">
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Tennis Coaching, photo 1"><img class="media-item" src="tennis1.png" alt="Tennis Coaching, photo 1" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Tennis Coaching, photo 2"><img class="media-item" src="tennis2.png" alt="Tennis Coaching, photo 2" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Tennis Coaching, photo 3"><img class="media-item" src="tennis3.png" alt="Tennis Coaching, photo 3" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Tennis Coaching, photo 4"><img class="media-item" src="tennis4.png" alt="Tennis Coaching, photo 4" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Tennis Coaching, photo 5"><img class="media-item" src="tennis5.png" alt="Tennis Coaching, photo 5" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Tennis Coaching, photo 6"><img class="media-item" src="tennis6.png" alt="Tennis Coaching, photo 6" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-            </div>
-        </div>
-        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Tennis Coaching photos right">&#10095;</button>
-      </div>
-      <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
-      <p class="tagline">Providing one-on-one tennis coaching and group lessons for young athletes.</p>
-      <button type="button" class="expand-button" aria-expanded="true" aria-controls="TennisCoaching-details">Show Less</button>
-      <div class="project-details" id="TennisCoaching-details">
-        <p>I coached beginner and intermediate students in tennis in both clinics and private lessons. I focused on a variety of key issues, including technique, strategy, and physical conditioning, footwork, and agility. To emphasize each of these areas, I developed new drills and personalized lesson plans to focus on what each player needed to work on. I also brought in peers to coach alongside me and offer even more individualized feedback.</p>
-      </div>
-    </div>
-
-    <h3 class="subheading">Other Volunteering Activities</h3>
-
-    <div class="project" id="Hiller">
-      <h3>Hiller Aviation Museum Volunteer</h3>
-      <div class="media-gallery">
-        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Hiller Aviation Museum Volunteer photos left">&#10094;</button>
-        <div class="media-container" tabindex="0" aria-label="Hiller Aviation Museum Volunteer photos and videos, 4 items">
-            <div class="media-row">
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Hiller Aviation Museum Volunteering"><img class="media-item" src="Hiller1.png" alt="Hiller Aviation Museum Volunteering" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-                <p class="media-caption">Hiller Aviation Museum Volunteering.</p>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Hiller Aviation Museum Volunteer, photo 2"><img class="media-item" src="Hiller2.png" alt="Hiller Aviation Museum Volunteer, photo 2" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Hiller Aviation Museum Volunteering"><img class="media-item" src="Hiller3.png" alt="Hiller Aviation Museum Volunteering" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-                <p class="media-caption">Hiller Aviation Museum Volunteering.</p>
-              </div>
-              <div class="media-wrapper">
-                <div class="media-frame">
-                  <button type="button" class="media-open" aria-label="Enlarge photo: Hiller Aviation Museum Volunteer, photo 4"><img class="media-item" src="Hiller4.png" alt="Hiller Aviation Museum Volunteer, photo 4" loading="lazy" decoding="async" draggable="false"></button>
-                </div>
-              </div>
-            </div>
-        </div>
-        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Hiller Aviation Museum Volunteer photos right">&#10095;</button>
-      </div>
-      <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
-      <p class="tagline">Exhibit Guide Volunteer at Hiller Aviation Museum</p>
-      <button type="button" class="expand-button" aria-expanded="true" aria-controls="Hiller-details">Show Less</button>
-      <div class="project-details" id="Hiller-details">
-        <p>I shared my aviation knowledge while serving as a volunteer at the Hiller Aviation Museum. I ran a variety of exhibits, from a 747 fuselage to flight simulators and a drone-ples. I often answered questions from visitors and guided tours of the exhibits I was in charge of. I also created engaging exercises and interactive labs at the Innovation Lab, such as demonstrations of how airplane engines function, or how wings and propellers produce lift and thrust.</p>
-      </div>
-    </div>
-
     <div class="project" id="Enable">
-      <h3>Enabling the Future Chapter Leader</h3>
+      <h3>Accessible 3D-Printed Prosthetics (Enabling the Future)</h3>
+      <p class="project-summary">Founded a community chapter of Enabling the Future and led a four-person team that designs and fabricates accessible prosthetic devices with CAD and 3D printing.</p>
+      <dl class="spec-list">
+        <div><dt>Role</dt><dd>Chapter founder and lead</dd></div>
+        <div><dt>Work</dt><dd>Designed and fabricated prosthetic limbs; trained members to customize limbs, fabricate arm components, and assemble complete devices</dd></div>
+      </dl>
+      <ul class="metrics">
+        <li><strong>4</strong><span>prosthetic limbs built</span></li>
+      </ul>
       <div class="media-gallery">
-        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Enabling the Future Chapter Leader photos left">&#10094;</button>
-        <div class="media-container" tabindex="0" aria-label="Enabling the Future Chapter Leader photos and videos, 5 items">
+        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Accessible 3D-Printed Prosthetics (Enabling the Future) photos left">&#10094;</button>
+        <div class="media-container" tabindex="0" aria-label="Accessible 3D-Printed Prosthetics (Enabling the Future) photos and videos, 5 items">
             <div class="media-row">
               <div class="media-wrapper">
                 <div class="media-frame">
@@ -2031,19 +2083,289 @@
               </div>
             </div>
         </div>
-        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Enabling the Future Chapter Leader photos right">&#10095;</button>
+        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Accessible 3D-Printed Prosthetics (Enabling the Future) photos right">&#10095;</button>
       </div>
       <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
-      <p class="tagline">Designing and printing accessible prosthetics for patients around the globe.</p>
-      <button type="button" class="expand-button" aria-expanded="true" aria-controls="Enable-details">Show Less</button>
-      <div class="project-details" id="Enable-details">
-        <p>I founded a community chapter and established a team with 4 members, designing new accessible prosthetic devices. We designed and fabricated 4 accessible prosthetic limbs using CAD and 3D printing. I also trained members to customize prosthetic limbs, fabricate components of arms, and assemble complete devices.</p>
+    </div>
+  </section>
+
+  <section id="outreach">
+    <h2>Teaching &amp; Outreach</h2>
+
+    <div class="project project-compact" id="STEMWorkshops">
+      <h3>Robotics Curriculum for Elementary Schools</h3>
+      <p class="project-summary">Built a hands-on robotics curriculum with a teacher at Henry Ford Elementary, a Title 1 school, and founded a district-wide FIRST LEGO League competition for eight teams. Over 60 students took part, and we raised $4.5K for kits and an after-school robotics program. Run through my nonprofit, Cream of the Crop.</p>
+      <div class="media-gallery">
+        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Robotics Curriculum for Elementary Schools photos left">&#10094;</button>
+        <div class="media-container" tabindex="0" aria-label="Robotics Curriculum for Elementary Schools photos and videos, 10 items">
+            <div class="media-row">
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: Robotics Curriculum for Elementary Schools, photo 1"><img class="media-item" src="StemWK1.png" alt="Robotics Curriculum for Elementary Schools, photo 1" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: Robotics Curriculum for Elementary Schools, photo 2"><img class="media-item" src="StemWK2.png" alt="Robotics Curriculum for Elementary Schools, photo 2" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <video class="media-item" src="IMG_4440%20copy.MOV" controls playsinline preload="metadata" aria-label="Workshop video"></video>
+                  <button type="button" class="media-expand" aria-label="Open video full screen: Workshop video" title="Open larger"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+                </div>
+                <p class="media-caption">Workshop video.</p>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: Robotics Curriculum for Elementary Schools, photo 4"><img class="media-item" src="StemWK4.png" alt="Robotics Curriculum for Elementary Schools, photo 4" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: Robotics Curriculum for Elementary Schools, photo 5"><img class="media-item" src="StemWK5.png" alt="Robotics Curriculum for Elementary Schools, photo 5" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+            </div>
+            <div class="media-row">
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: Robotics Curriculum for Elementary Schools, photo 6"><img class="media-item" src="StemWK6.png" alt="Robotics Curriculum for Elementary Schools, photo 6" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: Robotics Curriculum for Elementary Schools, photo 7"><img class="media-item" src="StemWK7.png" alt="Robotics Curriculum for Elementary Schools, photo 7" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: Robotics Curriculum for Elementary Schools, photo 8"><img class="media-item" src="StemWK8.png" alt="Robotics Curriculum for Elementary Schools, photo 8" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: Robotics Curriculum for Elementary Schools, photo 9"><img class="media-item" src="StemWK9.png" alt="Robotics Curriculum for Elementary Schools, photo 9" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: Robotics Curriculum for Elementary Schools, photo 10"><img class="media-item" src="StemWK3.png" alt="Robotics Curriculum for Elementary Schools, photo 10" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Robotics Curriculum for Elementary Schools photos right">&#10095;</button>
+      </div>
+      <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
+      <button type="button" class="expand-button" aria-expanded="false" aria-controls="STEMWorkshops-details" data-closed="Read the story" data-open="Hide">Read the story</button>
+      <div class="project-details" id="STEMWorkshops-details" hidden>
+        <p>When I was conducting robotics demos, I was approached by a teacher at Henry Ford Elementary who was interested in furthering the depth of robotics in her STEM program. She asked how to get students excited and shared her struggles. Listening, I realized that her problem was systemic: the curriculum was fixated on worksheets rather than wonder.</p>
+        <p>We began proposing changes. I introduced a hands-on Robotics curriculum and founded a district-wide FIRST LEGO League competition for eight teams. Rather than prescribing instructions, we encouraged testing unique ideas, and excitement overtook boredom as over 60 students huddled over sensors, cheered the robot on, and laughed at code going wrong.</p>
+        <p>We've now continued our program into the school year, having raised $4.5K to provide kits and materials for our classes and creating an after school enrichment program and LEGO robotics league for Henry Ford's students.</p>
+      </div>
+    </div>
+
+    <div class="project project-compact" id="FTC_Coaching">
+      <h3>FLL and FTC Robotics Coaching</h3>
+      <p class="project-summary">Mentored three FIRST LEGO League and FIRST Tech Challenge teams and ran summer camps for 50 students, teaching CAD, computer vision, Scratch programming, and 3D printing. All of the teams advanced to regional or state rounds.</p>
+      <div class="media-gallery">
+        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll FLL and FTC Robotics Coaching photos left">&#10094;</button>
+        <div class="media-container" tabindex="0" aria-label="FLL and FTC Robotics Coaching photos and videos, 5 items">
+            <div class="media-row">
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: FLL and FTC Robotics Coaching, photo 1"><img class="media-item" src="coaching1.png" alt="FLL and FTC Robotics Coaching, photo 1" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: FLL and FTC Robotics Coaching, photo 2"><img class="media-item" src="coaching2.png" alt="FLL and FTC Robotics Coaching, photo 2" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: FLL and FTC Robotics Coaching, photo 3"><img class="media-item" src="coaching3.png" alt="FLL and FTC Robotics Coaching, photo 3" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: FLL and FTC Robotics Coaching, photo 4"><img class="media-item" src="coaching4.png" alt="FLL and FTC Robotics Coaching, photo 4" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: FLL and FTC Robotics Coaching, photo 5"><img class="media-item" src="ftc.png" alt="FLL and FTC Robotics Coaching, photo 5" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll FLL and FTC Robotics Coaching photos right">&#10095;</button>
+      </div>
+      <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
+      <button type="button" class="expand-button" aria-expanded="false" aria-controls="FTC_Coaching-details" data-closed="Read the story" data-open="Hide">Read the story</button>
+      <div class="project-details" id="FTC_Coaching-details" hidden>
+        <p>I organized several robotics related summer programs as well. I mentored three FIRST LEGO League and FIRST Tech Challenge teams, teaching both the basics of the competition as well as more advanced skills. I also hosted a series of one and two week long summer camps, totalling 50 students across them.</p>
+        <p>I recruited peers as teaching aides, and expanded our portfolio of workshops to include introductions to all aspects of the competition and cover a breadth of technical skills from CAD and Computer Vision to Scratch Programming and 3D printing. All of these teams experienced heightened success, advancing to regional and state rounds. One even won the mentor award at a FIRST LEGO League tournament. Still, the strongest affirmation came at the start of the next season, as I watched our students prepare for their upcoming challenges with new fervor and enthusiasm.</p>
+      </div>
+    </div>
+
+    <div class="project project-compact" id="RCPlanes">
+      <h3>RC Airplane Workshop</h3>
+      <p class="project-summary">Taught eight middle school students to build RC airplanes from foam board, then flight-tested them and tuned wing geometry and center of gravity until the planes flew.</p>
+      <div class="media-gallery">
+        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll RC Airplane Workshop photos left">&#10094;</button>
+        <div class="media-container" tabindex="0" aria-label="RC Airplane Workshop photos and videos, 7 items">
+            <div class="media-row">
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: RC Airplane Workshop, photo 1"><img class="media-item" src="plane1.png" alt="RC Airplane Workshop, photo 1" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: RC Airplane Workshop, photo 2"><img class="media-item" src="plane2.png" alt="RC Airplane Workshop, photo 2" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: RC Airplane Workshop, photo 3"><img class="media-item" src="plane3.png" alt="RC Airplane Workshop, photo 3" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: RC Airplane Workshop, photo 4"><img class="media-item" src="plane4.png" alt="RC Airplane Workshop, photo 4" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: RC Airplane Workshop, photo 5"><img class="media-item" src="plane5.png" alt="RC Airplane Workshop, photo 5" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: RC Airplane Workshop, photo 6"><img class="media-item" src="plane6.png" alt="RC Airplane Workshop, photo 6" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: RC Airplane Workshop, photo 7"><img class="media-item" src="plane7.png" alt="RC Airplane Workshop, photo 7" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll RC Airplane Workshop photos right">&#10095;</button>
+      </div>
+      <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
+      <button type="button" class="expand-button" aria-expanded="false" aria-controls="RCPlanes-details" data-closed="Read the story" data-open="Hide">Read the story</button>
+      <div class="project-details" id="RCPlanes-details" hidden>
+        <p>I led a remote-control airplane workshop at a local library, with 8 middle school students participating. I taught the class to build RC airplanes from scratch using foamboard. We then took a fieldtrip to a local flying park to test them together. But after hours of cutting and gluing, many of the class's planes came crashing down after wobbling just a few feet. I gathered the students around to try and identify problems, patching the battered airframes and wings while making adjustments based off of each test flight. Soon, my students began offering suggestions, changing the geometry of the wings on their own or shifting the center of gravity around, trying to identify the ideal setup. Our on-the-spot fixes weren't exactly pretty, but our planes flew beautifully through the air.</p>
+      </div>
+    </div>
+
+    <div class="project project-compact" id="Hiller">
+      <h3>Hiller Aviation Museum</h3>
+      <p class="project-summary">Volunteer exhibit guide. I ran exhibits from a 747 fuselage to flight simulators and built interactive Innovation Lab demos showing how airplane engines work and how wings and propellers produce lift and thrust.</p>
+      <div class="media-gallery">
+        <button type="button" class="gallery-btn prev-btn" data-dir="-1" aria-label="Scroll Hiller Aviation Museum photos left">&#10094;</button>
+        <div class="media-container" tabindex="0" aria-label="Hiller Aviation Museum photos and videos, 4 items">
+            <div class="media-row">
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: Hiller Aviation Museum Volunteering"><img class="media-item" src="Hiller1.png" alt="Hiller Aviation Museum Volunteering" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+                <p class="media-caption">Hiller Aviation Museum Volunteering.</p>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: Hiller Aviation Museum, photo 2"><img class="media-item" src="Hiller2.png" alt="Hiller Aviation Museum, photo 2" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: Hiller Aviation Museum Volunteering"><img class="media-item" src="Hiller3.png" alt="Hiller Aviation Museum Volunteering" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+                <p class="media-caption">Hiller Aviation Museum Volunteering.</p>
+              </div>
+              <div class="media-wrapper">
+                <div class="media-frame">
+                  <button type="button" class="media-open" aria-label="Enlarge photo: Hiller Aviation Museum, photo 4"><img class="media-item" src="Hiller4.png" alt="Hiller Aviation Museum, photo 4" loading="lazy" decoding="async" draggable="false"></button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <button type="button" class="gallery-btn next-btn" data-dir="1" aria-label="Scroll Hiller Aviation Museum photos right">&#10095;</button>
+      </div>
+      <div class="scroll-hint">&harr; Scroll, drag, or use the arrows to see more. Click any photo to enlarge it.</div>
+      <button type="button" class="expand-button" aria-expanded="false" aria-controls="Hiller-details" data-closed="Read the story" data-open="Hide">Read the story</button>
+      <div class="project-details" id="Hiller-details" hidden>
+        <p>I shared my aviation knowledge while serving as a volunteer at the Hiller Aviation Museum. I ran a variety of exhibits, from a 747 fuselage to flight simulators and a drone-ples. I often answered questions from visitors and guided tours of the exhibits I was in charge of. I also created engaging exercises and interactive labs at the Innovation Lab, such as demonstrations of how airplane engines function, or how wings and propellers produce lift and thrust.</p>
       </div>
     </div>
   </section>
 </div>
 
+<div class="page" id="honors" data-page data-title="Honors" hidden>
+  <section id="awards">
+    <h2>Honors &amp; Awards</h2>
+    <div class="awards-grid">
+        <div class="award-category">
+          <h3>Research &amp; Engineering</h3>
+          <ul>
+            <li>4th Place Grand Award, Biomedical Engineering, International Science and Engineering Fair (ISEF), 2025</li>
+            <li>Regeneron Science Talent Search Top 300 Scholar, 2026</li>
+            <li>Best Paper Award, 3rd Place, IEEE 3rd International Conference on Computing and Machine Intelligence, 2024</li>
+            <li>Best Presentation Award, 11th International Conference on Mechatronics Systems and Robots (ICMSR), 2025</li>
+            <li>Junior Science and Humanities Symposium, National Oral Presenter, 2024</li>
+            <li>California Science &amp; Engineering Fair 5th Place, Kindeva Innovator Award ($250), 2025</li>
+            <li>Synopsys Championship Grand Award, Best of Championship, 2025</li>
+            <li>Synopsys Championship First Place, Biomedical Engineering, 2025</li>
+            <li>Synopsys Championship 2nd Place, Electrical Engineering, 2024</li>
+            <li>Sigma Xi Student Research Competition Grand Prize, 2025</li>
+            <li>Junior Science and Humanities Symposium, Northern California 2nd Place in Chemistry, 2025</li>
+            <li>American Society for Engineers of Indian Origin Award, Honorable Mention, 2025</li>
+          </ul>
+        </div>
+        <div class="award-category">
+          <h3>Entrepreneurship</h3>
+          <ul>
+            <li>Pete Conrad Scholar, Energy &amp; Environment Category, Conrad Challenge, 2025</li>
+            <li>Diamond Challenge Finalist, 2025</li>
+            <li>1517 Fund Medici Grant of $1K</li>
+            <li>Conrad Challenge Innovator Team, 2025</li>
+          </ul>
+        </div>
+        <div class="award-category">
+          <h3>Engineering Competitions</h3>
+          <ul>
+            <li>FRC World Championship Qualifier, Impact Award, 2023</li>
+            <li>FTC NorCal Regional Finalist, Control Award 2nd Place, Inspire Award 2nd Place</li>
+            <li>FTC Design Award, San Jose and Sunnyvale Qualifying Tournaments, 2022</li>
+            <li>Technology Student Association TEAMS (Tests of Engineering Aptitude, Math, and Science) Nationals Qualifying Team, 2023 and 2025</li>
+          </ul>
+        </div>
+        <div class="award-category">
+          <h3>Math &amp; Computing</h3>
+          <ul>
+            <li>2x AIME Qualifier (2023 and 2024), with Distinction in 2023</li>
+            <li>USACO Silver, 2023</li>
+          </ul>
+        </div>
+    </div>
+  </section>
+</div>
+
 </main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Evan Zhang</p>
+  <ul>
+    <li><a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+    <li><a href="https://scholar.google.com/citations?user=SviwYmkAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+    <li><a href="https://github.com/evanrzhang" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    <li><a href="#home">Back to top</a></li>
+  </ul>
+</footer>
 
 <dialog id="lightbox" class="lightbox" aria-label="Photo viewer">
   <div class="lb-top">
@@ -2083,8 +2405,11 @@
   window.addEventListener('resize', setHeaderHeight);
 
   /* ================= Pages (hash-based so links, refresh and Back work) ================= */
-  var aliases = { 'page-home': 'home', 'page-entrepreneurship': 'entrepreneurship',
-                  'page-stem-projects': 'stem-projects', 'page-community': 'community', 'about': 'home' };
+  // Links from older versions of the site still land in the right place.
+  var aliases = { 'page-home': 'home', 'about': 'home',
+                  'entrepreneurship': 'ventures', 'page-entrepreneurship': 'ventures',
+                  'stem-projects': 'builds', 'page-stem-projects': 'builds',
+                  'community': 'outreach', 'page-community': 'outreach', 'community-service': 'outreach' };
   var currentPage = null;
 
   function route() {
@@ -2104,7 +2429,7 @@
       else a.removeAttribute('aria-current');
     });
     var t = page.getAttribute('data-title');
-    document.title = t ? t + ' - Evan Zhang' : 'Evan Zhang - Portfolio';
+    document.title = t ? t + ' - Evan Zhang' : 'Evan Zhang - Engineering Portfolio';
     closeMenu();
 
     requestAnimationFrame(function () {
@@ -2154,7 +2479,7 @@
       var open = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!open));
       details.hidden = open;
-      btn.textContent = open ? 'Learn More' : 'Show Less';
+      btn.textContent = open ? (btn.getAttribute('data-closed') || 'Learn More') : (btn.getAttribute('data-open') || 'Show Less');
     });
   });
 
